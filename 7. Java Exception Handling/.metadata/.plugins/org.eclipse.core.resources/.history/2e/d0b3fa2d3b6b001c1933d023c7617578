@@ -1,0 +1,11 @@
+package program.with.try_with.resources;
+
+public class Test {
+
+	public static void main(String[] args) {
+		FileReader r = new FileReader("abc.txt");
+		try()
+
+	}
+
+}

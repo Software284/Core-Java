@@ -1,0 +1,9 @@
+Clone Method:->
+-> the process of creating exactly duplicates object is called cloning.
+-> the main purpose of cloning is to maintain backup copy and to preserve an state of an object.
+-> we can perform cloning by using clone method of object class.
+
+protected native Object clone() throws CloneNotSupportedException 
+
+-> we can perform cloning only for cloneable object.an object is said to clonnable if and only corresponding
+class implements cloaneable interface.

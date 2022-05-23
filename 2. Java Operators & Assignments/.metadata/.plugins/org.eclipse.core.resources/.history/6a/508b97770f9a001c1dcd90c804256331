@@ -1,0 +1,75 @@
+Arithmatic Operator(+,-,*,/,%):->
+-> if we apply any arithmatic operator between two variables a and b the result type is always max(int,type_of_a,type_of
+_b);
+byte + byte = int
+byte + short = int
+short + short = int
+byte + long = long
+long + double = double
+float + long = float
+char + char = int
+
+Example:
+sysout('a'+0.90); // 97.90
+sysout('a'+'b'); // 195
+========================================================================================================================
+-> in integral arithmatic(byte,short,int,long) there is no way to represent infinity hence if infinity is a
+result we will get arithmatic exception in integral arithmatic.
+Example:
+sysout(10/0); //RE:Arithmatic Exception divisible by 0
+
+but in floating point arithmatic(float,double) there is a way to represent infinity.for this float and double classes
+contains the following 2 constants
+	-> POSITIVE_INFINITY
+	-> NEGATIVE_INFINITY
+hence even though result is infinity we won't get any arithmatic exception in floating point arithmatic.
+Example:
+sysout(10/0.0); // POSITIVE_INFINITY
+sysout(-10/0.0); // NEGATIVE_INFINITY
+
+
+
+
+
+NaN(Not a Number):-> in integral arithmetic(byte,short,int,long) there is no way to represent undefined results hence
+if the result undefined we will get runtime exception saying AE division by zero.
+Example:-> 
+syosut(0/0); //RE: ArithmeticException divisible by 0 because it produces undefined.
+
+but in floating point arithematic(float,double) there is way to represent undefined results for this float and double
+classes contain NaN constant.hence if the result is undefined we won't get any arithmetic exception in floating point
+arithmetic.
+syosut(0.0/0); // NaN
+sysout(-0/0.0); //Nan
+
+
+========================================================================================================================
+->
+
+
+
+
+Note*:-> for any x value including NaN. the following expressions returns false.
+sysout(10 < Float.NaN); //false
+syosut(10 <= Float.NaN); //false
+sysout(10 > Float.NaN); //false
+sysout(10 >= Float.NaN); //false
+sysout(10 == Float.NaN); //false
+sysout(Float.NaN == Float.NaN); //false
+
+for any x value including Nan. the following expressions returns true
+sysout(10 != Float.NaN); //true
+sysout(Float.NaN != Float.NaN); //true
+
+
+
+
+
+
+
+
+
+
+
+
+d

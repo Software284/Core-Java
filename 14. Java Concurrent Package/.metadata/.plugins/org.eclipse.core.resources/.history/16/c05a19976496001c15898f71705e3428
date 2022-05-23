@@ -1,0 +1,18 @@
+package com.lamichhane.concurrent.modification.exception;
+
+import java.util.ArrayList;
+
+public class MyThread extends Thread {
+
+	static ArrayList l = new ArrayList();
+	public void run() {
+		try {
+			
+		}
+		catch(InterruptedException e) {
+			
+		}
+		System.out.println("Child Thread Updating List");
+		l.add("D");
+	}
+}

@@ -1,0 +1,6 @@
+Locale Class:->   
+-> a locale object represents a geographic location(country) or language or both.for example,we can
+create a locale object to represent india.we can create a locale object to represent english 
+language.
+-> locale class presents in java.util package.
+-> it is a final class and it is a direct child class of object.

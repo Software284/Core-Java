@@ -1,0 +1,5 @@
+Generics:->
+-> the main objectives of generics are to provide type safety and to resolve type casting problems.
+-> arrays are type safe that is we can give the gurantee for the type of elements present inside array.
+for example:->if our programming requirement is to hold only string type of objects we can choose string
+array.by mistake if we are trying to add any other type of objects we will get compile time error.

@@ -1,0 +1,60 @@
+Method Overloading:-> two methods are said to be overloaded if and only if both methods having same
+name but different argument types.in c language method overloading concept is not available hence 
+we can't declare multiple methods with same name but different argument types.if there is change in 
+argument type compulsary we should go for new method name which increases complexity of programming.
+in c:->
+abs(int x)
+fabs(float x)
+labs(long x)
+
+in java we can declare multiple methods with the same name but different argument types.such type of
+method are called overloaded methods.
+abs(int i)
+abs(long l)
+abs(float f)
+
+having overloading concept in java reduces complexity of programming.
+* in overloading method resolution always takes care by compiler based on reference type hence 
+overloading is also considered as compile time polymorphism or static polymorphism or early binding.
+
+Loop Holes:-> 
+case-I:-> automatic promotion in overloading:-> while resolving overloaded methods if exact match 
+method is not available then we won't get any compile time error immediately.first it will promote 
+argument to the next level and check whether match method is available or not if match method is 
+available then it will be considered.if the match method is not available then compiler promotes argument
+once again to the next level.this process will be continued until all possible promotions still if 
+the matched method is not available then we will get compile time error.the following are all possible 
+promotions in overloading
+byte-short-> int -> long -> float -> double
+char->int
+this process is called automatic promotion in overloading.
+see CaseOne class for example.
+
+case-II:-> while resolving overloaded methods compiler will always gives the precedence for child type
+argument than compared with parent type argument.see case two program.
+
+case-III:-> if there are multiple method matched with the same level of object reference then compiler
+gives you left and right.
+
+case-IV:-> see example in CaseFour
+
+case-V:-> see example CaseFive
+
+case-VI:-> 
+
+Note:-> in overloading method resoultion always takes cares by compiler based on reference type.in 
+overloading runtime object won't play any role.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

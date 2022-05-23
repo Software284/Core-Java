@@ -1,0 +1,97 @@
+Map
+ConcurrentMap
+ConcurrentHashMap
+
+ConcurrentMap:-> it contains three methods
+i. putIfAbsent();
+ii. remove();
+iii. replace();
+
+Object putIfAbsent(Object key,Object value):->
+Example1:->
+m.put(101,"durga");
+m.put(101,"shive");
+sysout(m);
+
+output:->
+{101,shive}
+
+m.put(101,"durga");
+m.putIfAbsent(101,"shive");
+
+output:->
+{101,durga}
+
+boolean remove(Object key,Object value):->
+m.put(101,"durga");
+m.remove(101);
+
+output:->
+{}
+
+m.put(101,"durga");
+m.remove(101,"durga");
+
+output:-> 
+{101=durga}
+
+
+
+boolean replace(Object key,Object oldValue,Object newValue):->
+m.put(101,"durga");
+m.replace(101,"shiva","hari");
+sysout(m) //{101=durga}
+m.replace(101,"durga","hari");
+sysout(m); //{101=hari}
+
+Note:-> these methods not present inside normal map.
+
+
+
+ConcurrentHashMap:-> 
+-> it is thread safe concurrent collection while normal HashMap is not thread safe.
+-> in this map total bucket level lock is implemented instead of enitre hashmap.the initial size of the
+map object is 16 so 16 multiple thread are allowed to update the bucket simultaneously while any no of
+thread can perform read operation.
+-> hashmap stores data internally in bucket.
+-> for each bucket a separate lock is maintained.
+-> in hashtable to perform any operation thread required total map object lock but in the case of
+concurrent hash map thread won't required total map object lock.thread required segment lock so 
+performance of the system will be improved.
+-> if there are 16 bucket but only 8 are used then for every two buckets one lock will be maintained.
+
+Conclusions:->
+-> Underlying data structure is hash table.
+-> concurrent hashmap allows concurrent read and thread-safe update operations.
+-> to perform read operation thread won't require any lock but to perform update operation thread 
+requires lock but it is lock of only a particular part of map(Segment lock/bucket lock) instead of 
+total map.
+-> concurrent update achived by internally dividing map into smaller portions which is defined by 
+concurrency level.
+-> the default concurrency level is 16.
+-> concurrent hash map allows any no of read operations but 16 update operations at a time by default.
+-> null is not allowed for both keys and values.
+-> while one thread iterating ,the other thread can perform update operations and concuurent hashmap
+never thorow concurrent modification exception.
+
+
+Constructors:->
+i. ConcurrentHashMap m = new ConcurrentHashMap(); //default size 16,fill ratio 0.75,concurrency level=16
+ii. ConcurrentHashMap m = new ConcurrentHashMap(int initialcapacity);
+iii. ConcurrentHashMap m = new ConcurrentHashMap(int initialcapacity,float fillratio);
+iv. ConcurrentHashMap m = new ConcurrentHashMap(int initialcapacity,float fillratio,int concurrencylevel);
+v. ConcurrentHashMap m = new ConcurrentHashMap(Map m);
+
+-> in second program if we replace ConcurrentHashMap to HashMap then we will get the Concurrent Modification 
+Exception.
+
+
+
+
+
+
+
+
+
+
+

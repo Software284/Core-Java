@@ -1,0 +1,33 @@
+Bitwise operators(&,|,^):-> 
+
+& -> AND :-> returns true iff both arguments are true.
+| -> OR :-> returns true if at least one argument is true.
+^ -> X-OR: -> returns true if and only if both arguments are different.
+
+Example:->
+sysout(true & false); //false
+sysout(true | false); //true
+sysout(true ^ false); //true
+
+
+-> 
+
+sysout(4 & 5);
+  100
++ 101
+--------
+  100
+// 4 answer
+
+sysout(4 | 5);
+  100
++ 101
+-------
+  101
+//5 answer
+
+sysout(4 ^ 5);
+  100
++ 101
+---------
+  001

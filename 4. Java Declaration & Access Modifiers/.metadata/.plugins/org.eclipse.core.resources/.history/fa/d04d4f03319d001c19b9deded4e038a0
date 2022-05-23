@@ -1,0 +1,12 @@
+package com.lamichhane.interface_demo;
+
+public class Test implements Interf {
+
+	public static void main(String[] args) {
+		
+		x = 10;
+		System.out.println(x);
+
+	}
+
+}

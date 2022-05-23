@@ -1,0 +1,17 @@
+package com.lamichhane.concat.operator.demo;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		
+		String a = "durga";
+		int b=10,c=20,d=30;
+		sysout(a+b+c+d); //durga102030
+		sysout(b+c+d+a); //60durga
+		sysout(b+c+a+d); //30durga30
+		syosut(b+a+c+d); //10durga2030
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package map.implementation.with.hashtable;
+
+public class Temp {
+	
+	int i;
+	
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	
+}

@@ -1,0 +1,15 @@
+Constructor of String class:->
+i.String s = new String(); :-> it created empty String object.
+ii.String s = new String(String literal); :-> it creates String object and the heap for given string literal.
+iii.String s = new String(StringBuffer sb); :-> it creates an equvalent String object for the given string 
+buffer.
+iv.String s = new String(char[] ch); :-> it creates an equivalent String object for the given char array.
+v.String s = new String(byte[] b); :-> it creates an equivalent String object for the given byte array.
+
+Improtant Methods Of String Class:-> 
+i. public char charAt(int index);
+ii. public String concat(String s);
+iii. public boolean equals(Object o);
+iv. 
+
+

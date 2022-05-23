@@ -1,0 +1,3 @@
+Autoboxing:-> automatic conversion of primitive to wrapper object by compiler is called autoboxing.
+Example:
+Integer i = 10;

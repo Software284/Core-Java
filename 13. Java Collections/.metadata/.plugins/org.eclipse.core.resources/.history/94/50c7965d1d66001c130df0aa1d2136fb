@@ -1,0 +1,2 @@
+Comparator Interface:-> it is present in java.util package and it defines two methods compare and equal.
+public int compare(Object obj1,Object obj2)

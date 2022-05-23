@@ -1,0 +1,145 @@
+Map Interface:-> it is not a child interface of collections. if we want to represent group of objects as key value pairs
+then we should go for map. both keys and values are objects only.duplicates keys are not allowed but values can be 
+duplicated.each key value pair is called entry hence map is considered as a collection of entry objects.
+
+Methods:->
+Object put(Object key,Object value)
+void putAll(Map m)
+Object get(Object key)
+boolean remove(Object key)
+boolean containsKey(Object key)
+boolean containsValue(Object key)
+boolean isEmpty()
+int size
+void clear()
+Set KeySet()
+collection values()
+Set entrySet()
+
+Entry Interface:-> a map is a group of key value pairs and each key value pair is called an entry hence map is considered 
+as a collection of entry objects.without existing map object there is no chance of existing entry object hence entry
+interface is defined inside map interface.
+Methods:->
+Object getKey()
+Object getValue()
+Object setValue()
+
+Implementation class of Map:->
+
+HashMap Class:->
+-> the underlying data structure is hashtable.
+-> insertion order is not preserved and it is based on hash code of keys
+-> duplicate keys are not allowed but values can be duplicated
+-> hetrogenious objects are allowed for both keys and value
+-> null is allowed for key(only once).
+-> null is allowed for values(any number of times)
+-> hashmap implements serializable and clonnable interfaces but not random access.
+-> hashmap is the best choice if our frequent operations is search.
+
+Constructor:->
+HashMap map = new HashMap() creates an empty hashmap object with defalult initial capacity 16 and default fill ratio
+0.75.
+HashMap map = new HashMap(int initial_capacity)
+HashMap map = new HashMap(int initial_capacity,float fill_ratio)
+HashMap map = new HashMap(Map map)
+
+Differences between hashmap and hashtable:->
+-> not synchronize vs synchronize
+-> not thread safe vs thread safe
+-> relatively performance is high vs relatively performance is slow
+-> null is allowed for key and value vs null is not applicable in hashtable
+
+How to get synchronize version of HashMap object:->
+HashMap m = new HashMap();
+HashMap m2 = Collection.synchronizedMap(m);
+
+LinkedHashMap:-> it is a child class of hashmap. it is exactly same as hashmap(including methods and constructor) except
+the following differences.
+HashMap vs LinkedHashMap:->
+-> The underlying data structure is hashtable vs underlying data structure is a combination of linked list + hashtable.
+-> insertion order is not preserved and it is based on hashcode of keys vs insertion order is preserved.
+-> itroduced in 1.2 version vs introduced in 1.4 version  
+
+Note: Linked Hashset and linked hashmap are commonly user for developing cache based applications.
+Note: difference == operator and .equals() method.in general == operator meant for reference comparision(address comparision).
+whereas .equals() method meant for content comparision.
+
+IdentityHashMap:-> it is exactly same as hashmap(including methods and constructor) except the following
+difference.
+-> in the case of normal hashmap JVM will used .equals method to identify duplicates keys which is 
+meant for content comparision but in the case of identity hashmap JVM will use == operator to identify
+duplicates keys which is meant for reference comparision(address comparison).
+
+WeakHashmap:-> it is exactly same as hashmap except the following difference.
+-> In the case of hashmap even though object doesn't have any reference. it is not eligible for gc if 
+it is associated with hashmap that is hashmap dominates garbage collector.
+-> but in the case of weak hashmap, if object doesn't contain any references it is eligible for gc even
+though object associated with weak hashmap that is garbage collector dominates weak hashmap.
+
+
+SortedMap Interface:-> it is a child interface of map. if we want to represent a group of objects as group of key value pairs
+according to some sorting order.sorting is based on the key but not based on value.
+
+Methods:->
+Object firstKey()
+Object lastKey()
+SortedMap headMap(Object key)
+SortedMap tailMap(Object key)
+SortedMap subMap(Object key1,Object key2)
+Comparator comparator();
+
+TreeMap class:-> 
+->underlying data structure is RED-BLACK tree
+->insertion order is not preserved
+-> duplicate keys are not allowed
+-> duplicate values are allowed
+-> hetrogenious objects are not allowed
+-> keys should be homogenious and comparable for default sorting.
+-> for customize sorting keys should not be homogenious and comparable.
+-> for non-empty tree map if we are trying to insert an entry with 
+the null key then we will get runtime exception saying null pointer
+exception.for empty tree map as the first entry with the null key is
+allowed but after inserting that entry if we are trying to insert
+any other entry then we will get runtime exception saying null pointer
+exception.for value we can use any no of time.
+
+Note: the above null acceptance rule applicable until 1.6 version only.
+from 1.7 version onwards null is not allowed for key.
+
+Constructor:-> 
+
+TreeMap k = new TreeMap()
+TreeMap k = new TreeMap(Comparator c)
+TreeMap k = new TreeMap(Map m)
+TreeMap t = new TreeMap(SortedMap m)
+
+
+Hashtable:-> it is called legacy class.
+-> the underlying data structure for hash table is hashtable.
+-> insertion order is not preserved and it is based on hashcode of keys.
+-> duplicate keys are not allowed and values can be duplicated.
+-> hetrogenious objects are allowed for both keys and values.
+-> null is not allowed for both key and value otherwise we will get runtime exception saying null 
+pointer exception.
+-> it implements serializable and clonnable interfaces but not Radom Access.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

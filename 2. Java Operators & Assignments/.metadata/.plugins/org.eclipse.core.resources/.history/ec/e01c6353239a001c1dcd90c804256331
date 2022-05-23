@@ -1,0 +1,18 @@
+Equality Operators(!=,==):->
+-> we can apply equality operators for every primitive type including boolean type also
+Example:
+sysout(10 == 20); //false
+sysout('a' == 'b'); //false
+sysout('a' == 97.0); //true
+sysout(false == false); //true
+
+-> we can apply equality operators for object types also.
+-> for object references r1,r2 r1 == r2 returns true if and only if both references pointing to the same object(reference
+comparision or address comparision).
+Thread t1 = new Thread();
+Thread t2 = new Thread();
+Thread t3 = t1;
+sysout(t1 == t3); //true
+sysout(t1 == t2); //false
+
+-> 

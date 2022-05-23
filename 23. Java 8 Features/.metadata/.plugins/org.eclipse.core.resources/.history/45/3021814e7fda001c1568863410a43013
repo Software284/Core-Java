@@ -1,0 +1,3 @@
+Streams:-> if we want to process the objects from the collections then we should go for streams
+concept.io streams meant for representing data with respect to file I/O while util package streams 
+meant for process data from collection.

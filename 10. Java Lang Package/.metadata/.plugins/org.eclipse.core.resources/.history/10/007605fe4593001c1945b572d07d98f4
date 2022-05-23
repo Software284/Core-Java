@@ -1,0 +1,18 @@
+package com.lamichhane.widening.vs.autoboxing;
+
+public class Test {
+	
+	public static void m1(Integer I) {
+		System.out.println("Auto Boxing");
+	}
+	
+	public static void m1(Long l) {
+		System.out.println("Auto Boxing");
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

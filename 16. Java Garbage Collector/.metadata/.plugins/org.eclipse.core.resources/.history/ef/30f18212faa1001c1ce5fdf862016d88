@@ -1,0 +1,14 @@
+package com.lamichhane.runtime.class_demo;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Runtime r = Runtime.getRuntime();
+		System.out.println("Total Heap Memory="+r.totalMemory());
+		System.out.println("Free Heap Memory="+r.freeMemory());
+		System.out.println(r.gc());
+
+	}
+
+}

@@ -1,0 +1,12 @@
+-> the only overloaded operator in java is '+' operator sometimes it act as arithmetic addition operator and sometimes
+it acts as string concatination operator.
+
+-> if alteast one argument is string type then plus operator acts as concatination operator and if both arguments are
+number type then plus operator acts as arithemetic addition operator.
+
+String a = "durga";
+int b=10,c=20,d=30;
+sysout(a+b+c+d); //durga102030
+sysout(b+c+d+a); //60durga
+sysout(b+c+a+d); //30durga30
+syosut(b+a+c+d); //10durga2030

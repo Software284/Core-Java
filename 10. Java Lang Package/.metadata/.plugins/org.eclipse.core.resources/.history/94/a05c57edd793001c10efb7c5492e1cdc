@@ -1,0 +1,10 @@
+Relation Between .equal method and == operator:->
+-> if two object are equal by == operator then these object are always equal by .equal method that is
+if r1 == r2 is true then r1.equals(r2) is always true.
+
+-> if two objects are not equal by == operator then we can't conclude anything about .equals method.it
+may return true or false.that is if r1 == r2 is false then r1.equals(r2) may returns true or false.
+and we can't expect exactly.
+
+-> if two object are equal by .equals method then we can't conclude anything about == operator.it may 
+returns true or false.that is r1.equals(r2) is true then we can't conclude anything about r1 == r2.

@@ -1,0 +1,14 @@
+package com.lamichhane.dateformat_class.example;
+
+import java.text.DateFormat;
+import java.util.Locale;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Full form is = "+DateFormat.getInstance(0,Locale.US).format(new Date()));
+
+	}
+
+}

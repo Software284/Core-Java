@@ -1,0 +1,29 @@
+
+public class Test {
+	/*
+	 	Arrays: An array is a indexed collections of fixted numbers of homogenious data elements.
+	 	the main advantage of arrays is we can represent multiple values by using single variable
+	 	so that readibility of the code will be improved.
+	 	Limitations of arrays:- 
+	 	-> Arrays are fixed in size that is once we creates an array there is
+	 	no chance of increasing or decreasing the size based on our requirement due to this,to use
+	 	arrays concept compulsary we should know the size in advance which may not possible always.
+	 	
+	 	-> Array can hold only homogenious data type elements.
+	 	Student[] st = new Student[10000];
+	 	st[0]=new Student();
+	 	st[1]=new Customer();
+	 	it throws incompatible type exception.we can solve this by using Object type arrays.
+	 	Object[] a = new Object[10000];
+	 	a[0]= new Student();
+	 	a[1]= new Customer(); 
+	 	
+	 	
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

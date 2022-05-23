@@ -1,0 +1,17 @@
+package comparator.with.treeset.example;
+
+import java.util.TreeSet;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		TreeSet set = new TreeSet();
+		set.add(0);
+		set.add(5);
+		set.add(3);
+		set.add(4)
+
+	}
+
+}

@@ -1,0 +1,67 @@
+Need of concurrent package:->
+-> Tradition Collection Object(Like ArrayList,HashMap etc) can be accessed by Multiple Threads simultaneously
+and threre may be a chance of data inconsistency problems and hence these are not thread safe.
+-> Already existing Thread Safe Collections(Vector,Hashtable,synchronizedList(),synchronizedSet(),
+synchronizedMap() performance wise not upto the mark.
+-> because for every operation even for read operation also total collection will be loaded by only one thread
+at a time and it increases waiting time of threads.
+-> another big problem with traditional collections is while one thread iterating collection,the other thread
+are not allowed to modify collection object simultaneously if we are trying to modify then we will get
+ConcurrentModificationException.
+-> hence these traditional collection objects are not suitable for scalable multi threaded applications.
+-> to overcome these problems sun people introduced concurrent collections in 1.5 version.
+
+Example:-> see the example
+
+Difference Between Traditional and Concurrent Collections:->
+-> Concurrent collections are always thread safe
+-> when compared with traditional thread safe collection performance is more because of different locking mechanism.
+-> while one thread interacting collection the other threads are allowed to modify collection in safe manner.
+
+hence concurrent collections never throw concurrentModificationException.the important concurrent classes are
+i. ConcurrentHashMap
+ii. CopyOnWriteArrayList
+iii. CopyOnWriteArraySet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

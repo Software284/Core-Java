@@ -1,0 +1,53 @@
+sometimes to meet programming requirement we can define our own exceptions such type
+of exception are called customized or user defined exception.
+
+Top 10 Exception:-> based on the person who is rising an exception all excetpion are
+divided into 2 categories.
+i.JVM Exception
+ii. Programatic Exception
+
+JVM Exception:-> The exception which are rise automatically by JVM whenever a particular
+event occur are called JVM Exceptions.example arithmetic exception,null pointer exception,
+etc.
+
+Programatic Exception:-> The exceptions which are rised explictly either by programmer
+or by API Developer to indicate that something goes wrong are called programatic exception.
+for example TooOldException,IllegalArgumentException etc.
+
+i.ArrayIndexOutOfBoundException:-> it is the child class of runtime exception and hence 
+it is  unchecked.rised automatically by JVM whenever we are trying access array element
+with the out of range index.
+
+ii. NullPointerException:-> it is the child class of runtime exception and hence it is
+unchecked.rised automatically by JVM whenever we are trying to perform any operation on
+null.
+
+iii. ClassCastException:-> it is the  child class of runtime exception and hence it is
+unchecked.rised automatically by JVM whenever we are trying to type cast parent object
+to child type.
+
+iv. StackOverflowError:-> it is the child class of error hence it is unchecked.rised automatically
+by JVM whenever we are trying to perform recursive method call.
+
+v. NoClassDefFoundError:-> it is the child class of erro hence it is unchecked. rised automatically
+by JVM whenever JVM unable to find required .class file.
+
+vi. ExceptionInInitializerEroor:-> it is the child class of error hence it is unchecked.rised 
+automatically by JVM if any exception occure while executing static variable assignment and
+static blocks.
+
+vii. IllegalArgumentException:-> it is the child class of runtime exception and hence it is unchecked.
+rised explictly either by programmer or by API Developer to indicate that method has been invoked
+with illegal argument.example the valid range of thread priority
+
+viii.NumberFormatException:-> it is the direct child class of illegalargument exception which is the
+child class of runtime exception and hence it is unchecked.rised explictly either by programmer or
+by API Developer.
+
+
+
+
+
+
+
+

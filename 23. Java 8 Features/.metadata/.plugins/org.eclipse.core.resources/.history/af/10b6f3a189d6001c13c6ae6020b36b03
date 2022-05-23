@@ -1,0 +1,104 @@
+Functional Interfaces:-> the interfaces with only one abstract method and any no of default
+and static methods are called functional interfaces.
+Callable
+Comparable
+Comparater
+Runnable
+ActionListener
+
+Predefined functional interfaces:-> these interfaces are present in java.util.function.
+Predicate
+Function
+Consumer
+Supplier
+
+Predicate:-> A predicate is a function with a single argument and returns boolean value.
+To implement predicate functions in Java, Oracle people introduced Predicate interface in 1.8
+version (i.e.,Predicate<T>).
+Predicate interface present in Java.util.function package.
+It’s a functional interface and it contains only one method i.e., test()
+
+Ex:
+ interface Predicate<T> {
+ public boolean test(T t);
+ }
+As predicate is a functional interface and hence it can refers lambda expression.
+
+Predicate Program Sequence:->
+predicate program to find greater than ten number or not
+predicate program to find length of the string
+predicate program to find collection empty or not
+
+
+Predicate Joining:-> It’s possible to join predicates into a single predicate by using the 
+following methods.
+and()
+or()
+negate()
+these are exactly same as logical AND ,OR and complement operators
+
+Predicate Program Sequence:->
+predicate program with and or and negate method
+predicate program to find string start with m letter
+predicate program to find emply or null string in list
+predicate program for user authentication
+predicate program for engineer going to pub or not
+predicate program for employee management system
+
+Predicate Interface isEqual() method:-> predicate interface contains only one abstract method
+while it contains multiple defaults methods and one static method.
+interface Predicate<T>{
+  public boolean test(T t);
+  default and(T t);
+  default or(T t);
+  default negate(T t);
+  public static predicate isEqual(T t);
+  }
+  
+it is use for the equality purpose.
+Example:->
+Predicate<String> p = Predicate.isEqual("DURGASOFT");
+System.out.println(p.test("DURGASOFT");
+System.out.println(p.test("MALLIKA");
+
+output:-> 
+true
+false
+
+
+Example:
+Predicate<Employee> p = Predicate.isEqual(new Employee("Durga","CEO",12000,"HYD");
+sysout(p.test(new Employee("Mahesh","MANAGER",343443,"BGL");
+
+output:
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

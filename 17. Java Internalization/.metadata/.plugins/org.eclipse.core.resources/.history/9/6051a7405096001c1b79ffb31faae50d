@@ -1,0 +1,22 @@
+-> various locations follow various styles to represent date.
+Example:
+IN-> dd/mm/yyyy
+US-> mm/dd/yyyy
+
+-> we can use DateFormat to format java date according to a particular Locale.
+-> DateFormat class presents in java.text package and it is an abstract class.
+-> DateFormat df = new DateFormat(); is invalid.
+-> getting DateFormat object for default locale.
+ 
+public static DateFormat getInstance();
+public static DateFormat getDateInstance();
+public static DateFormat getDateInstance(int style);
+
+allowed style are:->
+DateFormat.FULL -> 0 -> wednesday 10th Septmber 2014
+DateFormat.LONG -> 1 -> 10th Septmber 2014
+DateFormat.MEDIUM -> 2 -> 10th Sep 2014
+DateFormat.SHORT -> 3 -> 10/09/14
+
+Note:-> The default style is medium.
+-> getting DateFormat object for specific locale.

@@ -1,0 +1,17 @@
+package com.lamichhane.iterator.dependent.program;
+
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		CopyOnWriteArrrayList list = new CopyOnWriteArrayList();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		Iterator itr = list.iterator();
+
+	}
+
+}

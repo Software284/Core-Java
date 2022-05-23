@@ -1,0 +1,19 @@
+Method Signature:-> In java method signature consists of method name followed by argument types.
+public static int m1(int i,float f)
+return type is not part of method signature in java.
+
+compiler will use method signature to resolve method calls.
+within a class two method with a same signature not allowed.
+class test {
+ public void m1(int i){
+ }
+ public int m1(int x){
+  return x;
+ }
+ 
+ public static void main(String args[]){
+  test t = new test();
+  t.m1(10);
+ }
+ }
+ here compiler gives left and right.

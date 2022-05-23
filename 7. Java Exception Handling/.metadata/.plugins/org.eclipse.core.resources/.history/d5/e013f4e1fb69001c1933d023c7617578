@@ -1,0 +1,52 @@
+Exception:->An unexpected unwanted event that disturbs normal flow of the program is called exception.
+for example tired punchured exception,sleeping exception,file not found exception etc.
+it is highly recomended to handle exceptions and the main objective of excception handling is 
+graceful termination of the program.
+Excption handling doesn't mean repairing an exception.we have to provide alternative way to continue
+rest of the program normally is the concept of exception handling.for exaple our programming 
+requireent is to read data from remote file locating at london at runtime if london file is not
+available our program should not be terminated abnormally.we have to provide some local file to 
+continue rest of the program normally.this way of defining alternative is nothing but exception
+handling.
+
+Runtime Stack Mechanism:-> For every thread JVM will create a runtime stack.each and every method
+call performed by that thread will be stored in the corresponding stack.each entry in the stack is
+called stack frame or activation record.after completing every method call the corresponding entry
+from the stack will be removed.after completing all method call the stack will become empty and that
+empty stack will be destroyed by JVM just before terminating the thread.
+
+Default Exception Handling:-> Inside a method if any exception occurs,the method in which it is rised
+is responsible to create exception object by including the following information
+-> name of exception
+-> description of excepiton
+-> location at which exception occurs(stack trace)
+
+after creating a exception object method handover that object to the JVM.
+JVM will check whether the method contains any exception handling code or not.if the method doesn't
+contain exception handling code then JVM terminate that method abnormally and removes the corresponding
+entry from the stack.
+then JVM identifies caller method and checks whether caller method contains any handling code or not.
+if the caller method doesn't contain handling code  then JVM terminates that caller method also
+abnormally and removes the corresponding entry from the stack.this process will be contiued until
+main method and if the main method also doesn't contain handling code then JVM terminates main
+method abnormally and removes corresponding entry from the stack.
+then JVM handovers responsibility of exception handling to default exception handler,which is the 
+part of JVM.
+default exception handler prints excepiton information in the following format and terminates program
+abnormally.
+
+Note:-> In a program if atleast one method terminates abnormally then the program termination is
+abnormal termination.if all methods terminated normally then only program termination is normal
+termination.
+
+Exception Hierarchy:->
+
+Throwable Class:-> it is the root of all exception and errors.it defines two child classes
+-> exception
+-> eroor
+
+Exception:-> 
+
+
+
+

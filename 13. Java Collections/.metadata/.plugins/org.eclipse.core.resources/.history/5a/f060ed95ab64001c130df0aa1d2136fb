@@ -1,0 +1,14 @@
+
+public class Test {
+	
+	/*
+	 Collections(I):- if we want to represent a group of individual objects as a single entity then
+	 we should go for collections.
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

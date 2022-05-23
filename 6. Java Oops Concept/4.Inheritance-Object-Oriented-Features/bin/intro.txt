@@ -1,0 +1,187 @@
+Is a Relationship:-> 
+-> it is also known as inheritance.
+-> the main advantage of is a relationship is code re-usability.
+-> by using extends keyword we can implement is a relationship.
+
+Loop Holes:->
+-> whatever methods parent has by default avaialble to the child and hence the child reference we can call both
+parent and child methods.
+C c = new C();
+c.m1();
+c.m2();
+	
+-> whatever methods child has by default not available to the parent and hence on the parent reference
+we can't call child specific methods.
+P p = new P();
+p.m1();
+// p.m2();
+
+-> parent reference can be used to hold child objects but using that reference we can't call child
+specific methods but we can call the methods present in parent class.	
+P p1 = new C();
+p1.m1();
+// p1.m2();
+-> parent reference can be used to hold child object but child reference can not be used to hold parent
+object.
+//		C c1 = new P();
+
+
+Code Without Inheritance:->
+class ELoan{
+ // 300 methods;
+ }
+class BLoan{
+ // 300 methods;
+ }
+class HLoan{
+ // 300 methods
+ }
+ 
+ 
+Code With Inheritance:- If there are 250 methods common between three classes then
+class Loan{
+ // 250 methods 
+ }
+class ELoan extends Loan{
+ // 50 methods
+ }
+class BLoan extends Loan{
+ // 50 methods 
+ }
+class HLoan extends Loan{
+ // 50 methods 
+ }
+ 
+Note:-> here 500 code are reduced.total java api is implemented based on inheritance concept.
+the most common methods which are applicable for any java object are defined in object class hence 
+every class in java is a child class of object either directly or indirectly so that object class methods
+by default available to every java class without re-writing due to this object class access root for all
+java classes.
+throwable class defines the most common methods which are required for every exception and error classes
+hence this class access root for java exception hirarchy.
+
+Multiple Inheritacne:-> a java class can't extend more than one class at a time hence java won't provide
+support for multiple inheritance in classes.
+Note:-> 
+-> if our class doesn't extend any other class then only our class is direct child class of object.
+Class A{
+ // here A extends Object
+}
+
+-> if our class extends any other class then our class is indirect child class of object.
+Class A extends B{
+ // here B extends Object and A extends B so multilevel inheritance
+ }
+ 
+ Note:-> either directly or indirectly java won't provide support for inheritance with respect to classes.
+ 
+ 
+ Why Java won't support for multiple inheritance:->there may be a chance of ambiguity problem hence
+ java won't provide support for multiple inheritance.Example
+ Class A{
+  public void m1();
+  }
+ Class B{
+  public void m1();
+  }
+ Class C extends A,B
+ {
+  // ambiguity problem
+  }
+ 
+ but interface can extends any no of interfaces simultaneously hence java provide support for multiple
+ inheritance with respect to interfaces.
+ interface A {
+  }
+ interface B {
+ }
+ interface C extends A,B{
+ }
+ 
+ Why ambuiguity problem wont' be there in Interfaces?
+  interface A {
+   //m1
+  }
+ interface B {
+  //m1
+ }
+ 
+ interface c implements A,B
+ {
+ 	
+ }
+ 
+ class d implements c {
+  // here only one implementation of m1 method
+ }
+ 
+ even though multiple declarations are available but implementation is unique and hence there is
+ no chance of ambiguity problem in interfaces.
+ 
+ Note:- Strictly speaking,through interface we won't get any inheritance.
+ 
+ 
+-> cyclic inheritance is not alowed in java off course it is not required.example
+class A extends A{
+}
+class A extends B{
+}
+class B extends A{
+}
+
+
+
+
+
+
+Has a Relationship:-> 
+-> it is also known as composition or aggregation.
+-> there is no specific keyword to implement has a relation but most
+of the times we are depending on new keyword.
+-> the main advantage of has a relationship is re-usability of the
+code.
+Example:-> 
+class car {
+ Engine e = new Engine();
+ }
+ car has a engine reference
+ 
+ 
+ Difference Between Composition and Aggregation:->
+ -> Without existing container object if if there is no chance of existing contained object then
+ container and contained objects are strongly associated and this strong association is nothing but
+ composition.university consists of several departments without existing university there is no chance
+ of existing department hence university and department are strongly associated and this storng 
+ association is nothing but composition.
+ 
+ -> without existing container object if there is a chance of existing contained object then container
+ and contained object are weakly associated and this weak association is nothing but aggregation.
+ Example:departments consists of several producers without existing department there may be a chance of
+ existing producer objects hence departments and producers objects are weakly associated and this
+ weak association is nothing but aggregation.
+ 
+ Note:-> 
+ -> in composition objects are strongly associated whereas in aggregation objects are weakly associated.
+ -> in composition container objects holds directly contained objects whereas in aggregation container
+ object holds just references of contained objects.
+ 
+ 
+ 
+ When to use is a relation and when to use has a relationship?
+ -> if we want a total functionality of your class automatically then we should go for is a relationship
+ -> if we want part of the functionality then we should go for has a relationship.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+

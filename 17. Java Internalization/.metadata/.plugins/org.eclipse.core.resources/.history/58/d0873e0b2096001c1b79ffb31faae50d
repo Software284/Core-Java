@@ -1,0 +1,6 @@
+NumberFormat Class:->
+-> various locations follow various styles to represent a java number.for example
+double d = 123456789;
+India people => 1,23,456,789
+US people => 123,456.789
+Italy People => 123,456,789

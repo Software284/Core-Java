@@ -1,0 +1,9 @@
+Streams:-> if we want to process the objects from the collections then we should go for streams
+concept.io streams meant for representing data with respect to file I/O while util package streams 
+meant for process data from collection.
+
+Program sequence:->
+program of finding even number in list without streams
+program of finding even number in list with stream
+program to double list value without stream
+program to double list value with stream map configuration

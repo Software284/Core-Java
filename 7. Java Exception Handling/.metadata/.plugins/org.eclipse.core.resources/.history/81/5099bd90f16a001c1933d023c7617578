@@ -1,0 +1,17 @@
+package handling.checked.excetpion.with_throws.keyword;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class Test {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		FileReader reader = new FileReader("abc.txt");
+		BufferedReader read = new BufferedReader(reader);
+		System.out.println(read.readLine());
+
+	}
+
+}

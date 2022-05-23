@@ -1,0 +1,3 @@
+Method Local Inner Class:-> sometimes we can declare a class inside a method such type of inner classes are
+called method local inner classes.
+the main purpose main method local inner class is to define method specific repeteadly required functionality.

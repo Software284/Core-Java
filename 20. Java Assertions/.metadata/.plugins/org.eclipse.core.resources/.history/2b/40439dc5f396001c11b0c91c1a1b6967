@@ -1,0 +1,11 @@
+Types Of Assert Statements:-> thre are two types of assert statements 
+i. Simple Version
+ii. Augmented Version
+
+i.Simple Version
+syntax:
+assert(b)
+-> b should be boolean type.
+-> if b is true then our assumption satisfied and hence rest of the program will be executed normally.
+-> if b is false then our assumption fails i.e somewhere something goes wrong.and hence the program will
+be terminated abnormally by rising assertions error.

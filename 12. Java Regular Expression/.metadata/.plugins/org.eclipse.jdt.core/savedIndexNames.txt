@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\Programmer\OneDrive\Desktop\Desktop FIle\Java Regular Expression\.metadata\.plugins\org.eclipse.jdt.core
+663821659.index
+1865797976.index
+3619351709.index
+4040481083.index
+3884775976.index
+3841323222.index
+2468646911.index

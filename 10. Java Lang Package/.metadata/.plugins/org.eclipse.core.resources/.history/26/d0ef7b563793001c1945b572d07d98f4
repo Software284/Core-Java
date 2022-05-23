@@ -1,0 +1,6 @@
+Autoboxing:-> automatic conversion of primitive to wrapper object by compiler is called autoboxing.
+Example:
+Integer i = 10;
+compiler converts int to integer automatically by autoboxing.
+after compilation athe aboce line will become 
+Integer i = Integer.valueOf(10);

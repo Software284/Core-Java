@@ -1,0 +1,148 @@
+Java Language Coding Standard:-> 
+==========================================================================================================================================================
+-> whenever we are writing java code it is highly recomended to follow coding standards. whenever we are writing any component it's name should reflect
+the purpose of that component(functionality).
+-> the main advantage of this approach is readability and maintainability of the code will be improved.
+Noob Style:->
+class A{
+	public int m1(int x,int y){
+		return x+y;
+	}
+}
+
+Pro Style:->
+package com.lamichhane
+public class Calculator{
+	public static int add(int number1,int number2){
+		return number1 + number2;
+	}
+}
+===========================================================================================================================================================
+Coding Standard For Classes:->
+-> usually class names are nouns.
+-> should starts with uppercase characters.
+-> if it contains multiple words every inner word should start uppercase character.
+Example:->
+String
+StringBuffer
+Account
+Dog
+
+Coding Standards For Interfaces:->
+-> usually class names are adjective.
+-> should starts with uppercase character.
+-> if it contains multiple words every inner word should starts with uppercase character.
+Example:->
+Runnable
+Serializable
+Comparable
+RandomAccess
+
+Coding Standards For Methods:-.
+-> usually method names are either verbs or verb+nouns combination.
+-> should starts with lowercase alphabet symbol.
+-> if it contains multiple words then every inner word should start with uppercase character(CamelCase Convenction).
+Example:
+print();
+sleep();
+eat();
+start();
+getName();
+setSalary();
+
+Coding Standards For Variables:->
+-> usually variables names are nouns.
+-> should starts with lowercase alphabet symbol.
+-> if it contains multiple words then every inner words should start with uppercase character(CamelCase
+Convention).
+Example:-> 
+name
+age 
+salary
+mobileNumber
+
+
+Coding Standard For Constants:->
+-> usually constant names are nouns.
+-> should contain only uppercase characters.
+-> if it contains multiple words then these words are seperated with _ symbol.
+Example:->
+MAX_VALUE
+MAX_PRIORITY
+NORM_PRIORITY
+MIN_PRIORITY
+PI
+
+Note:-> we can declare constants with public static and final modifiers.
+
+Java Bean Coding Standards:->
+-> a java bean is a simple java class with the private properties and pubic getter and setter methods.
+public class StudentBean{
+	private String name;
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	public String getName(){
+		return name;
+	}
+}
+-> class names with the bean not a official convention from sun.
+
+Syntax for setter method:->
+-> it should be public method.
+-> the return type should be void.
+-> method name should be prefixed with set.
+-> it should take some argument i.e it should not be no arg method
+
+Syntax for getter method:->
+-> it should be public method.
+-> the return type should not be void.
+-> method name shoud prefixed with get.
+-> it should not take any argument.
+
+* for boolean properties getter method name can be prefixed with either get or is.but recommended to use is 'is'.
+Example:
+private boolean empty;
+public boolean getEmpty(){
+	return empty;
+}
+
+public boolean isEmpty(){
+	return empty;
+}
+
+Coding Standards For Listeners:->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

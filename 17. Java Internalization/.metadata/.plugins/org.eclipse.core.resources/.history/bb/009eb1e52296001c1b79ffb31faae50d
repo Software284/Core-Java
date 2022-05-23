@@ -1,0 +1,51 @@
+NumberFormat Class:->
+-> various locations follow various styles to represent a java number.for example
+double d = 123456.789;
+India people => 1,23,456.789
+US people => 123,456.789
+Italy People => 123.456,789
+-> we can use number format class to format a java number according to a particular locale.
+
+-> number format class present in java.text package and it is a abstract class.
+NumberFormat nf = new NumberFormat();
+//invalid it is a abstract class we can't create object.
+-> getting number format object for default locale.
+
+-> number format class defines the following methods for this purpose.
+public static NumberFormat getInstance();
+public static NumberFormat getNumberInstance();
+public static NumberFormat getCurrencyInstance();
+public static NumberFormat getPercentageInstance();
+
+
+Example:->
+NumberFormat nf = NumberFormat.getInstance(); or NumberFormat nf = NumberFormat.getNumberInstance();
+NumberFormat nf = NumberFormat.getCurrencyInstance();
+NumberFormat nf = NumberFormat.getPercentageInstance();
+
+-> getting number format object for specific locale.the above methods are same but we have to pass 
+the corresponding locale object as arguments.
+public static NumberFormat getInstance(Locale l);
+public static NumberFormat getNumberInstance(Locale l);
+public static NumberFormat getCurrencyInstance(Locale l);
+public static NumberFormat getPercentageInstance(Locale l);
+
+
+-> converting java primitive to native number format 
+nf.format(long l);
+nf.format(double d);
+
+-> converting native number format to java primitive format
+Number num = nf.parse(String s);
+
+
+
+
+
+
+
+
+
+
+
+

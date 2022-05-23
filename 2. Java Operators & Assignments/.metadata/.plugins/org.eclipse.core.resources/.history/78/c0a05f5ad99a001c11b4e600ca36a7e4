@@ -1,0 +1,4 @@
+Difference Between ClassNotFoundException VS NoClassDefFoundError:->
+
+-> for hard coded class names,at runtime if the corresponding .class file is not available then we will get runtime
+exception saying NoClassDefFoundError,which is unchecked.

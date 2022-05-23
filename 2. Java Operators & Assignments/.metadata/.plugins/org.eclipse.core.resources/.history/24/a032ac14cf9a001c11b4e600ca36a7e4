@@ -1,0 +1,6 @@
+New Vs NewInstance:->
+-> we can use new operator to create an object if we know class name at the beginning.
+Example:
+Test t  = new Test();
+Student s = new Student();
+Customer c = new Customer();

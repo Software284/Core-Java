@@ -1,0 +1,100 @@
+ENUM:->
+-> if we want to represent a group of named constants then we should go for ENUM.
+Example:
+enum Month{
+	JAN,FEB,MAR,APR,...DEC;
+}
+enum Beer{
+	KO,KF,RC,AO;
+}
+semicolon is optional.
+-> the main objective of ENUM is to define our own data types(enumerated data types).
+-> ENUM concept introduced in 1.5 version when compared with old languages ENUM java enum is more powerful.
+
+Internal Implementation of ENUM:-> 
+enum Beer {
+	KF,RC;
+}
+
+class Beer{
+	public static final Beer KF = new Beer();
+	public static final Beer RC = new Beer();
+}
+-> every enum is internally implemented by using class concept.
+-> every enum constant is always public static final.
+-> every enum constants represents an object of the type enum.
+
+ENUM Declaration and Usage:->
+-> every enum constant is always public static final and hence we can access enum constant by using enum
+name.
+enum Beer {
+	KF,KO,RC,CO;
+}
+class Test{
+	public static void main(String args[]){
+		Beer b = Beer.KF;
+		System.out.println(b);
+	}
+}
+
+Note:-> inside enum toString() method is internally implemented to return name of the constants.
+
+-> we can declare enum either within the class or outside of the class but not inside a method.if we are 
+trying to declare inside a mehtod then we will get compile time error saying enum types must not be local.
+
+-> if we declare enum outside of the class,the applicable modifiers are public,default,strictfp.
+-> if we declare enum inside a class,the applicable modifiers are public,default,strictfp,private,protected,
+static.
+
+ENUM VS SWITCH:->
+-> until 1.4 version the allowed argument types for the switch statement or byte,short,int,char.but from 
+1.5 version onwards corresponding wrapper classes and ENUM types are allowed.from 1.7 version onwards string
+type also allowed.
+hence from 1.5 version onwards we can pass enum type as argument to switch statement.
+-> see the example
+-> if we pass enum type as argument to switch statement then every case label should be valid enum constant.
+otherwise we will get compile time error.
+
+Enum Vs Inheritance:->
+-> every enum is always direct child class of java.lang.Enum and hence our enum can't extends any other enum(
+because java won't provide support for multiple inheritance).
+-> Every enum is always final implictly and hence for our enum we can't create child enum.
+-> because of above reasons we can conclude inheritance concept not applicable for enum explictly and we can't
+use extends keyword for enum.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

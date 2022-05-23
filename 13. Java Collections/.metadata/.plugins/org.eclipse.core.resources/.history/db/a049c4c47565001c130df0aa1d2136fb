@@ -1,0 +1,11 @@
+package implementation.of.list.with.Stack;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Stack st = new Stack();
+
+	}
+
+}

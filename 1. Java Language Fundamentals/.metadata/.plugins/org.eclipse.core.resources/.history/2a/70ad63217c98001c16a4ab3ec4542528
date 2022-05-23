@@ -1,0 +1,12 @@
+package com.lamichhane.octal.literal.example;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		int x = 0x10;
+		System.out.println(x);
+
+	}
+
+}

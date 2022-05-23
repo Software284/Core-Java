@@ -1,0 +1,168 @@
+Flow Control:->
+-> it describes the order in which the statements will be executed at runtime.
+
+Flow Control:
+	Selection Statements
+		if-else
+		switch
+	Iterative Statements
+		while()
+		do-while()
+		for()
+		for-each loop
+	Transfer Statements
+		break
+		continue
+		return
+		try-catch-finally
+		assert
+
+===================================================================================================
+Selection Statements:->
+i. if else:->
+syntax:
+if(b)
+{
+	// action if b is true
+}
+else {
+	// action if b is false
+}
+-> the argument to the if statement should be boolean type by mistake if we are trying to provide any
+other type then we will get compile time error.
+int x = 0;
+if(x){
+sysout("Hello");
+}
+else
+{
+	sysout("Hi");
+}
+
+output:->
+incompatible types found int required boolean
+
+int x = 10;
+if(x=20){
+sysout("Hello");
+}
+else{
+syosut("Hi");
+}
+
+output:->
+incompatible types found int required boolean
+
+int x = 10;
+if(x == 20){
+syosut("Hello");
+}
+else{
+sysout("Hi");
+}
+
+output:
+Hi
+
+boolean b = true;
+if(b = false){
+sysout("Hello");
+}
+else{
+syosut("Hi");
+}
+
+output:-> 
+Hi
+
+
+boolean b = false;
+if(b == false){
+sysout("Hello");
+}
+else{
+sysout("Hi");
+}
+
+output:
+Hello
+
+-> else part and curly braces are optional.without curly braces only one statement is allowed under
+if which should not be declarative statement.
+if(true)
+sysout("Hello");
+//valid
+
+if(true);
+//valid
+
+if(true)
+int x = 10;
+//invalid
+
+if(true){
+int x = 10;
+}
+//valid
+
+semicolon is a valid java statement which is also known as empty statement.
+
+Note:-> there is no dangling else problem in java.every else is matched or mapped to the nearest if
+statement.
+======================================================================================================
+Switch Statement:-> 
+-> if several options are available then it is not recommended to use nested if else because
+it reduces readability.
+-> to handle this requirement we should go for switch statement.
+syntax:
+switch(x){
+	case 1:
+		// Action-1
+		break;
+	case 2:
+		// Action-2
+		break;
+	case n:
+		// Action-n
+		break;
+	default:
+		// default action 
+}
+
+-> the allowed argument types for the switch statement are byte,short,char,int until 1.4 version.but
+from 1.5 version onwards corresponding wrapper classes and enum type also allowed.from 1.7 version
+onwards string type also allowed.
+
+-> curly braces are mandatory except switch everywhere curly braces are optional.
+-> both case and default are optional.i.e an empty switch statement is a valid java syntax.
+Example:
+int x = 10;
+switch(x){
+}
+
+-> inside switch every statement should be under some case or default i.e independent statements are
+not allowed inside switch otherwise we will get compile time error.
+
+Example:
+int x = 10;
+switch(x){
+	System.out.println("Hello");
+}
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

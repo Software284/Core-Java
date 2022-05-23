@@ -1,0 +1,15 @@
+StringBuilder:->
+-> Every method present in StringBuffer is synchronized and hence only one thread is allowed to 
+operate on StringBuffer object at a time.which may creates performance problems.to handle this requriement
+sun people introduce StringBuilder concept in 1.5 version.
+
+
+StringBuilder is exactly same as StringBuffer except the following differences:->
+-> Every method present in StringBuffer is synchronized vs Every method present in StringBuilder is non-
+synchronized.
+-> StringBuffer is thread safe vs StringBuilder is not thread safe
+-> it increases waiting time of thread and creates performance problem vs relatively performance is high.
+-> StringBuffer comes in 1.0 v vs String builder is comes in 1.5 version.
+
+Note:-> except the above differences everything is same in StringBuffer and StringBuilder(including method
+and constructors).

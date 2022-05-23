@@ -1,0 +1,17 @@
+package com.lamichhane.wrapper.utility_class.valueof.method;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Integer i = new Integer(10);
+		Integer i1 = Integer.valueOf(10);
+		Integer i2 = Integer.valueOf("10");
+		
+		System.out.println(i);
+		System.out.println(i1);
+		System.out.println(i2);
+
+	}
+
+}

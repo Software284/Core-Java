@@ -1,0 +1,70 @@
+Primitive Type Functional Interface:-> 
+
+1. Autoboxing:
+Automatic conversion from primitive type to Object type by compiler is called autoboxing.
+
+
+2. Autounboxing:
+Automatic conversion from object type to primitive type by compiler is called autounboxing.
+
+3. In the case of generics, the type parameter is always object type and no chance of passing
+primitive type.
+ArrayList<Integer> l = new ArrayList<Integer>();//valid
+ArrayList<int> l = new ArrayList<int>();//invalid
+
+
+Need of Primitive Functional Interfaces:
+In the case of normal Functional interfaces (like Predicate, Function etc) input and return types are
+always Object types. If we pass primitive values then these primitive values will be converted to
+Object type (Autboxing), which creates performance problems.
+1) import java.util.function.Predicate;
+2) class Test
+3) {
+4) public static void main(String[] args)
+5) {
+6) int[] x ={0,5,10,15,20,25};
+7) Predicate<Integer> p=i->i%2==0;
+8) for (int x1 : x)
+9) {
+10) if(p.test(x1))
+11) {
+12) System.out.println(x1);
+13) }
+14) }
+15) }
+16) }
+In the above examples,6 times autoboxing and autounboxing happening which creates
+Performance problems.
+To overcome this problem primitive functional interfaces introduced, which can always takes
+primitive types as input and return primitive types.Hence autoboxing and autounboxing won't be
+required,which improves performance
+
+
+Primitive Type Functional Interfaces for Predicate:The following are various primitive Functional interfaces for
+Predicate.
+1.IntPredicate-->always accepts input value of int type
+2.LongPredicate-->always accepts input value of long type
+3.DoublePredicate-->always accepts input value of double type
+
+1.
+1) interface IntPredicate
+2) {
+3) public boolean test(int i);
+4) //default methods: and(),or(),negate()
+5) }
+2.
+1) interface LongPredicate
+2) {
+3) public boolean test(long l);
+4) //default methods: and(),or(),negate()
+5) }
+3.
+1) interface DoublePredicate
+2) {
+3) public boolean test(double d);
+4) //default methods: and(),or(),negate()
+5) } 
+
+
+
+

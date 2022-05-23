@@ -1,0 +1,235 @@
+Object Type Casting:-> we can use parent reference to hold child object.
+Example:->
+Object o = new String("mahesh")
+we can use interface reference to hold implemented class object
+Example:-> 
+Runnable r = new Thread()
+
+Syntax:
+A  b = (C)d;
+where 
+A = class/interface name
+b = reference variable name
+C = class/interface name
+d = reference variable name
+
+Mantra 1(compile time checking one):-> the type of 'd' and 'C' must have some relation either child to
+parent or parent to child or same type otherwise we will get compile time error saying inconvertible 
+types found 'd' type required 'C'.
+
+Example 1:-
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example 2:-> 
+String s = new String("mahesh");
+StringBuffer sb = (StrinBuffer)s;
+this statement is invalid.throws CE inconvertible types because there is no relationship between
+StringBuffer and String.
+
+Mantra 2(compile time checking 2):->'C' must be either same or derived type of 'A' otherwise we will
+get compile time error saying incompatible types found 'C' required 'A'.
+
+Example1:->
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example2:->
+Object o = new String("mahesh")
+StringBuffer bf = (String)o
+this statement is prefectly invalid.it throws incompatible type exception.
+
+
+Mantra3(Runtime Checking):-> runtime object type of 'd' must be either same or derived type of 'C' otherwise 
+we will get runitme exception saying class cast exception.
+Example1:->
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+we will get runtime exception saying class cast exception java.lang.string can not be cast to string buffer.
+
+Object o = new String("durga")
+Object o1 = String(o)
+prefectly valid statements.
+
+
+
+Type Casting:-> strictly speaking throught type casting we are not creating any new object.for the existing
+object we are providing another type of reference variable that is we are performing type casting not object
+casting.
+Example1:->
+String s = new String("maehsh");
+Object o = (Object)s;
+
+Example2:->
+Integer I = new Integer(10);
+Number n = Number(I);
+Object o = (Object)n;
+sysout(I==n) //true
+sysout(n==o) //true
+
+we can also write in single line as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

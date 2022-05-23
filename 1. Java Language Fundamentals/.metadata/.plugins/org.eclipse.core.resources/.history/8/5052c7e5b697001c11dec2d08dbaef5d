@@ -1,0 +1,11 @@
+-> A name in java program is called identifier which can be used for identification purpose.it can be
+method name,variable name,class name,or label name.
+public class Test {
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+
+	}
+
+}

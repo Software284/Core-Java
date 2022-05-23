@@ -1,0 +1,17 @@
+
+public class Test {
+	
+	/*
+	 Collections(I):- 
+	 if we want to represent a group of individual objects as a single entity then we should go for collections.
+	 collections interface defines the most common methods which are applicable for any collection
+	 objects.in general collections interface is considered as root interface of collections
+	 framework.there is no concrete class which implements collections interface directly.
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

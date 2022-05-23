@@ -1,0 +1,3 @@
+Need of concurrent package:->
+-> 90 percent of the collections are not thread safe so when multiple thread can share same collection
+object at the runtime so there will be a chance of occuring problem.

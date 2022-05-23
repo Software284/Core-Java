@@ -1,0 +1,76 @@
+Customize Excepiton Handling By Using Try Catch:-> it is highly recomended to handle exception.the code
+which may rise an exception is called riskey code and we have to define that code inside try block and 
+corresponding handling code we have to define inside catch block.
+try{
+riskey code
+}
+catch(Exception e){
+handling code
+}
+
+
+
+Control Flow in Try Catch:-> 
+
+try{
+	Statement1
+	Statement2
+	Statement3
+}
+catch(Exception e){
+	Statement4
+}
+Statement5
+
+case1:-> if there is no exception
+Statement1
+Statement2
+Statement3
+Statement5
+normal termination
+
+case2:-> if exception rise at statement 2 and corresponding catch block match then 
+Statement1
+Statement4
+Statement5
+normal termination
+
+case3:-> if an exception rise at statement 2 and corresponding catch block not match then
+Statement1
+abnormal termination
+
+case4:-> if an exception rise at statement 4 or statement 5 then it always abnormal termination.
+
+Note:->
+-> Within the try block if anywhere an exception rise at then rest of the try block won't be executed
+even though we handle excepiton hence within the try block we have to take only riskey code and length
+of try block should be as less as possible.
+-> In addition to try block there may be a chance of rising an exception inside catch and finally blocks.
+-> if any statement which is not part of try block and rises an exception then it is always abnormal 
+termination.
+
+throwable class defines the following methods to print exception information:->:-> 
+e.printStackTrace()
+e.getMessage()
+e.toString()
+
+Note:-> Default exception handler use printStackTrace method by default.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

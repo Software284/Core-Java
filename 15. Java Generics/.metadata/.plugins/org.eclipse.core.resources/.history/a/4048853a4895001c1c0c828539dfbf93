@@ -1,0 +1,18 @@
+package com.lamichhhane.case_first;
+
+import java.util.ArrayList;
+
+public class Test {
+	
+	m1(ArrayList<String> l){
+		l.add("A");
+		l.add(null);
+		// l.add(10);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

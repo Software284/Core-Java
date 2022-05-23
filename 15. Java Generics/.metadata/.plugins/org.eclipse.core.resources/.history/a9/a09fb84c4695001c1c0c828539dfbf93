@@ -1,0 +1,65 @@
+case-I:->
+m1(ArrayList<String> l);
+ArrayList<String> s = new ArrayList<String>();
+m1(s);
+-> we can call this method by passing array list of only string type.
+m1(ArrayList<String> l){
+	l.add("A");
+	l.add(null);
+	l.add(10); CE
+}
+but within the method we can add only string types of objects to the list.by mistake if we are tying to add any other type then we will get compile time
+error.
+
+case-II:->
+m1(ArrayList<?> l);
+ArrayList<Integer> a = new ArrayList<String>();
+ArrayList<Double> b = new ArrayList<Double>();
+ArrayList<Student> s = new ArrayList<Student>();
+m1(a);
+m1(b);
+m1(s);
+-> we can call this method by passing array list of any type.
+m1(ArrayList<?> l){
+	// here we can't add anything except null
+	l.add(null);
+}
+but within the method we can't add anything to the list except null because we don't know the type exactly.null is allowed because it is valid value for
+any type.this type of methods are best suitable for read only operation.
+
+case-III:->
+m1(ArrayList<? extends X> l);
+let's say X is Number type then
+ArrayList<Integer> a = new ArrayList<Integer>();
+ArrayList<Double> b = new ArrayList<Double>(); 
+ArrayList<Student> c = new ArrayList<Student(); 
+m1(a); //valid
+m1(b) //valid
+m1(c) //invalid
+-> X can be either class or interface.if X is a class then we can call this method by passing arraylist of either x type or it's child classes.if X is an
+interface then we can call this method by passing array list either X type or it's implementation classes.
+-> but within the method we can't add anything to list except null because we don't know the type of 'X' exactly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

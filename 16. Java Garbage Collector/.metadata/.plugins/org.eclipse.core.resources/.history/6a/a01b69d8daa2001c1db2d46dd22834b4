@@ -1,0 +1,13 @@
+package com.lamichhane.finalizedemo.case_third;
+
+public class FinalizeDemo {
+		
+	static FinalizeDemo s;
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

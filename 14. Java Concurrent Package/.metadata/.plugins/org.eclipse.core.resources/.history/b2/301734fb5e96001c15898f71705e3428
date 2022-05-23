@@ -1,0 +1,94 @@
+Need of concurrent package:->
+-> 90 percent of the collections are not thread safe so when multiple thread can share same collection
+object at the runtime so there will be a chance of occuring problem.AL,LL,HS,TS etc are the example
+of collection object which are not thread safe.Vector and HashTable are thread safe.
+
+-> only 10 percent of the collection classes are thread safe.when one thread accessing the collection
+object other thread can't even read it.so it creates performance problems.
+
+-> when one thread iterating a collection object other thread can't even modify that object.it throws
+compile time exception concurrentmodificationexcepiton.
+
+Map
+ConcurrentMap
+ConcurrentHashMap
+
+ConcurrentMap:-> it contains three methods
+i. putIfAbsent();
+ii. remove();
+iii. replace();
+
+Object putIfAbsent(Object key,Object value):->
+Example1:->
+m.put(101,"durga");
+m.put(101,"shive");
+sysout(m);
+
+output:->
+{101,shive}
+
+m.put(101,"durga");
+m.putIfAbsent(101,"shive");
+
+output:->
+{101,durga}
+
+boolean remove(Object key,Object value):->
+m.put(101,"durga");
+m.remove(101);
+
+output:->
+{}
+
+m.put(101,"durga");
+m.remove(101,"durga");
+
+output:-> 
+{101=durga}
+
+
+
+boolean replace(Object key,Object oldValue,Object newValue):->
+m.put(101,"durga");
+m.replace(101,"shiva","hari");
+sysout(m) //{101=durga}
+m.replace(101,"durga","hari");
+sysout(m); //{101=hari}
+
+Note:-> these methods not present inside normal map.
+
+
+
+ConcurrentHashMap:-> 
+-> it is thread safe concurrent collection while normal HashMap is not thread safe.
+-> in this map total bucket level lock is implemented instead of enitre hashmap.the initial size of the
+map object is 16 so 16 multiple thread are allowed to update the bucket simultaneously while any no of
+thread can perform read operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

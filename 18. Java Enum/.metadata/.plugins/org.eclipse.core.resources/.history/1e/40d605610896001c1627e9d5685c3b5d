@@ -1,0 +1,5 @@
+package com.lamichhane.enums.with.inner.classes;
+
+public enum Color {
+
+}

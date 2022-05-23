@@ -1,0 +1,47 @@
+Coupling:-> the degree of dependency between the components is called coupling.if dependency is more
+then it is considered as tightly coupling and if dependency is less then it is considered as loosely
+coupling.
+Example:-> Tightly Coupled
+class A {
+ static int i = B.j;
+ }
+
+class B {
+ static int j = C.k;
+ }
+
+class C {
+ static int k = D.m1();
+ }
+
+class D {
+ public stati int m1(){
+  return 10;
+  }
+ }
+
+the above components are said to be tightly coupled to each other because dependency between the
+components is more.
+tightly coupling is not a good programming practise because it has several serious dis-advantages.
+
+i.Without effecting remaining components we can't modify any component and hence enhancement will 
+become difficult.
+ii.It suprasses re-usability
+iii.It reduces maintainability of the application.
+
+hence we have to maintain dependency between the components as less as possible that is loosely coupling
+is a good programming practise.
+
+
+Cohesion:-> for every component a clear well defined functionality is defined then that component is
+said to be follow high cohesion.in programming it is better to design different component for the
+independent parts of the program.for example spring mvc follows high cohession because it provides
+separate compoent for modal,view and controller.
+
+
+high cohession is always is a good programming practise because it has several advantages.
+i.Without effecting remaining components we can modify any component hence enhancement will become
+easier.
+ii.it promotes re-usability of the code(where ever validation is required we can re-use the same
+vaidate servlet without re-writing).
+iii.

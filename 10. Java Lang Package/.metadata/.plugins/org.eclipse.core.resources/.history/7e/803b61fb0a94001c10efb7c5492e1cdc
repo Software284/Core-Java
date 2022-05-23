@@ -1,0 +1,43 @@
+String Constant Pool:-> 
+Interning of String objects:-> we can use intern method to get corresponding string constant pool object
+reference by using heap object reference.
+By using heap object reference if we want to get corresponding SCP object reference then we should go
+for intern method.
+
+Example1:->
+String s1 = new String("durga");
+String s2 = s1.intern();
+System.out.println(s1 == s2);
+String s3 = "durga";
+System.out.println(s2 == s3);
+
+output:->
+false
+true
+
+Example2:->
+String s1 = new String("durga");
+String s2 = s1.concat("software");
+String s3 = s2.intern();
+System.out.println(s2 == s3);
+String s4 = "durgasoftware";
+System.out.println(s3 == s4);
+
+output:->
+true
+true
+
+-> if the corresponding SCP object is not available then intern inself will return own object 
+reference.
+
+Importance of String Constant Pool:->
+->let us consider a form containing the multiple form field with stirng value let's say 12 fields
+are there with name,email,city,gender,etc.
+-> 
+
+
+
+
+
+
+

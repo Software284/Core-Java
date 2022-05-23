@@ -1,0 +1,10 @@
+Anonymous Inner Class:-> sometimes we can declare inner class without name such type of inner classes are called
+anonymous inner classes.
+the main purpose of anonymous inner classes is just for instant use(one time usage).
+based on declaration and behaviour there are three types of anonymous inner classes:->
+
+i. anonymous inner class that extends a class
+ii. anonymous inner class that implements a interface
+iii. anonymous inner class that defines inside arguments
+
+

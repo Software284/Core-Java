@@ -1,0 +1,5 @@
+package throwing.custom.exception.manually;
+
+public class myException extends Exception {
+
+}

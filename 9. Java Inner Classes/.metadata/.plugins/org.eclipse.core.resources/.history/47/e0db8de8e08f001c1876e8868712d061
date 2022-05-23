@@ -1,0 +1,6 @@
+Inner Classes:-> 
+-> sometimes we can declare a class inside another class such type of classes are called
+inner classes.inner classes concept introduce in 1.1 version to fix GUI bugs as a part of event handling
+but because of powerful features and benefits of inner classes slowly programmer started using in regular
+coding also.
+-> 

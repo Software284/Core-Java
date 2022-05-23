@@ -1,0 +1,49 @@
+ CopyOnWriteArrayList(C):->
+ Collection(I)
+ List(I)
+ CopyOnWriteArrayList(C)
+ 
+ -> it is a thread safe version of ArrayList as the name indicates CopyOnWriteArrayList creates a clonned copy of underlying ArrayList
+ for every update operation at certain point both will synchronize automatically.Which is taking care by JVM internally.
+ -> as update operation will be performed on cloned copy there is no effet for the threads which performs read operation.
+ -> it is colstly to use because for every update operation a cloned copy will be created.hence CopyOnWriteArrayList is the best 
+ choice if several read operations and less number of write operations are required to perfrom.
+ -> insertion order is preserved.
+ -> duplicate objects are allowed.
+ ->heterogeneous objects are allowed.
+ -> null insertion is possible.
+ -> it implements serializable,clonnable and randomaccess interfaces.
+ -> while one thread iterating CopyOnWriteArrayList,the Other threads are allowed to modify and we won't get
+ ConcurrentModificationException.that is iterator is Fail Safe.
+ -> iterator of arraylist can perform remove operation but iterator of CopyOnWriteArrayList can't Perform remove operation.
+ otherwise we will get RuntimeException saying unsupportedoperationexception.
+ 
+ Similarities between ArrayList and CopyOnWriteArrayList:->
+ i. insertion order is prserved
+ ii. duplicates are allowed
+ iii. heterogenious objects are allowed
+ iv. null insertion is possible
+ v. implements serializable,clonaable,randomaccess
+ 
+ Differences betweeen ArrayLIst and CopyOnWriteArrayList:->
+ -> concurrent modification exception occured in Arraylist but not in CopyOnWriteArrayList.
+ -> iterator of array list is thread-fail while iterator of copyonwritearraylist is thread-safe.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

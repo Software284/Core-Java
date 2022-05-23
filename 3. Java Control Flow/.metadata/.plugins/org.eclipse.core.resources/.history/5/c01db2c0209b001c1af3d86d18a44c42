@@ -1,0 +1,410 @@
+Iterative Statements:->
+i. while
+ii. do-while
+iii. for loop
+iv. for-each loop
+========================================================================================================
+
+While Loop:->
+-> if we don't know no of iteration in advance then we should go for while loop
+Example:
+while(rs.next()){
+}
+while(e.hasMoreElements()){
+}
+while(itr.hasNext()){
+}
+
+-> the argument should be boolean type.if we are trying to provide any other type then we will get 
+compile time error.
+
+syntax
+while(b){
+	// action
+}
+
+while(1){
+}
+CE:incompatible types found int required boolean.
+
+
+-> curly braces are optional and without curly braces we can take only one statement under while which
+should not be declarative statement.because it is never used.
+
+while(true){
+sysout("Hello");
+}
+//valid
+while(true); //valid
+while(true)
+	int x = 10;
+//invalid
+while(true){
+ int x = 10;
+}
+//valid
+
+-> see the examples to understand loop holes.
+
+
+while(true){
+	sysout("Hello");
+}
+sysout("Hi");
+//invalid CE:unreachable statement
+
+
+while(false){
+	sysout("Hello");
+}
+sysout("Hi");
+//invalid CE:unreachable statement
+
+
+int a = 10,b=20;
+while(a<b){
+	sysout("Hello");
+}
+sysout("Hi");
+//valid
+output:->
+Hello 
+Hello 
+Hello
+.......infinite number of time
+
+int a = 10,b=20;
+while(a>b){
+	sysout("Hello");
+}
+sysout("Hi");
+//valid
+output:->
+Hi
+
+
+
+
+final int a = 10,b=20;
+while(a<b){
+	sysout("Hello");
+}
+sysout("Hi");
+//invalid CE:unreachable statement
+
+
+
+final int a = 10,b=20;
+while(a>b){
+	sysout("Hello");
+}
+sysout("Hi");
+//invalid CE:unreachable statements
+
+
+
+Note:->
+-> every final variable will be replaced by the value at compile time only.
+Example:
+final int a=10;
+int b = 20;
+sysout(a); => sysout(10);
+sysout(b); => sysout(b);
+
+-> if every argument is a final variable(compile time constant) then that operation should be 
+performed at compile time only.
+Example:
+final int a = 10,b=20;
+int c= 30;
+sysout(a+b); => sysout(30);
+sysout(a+c); => sysout(10+c);
+sysout(a<b); => sysout(true);
+sysout(a<c); => sysout(10<c);
+
+=======================================================================================================
+
+Do-While Loop:-> 
+-> syntax
+do {
+}while();
+b should be boolean type and semicolon is mandatory.
+
+-> if we want to execute loop body at least once then we should go for do-while.
+
+-> curly braces are optional and without curly braces we can take only one statement between do and
+while which should not be declarative statement.
+
+do{
+ sysout("Hello");
+}while(true);
+//valid
+
+do;
+while(true);
+//valid
+
+do
+	int x = 10;
+while(true);
+//invalid
+
+do{
+int x = 10;
+}while(true);
+//valid
+
+do
+while(true);
+//invalid
+
+
+-> this statement is valid.
+
+do
+  while(true)
+   sysout("Hello");
+while(false);
+
+
+-> see the example
+do{
+ sysout("Hello");
+}while(true);
+sysout("Hi");
+//invalid CE:unreachable statement
+
+
+do{
+ sysout("Hello");
+}while(false);
+sysout("Hi");
+//valid
+output:
+Hello
+Hi
+
+int a=10,b=20;
+do{
+ sysout("Hello");
+}while(a<b);
+sysout("Hi");
+//valid infinately hello printed
+
+int a=10,b=20;
+do{
+ sysout("Hello");
+}while(a>b);
+sysout("Hi");
+//valid
+output:
+Hello
+Hi
+
+final int a=10,b=20;
+do{
+ sysout("Hello");
+}while(a<b);
+sysout("Hi");
+//invalid CE:unreachable statement
+
+final int a=10,b=20;
+do{
+ sysout("Hello");
+}while(a>b);
+sysout("Hi");
+//valid
+output:
+Hello 
+Hi
+=======================================================================================================
+
+For Loop:->
+-> for loop is the most commonly used loop in java.
+-> if we know no of iterations in advance then for loop is the best choice.
+syntax:
+for(initialization_section;conditional_check;increament_decreament_section){
+	//loop body
+}
+
+-> curly braces are optional and without curly braces we can take only one statement under for loop,
+which should not declarative statement.
+
+for(int i = 0; true ; i++){
+	sysout("Hello");
+}
+//valid
+
+for(int i = 0; i<10; i++);
+//valid
+
+for(int i = 0; i<10; i++)
+	int x = 10;
+//invalid
+=======================================================================================================
+
+Initialization Section:-> 
+-> this part will be execute only once in loop lifecycle.
+-> here we can declare and initialize local variables of for loop.
+-> here we can declare any no of variables but should be of the same type.
+-> by mistake if we are trying to declare different data type variables then we will get compile time
+error.
+Example:
+int i = 0,j=0; //valid
+int i = 0,String s = "durga"; //invalid
+int i = 0, int j = 0; //invalid
+
+
+-> in the initialization section we can take any valid java statement including sysout.
+Example:
+int i = 0;
+for(sysout("Hello boss u are sleeping");i<3;i++){
+	sysout("No boss only you are sleeping");
+}
+//valid
+output:
+Hello boss u are sleeping
+No boss only you are sleeping
+No boss only you are sleeping
+No boss only you are sleeping
+
+Conditional Check Section:->
+-> here we can take any valid java expression but should be of the type boolean.
+-> this part is optional and if we are not taking anything then compiler will always place true.
+
+
+
+Increament Decreamet Section:->
+-> in the increament or decreament section we can take any valid java statement including sysout.
+Example:
+int i = 0;
+fo(sysout("Hello");i<3;sysout("Hi")){
+	i++;
+}
+
+output:->
+Hello
+Hi
+Hi
+Hi
+=======================================================================================================
+-> all three parts of for loop are independent of each other and ooptional.
+for(;;){
+ sysout("Hello");
+}
+//valid
+
+for(;;);
+//valid
+both are infinite loops.
+
+-> 
+
+for(int i = 0; true; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+
+for(int i = 0; false; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+
+for(int i = 0;; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+
+
+int a = 10,b=20;
+for(int i = 0; a<b; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+int a = 10,b=20;
+for(int i = 0; a>b; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+
+final int a = 10,b=20;
+for(int i = 0; a<b; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+final int a = 10,b=20;
+for(int i = 0; a>b; i++)
+{
+	sysout("Hello");
+}
+sysout("Hi");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+package com.lamichhane.java.number.to.italy.specific.form;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Test {
+
+	public static void main(String[] args) {
+		double d = 123456.789;
+		NumberFormat format = NumberFormat.getInstance(Locale.ITALY);
+		
+
+	}
+
+}

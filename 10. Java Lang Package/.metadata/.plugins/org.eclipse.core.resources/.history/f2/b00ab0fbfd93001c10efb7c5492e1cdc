@@ -1,0 +1,63 @@
+Clone Method:->
+-> the process of creating exactly duplicates object is called cloning.
+-> the main purpose of cloning is to maintain backup copy and to preserve an state of an object.
+-> we can perform cloning by using clone method of object class.
+
+protected native Object clone() throws CloneNotSupportedException 
+
+-> we can perform cloning only for cloneable object.an object is said to clonnable if and only corresponding
+class implements cloaneable interface.
+-> Cloneable interface present in java.lang.package and it doesn't contain any methods.it is a marker interface.
+-> if we are trying to perform cloaning for non-cloneable objects then we will get runtime exception saying
+clonenotsupported exception.
+-> s2 = s1 is not cloaning.
+
+Shallow Cloneaing vs Deep Cloneaing:->
+
+Shallow Cloaning:->
+-> the process of creating bitwise copy of an object is called shallow cloaning.
+-> if the main object contain primitive variables then exactly duplicates copies will be created in the cloned
+object.
+-> if the main object contain any reference variable then corresponding object won't be created just duplicate
+reference variable will be created pointing to old content object.
+-> object class clone method meant for shallow cloning.
+-> in shallow coding by using cloned object reference if we perform any change to the
+content object then those changes will be reflected to the main object.
+-> to overcome this problem we should go for deep cloning.
+
+Example:-> see the example.
+
+
+Deep Cloning:->
+-> the process of creating exactly duplicate independent copy including contained object is called
+deep cloning.
+-> in deep cloning if the main object contain any primitive variables then in the cloned object duplicate
+copies will be created.
+-> if the main object contains any reference variable then the corresponding contained object also
+will be created in the cloned copy.
+-> by default object class clone method meant for shallow cloning but we can implement deep cloning
+explictly by overriding clone method in our class.
+->see example
+-> by using cloned object reference if we perform any change to the contain object then those changes
+won't be reflected to the main object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

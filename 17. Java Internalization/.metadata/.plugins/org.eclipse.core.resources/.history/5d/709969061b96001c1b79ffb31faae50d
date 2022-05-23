@@ -1,0 +1,17 @@
+package com.lamichhane.locale.demo.program;
+
+import java.util.Locale;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Locale l = Locale.getDefault();
+		System.out.println(l);
+		Locale l2 = new Locale("NEP");
+		l.setDefault(l2);
+		System.out.println(l2);
+
+	}
+
+}

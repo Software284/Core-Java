@@ -1,0 +1,3 @@
+String Constant Pool:-> 
+Interning of String objects:-> we can use intern method to get corresponding string constant pool object
+reference by using heap object reference.

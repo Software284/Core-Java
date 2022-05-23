@@ -1,0 +1,13 @@
+package com.lamichane.toString.method;
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		
+		String s = new String("mahesh");
+		Integer i = new Integer(10);
+		List list = new ArrayList<>();
+
+	}
+
+}

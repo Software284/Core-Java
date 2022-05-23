@@ -1,0 +1,16 @@
+package com.lamichhane.addIfAbsent.Method;
+
+public class Test {
+
+	public static void main(String[] args) {
+	
+		CopyOnWriteArrayList   = new CopyOnWriteArrayList();
+		l.add("A");
+		l.add("A");
+		l.addIfAbsent("B");
+		l.addIfAbsent("B");
+		System.out.pritnln(l);
+
+	}
+
+}

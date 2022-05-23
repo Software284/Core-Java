@@ -1,0 +1,5 @@
+StringTokenizer Class:-> 
+->it is a specially designed class for tokenization activity.
+-> stringtokenzer present in java.util package
+-> default pattern for string tokenizer is space
+-> 

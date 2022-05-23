@@ -1,0 +1,106 @@
+String Class:-> 
+=============================================================================================================
+case-I:
+-> once we creates a String object we can't perform any changes in the existing object. if we are
+trying to perform any change with those changes a new object will be created. this non-changable behaviour
+is nothing but immutability of String of object.
+
+String s = new String("durga");
+s.append(" software");
+System.out.println(s);
+
+Output:->
+durga
+
+-> once we creates StringBugger Object we can perform any type change in the existing object this changeable
+behaviour is nothing but mutablility of StringBuffer object.
+
+StringBuffer sb = new StringBugger("durga");
+sb.append(" software");
+System.out.pritnln(sb);
+
+Output:->
+durga software
+
+=============================================================================================================
+
+case-II:-> 
+-> in String class .equals method is overridden for content comparision hence even though objects are 
+different if content is same .equals method returns true.
+
+String s1 = new String("durga");
+String s2 = new String("durga");
+System.out.pritnln(s1==s2);
+System.out.println(s1.equals(s2));
+
+output:->
+false
+true
+
+-> in StringBuffer class .equals method not overridden for content comparision hence object class .equals 
+method got executed which is meant for reference comparision(address comparision).due to this if objects are
+different .equals method returns false eventhough content is same.
+
+
+StringBuffer sb1 = new StringBuffer("durga");
+StringBuffer sb2 = new StringBuffer("durga");
+System.out.println(sb1==sb2);
+System.out.pritnln(sb1.equals(sb2));
+
+output:->
+false 
+false
+
+=============================================================================================================
+
+case-III:-> 
+Example1:
+String s = new String("durga");
+-> in this case two object will be created one in the heap area and other is in string constant pool area and
+s is always pointing to heap object.
+
+String s = "durga";
+-> in this case only one object will be created in string constant pool and s is always pointing to that 
+object.
+
+Note:
+-> object creation in string constant pool is optional.first it will check is there any object already
+present in string constant pool with required content.if object already present then existing object will 
+be reused.if object not already available then only a new object will be created.but this rule is applicable
+only for string constant pool but not for the heap.
+
+-> garbage collector is not allowed to access string constant pool area hence eventhough object doesn't 
+contain reference variable it is not eligible of garbage collector if it is present in string constant pool
+area because garbage collector is applicable only for heap area and scp are present in method area.
+
+-> all string constant pool objects will be destroyed automaticaly at the time of JVM shutdown.in web app
+we need perform server restart in certain time period.
+
+
+
+Example2:
+String s1 = new String("durga");
+String s2 = new String("durga");
+String s3 = "durga";
+String s4 = "durga";
+
+Note:->
+-> whenever we are using new operator compulsary a new object will be created
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

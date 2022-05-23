@@ -1,0 +1,4 @@
+[] Operator:->
+-> we can use this operator to declare and create arrays.
+Example:
+int[] x = new int[];

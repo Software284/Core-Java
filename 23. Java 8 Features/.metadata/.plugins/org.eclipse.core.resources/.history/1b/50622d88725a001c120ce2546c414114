@@ -1,0 +1,25 @@
+package anonymous.inner_classes.instance.variable.with.lambda;
+
+public class Test {
+	
+	int x = 888;
+	
+	public void m2() {
+		Interf i = new Interf() {
+			int x = 999;
+			public void m1() {
+				System.out.println(this.x);
+			}
+		};
+		i.m1();
+	}
+	
+	//here this keyword represents inner class object 
+	// that's why result is 999
+	
+	public static void main(String args[]) {
+		Test t = new Test();
+		t.m2();
+	}
+
+}

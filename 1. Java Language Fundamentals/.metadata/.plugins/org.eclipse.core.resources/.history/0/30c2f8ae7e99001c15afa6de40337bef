@@ -1,0 +1,80 @@
+Var-args Method(Variable Number of argument method):->
+
+-> until 1.4 version we can't declare a method with variable number of arguments.if there is a change in number of arguments compulsary we should go 
+for new method.it increases length of the code and reduces readability.
+
+-> to overcome this problem sun people introduced var-arg methods in 1.5 version.according to this we can declare a method which can take variable no
+of arguments such type of methods are called var args methods.
+
+-> we can declare a var-arg method as follows
+m1(int... x);
+we can call this method by passing any no of int values including 0 number.
+m1();
+m1(10);
+m1(10,20);
+m1(10,20,30,40);
+
+-> internally var arg parameter will be converted into one dimensional array hence within the var-arg method we can differentiate values by using 
+index.
+-> see the example of var-args 
+==========================================================================================================================================================
+
+Loop Holes:->
+-> which of the following are valid var-args method declaration.
+m1(int... x); //valid
+m1(int ...x); //valid compiler automatically removed by compiler
+m1(int...x); //valid
+m1(int x...); //invalid
+m1(int. ..x); //invalid always should be together only
+m1(int .x..); //invalid
+
+-> we can mix var arg parameter with normal parameter.if we mix normal parameter with var-arg parameter then var-arg parameter should be last param.
+m1(int x,int... y); //valid
+m1(String s,double... y); //valid
+m1(double... y,String s); //invalid
+m1(char ch, String... s);
+
+-> inside var arg method we can take only one var-arg parameter and we can't take more than one var-arg parameter.
+m1(int... x,double... d);
+
+-> inside a class we can't declare var-arg method and corresponding one dimensional array method simultaneously.otherwise we will get compile time 
+error.
+
+class Test{
+	public static void m1(int... x){
+		sysout("x..");
+	}
+	
+	public static void m1(int[] x){
+		sysout("z[]");
+	}
+	public static void main(String args){
+	}
+}
+CE:can't declare both m1 of int[] andm m1(int...) in Test
+
+-> in general var-arg method will get least priority i.e if no other method matched then only var args method will get the chance.
+class Test{
+
+	public static void m1(int... x){
+		sysout("var args method");
+	}
+	public static void m1(int x){
+		sysout("general method");
+	}
+
+	public static void main(String args){
+		m1(); // var-args method
+		m1(10,20); // var-args method
+		m1(10); // general method
+	}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+New Vs NewInstance:->
+-> we can use new operator to create an object if we know class name at the beginning.

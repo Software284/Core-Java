@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ArrayList list = new ArrayList();
+		list.add("Mahesh");
+		list.add(new Thread());
+		list.add(10);
+
+	}
+
+}

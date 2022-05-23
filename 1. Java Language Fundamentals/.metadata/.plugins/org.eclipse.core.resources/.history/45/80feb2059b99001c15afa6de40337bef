@@ -1,0 +1,49 @@
+Java Language Coding Standard:-> 
+==========================================================================================================================================================
+-> whenever we are writing java code it is highly recomended to follow coding standards. whenever we are writing any component it's name should reflect
+the purpose of that component(functionality).
+-> the main advantage of this approach is readability and maintainability of the code will be improved.
+Noob Style:->
+class A{
+	public int m1(int x,int y){
+		return x+y;
+	}
+}
+
+Pro Style:->
+package com.lamichhane
+public class Calculator{
+	public static int add(int number1,int number2){
+		return number1 + number2;
+	}
+}
+===========================================================================================================================================================
+Coding Standard For Classes:->
+-> usually class names are nouns.
+-> should starts with uppercase characters.
+-> if it contains multiple words every inner word should start uppercase character.
+Example:->
+String
+StringBuffer
+Account
+Dog
+
+Coding Standards For Interfaces:->
+-> usually class names are adjective.
+-> should starts with uppercase character.
+-> if it contains multiple words every inner word should starts with uppercase character.
+Example:->
+Runnable
+Serializable
+Comparable
+RandomAccess
+
+
+
+
+
+
+
+
+
+

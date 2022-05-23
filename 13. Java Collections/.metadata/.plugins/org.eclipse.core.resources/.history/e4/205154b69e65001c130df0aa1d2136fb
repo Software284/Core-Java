@@ -1,0 +1,126 @@
+package introduction.to.list.program;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+//		ArrayList I = new ArrayList();
+//		I.add("A");
+//		I.add(10);
+//		I.add("A");
+//		I.add(null);
+//		
+//		System.out.println(I);
+//		I.remove(2);
+//		System.out.println(I);
+//		I.add(2,"M");
+//		I.add("N");
+//		System.out.println(I);
+		
+//		ArrayList  I1 = new ArrayList();
+//		LinkedList I2 = new LinkedList();
+//		System.out.println(I1 instanceof Serializable); //true
+//		System.out.println(I2 instanceof Cloneable); //true
+//		System.out.println(I1 instanceof RandomAccess); //true
+//		System.out.println(I2 instanceof RandomAccess); //false
+		
+//		LinkedList I = new LinkedList();
+//		I.add("durga");
+//		I.add(30);
+//		I.add(null);
+//		I.add("durga");
+//		I.set(0, "Software");
+//		I.add(0,"Venky");
+//		I.removeLast();
+//		I.addFirst("CCC");
+//		System.out.println(I);
+		
+//		Vector v = new Vector();
+//		System.out.println(v.capacity());
+//		for(int i=1;i<=10;i++) {
+//			v.addElement(i);
+//		}
+//		
+//		System.out.println(v.capacity());
+//		v.addElement("A");
+//		System.out.println(v.capacity());
+//		System.out.println(v); 
+		
+//		Stack s = new Stack();
+//		s.push("A");
+//		s.push("B");
+//		s.push("C");
+//		System.out.println(s);
+//		System.out.println(s.search("A"));
+//		System.out.println(s.search("Z"));
+		
+//		Vector v = new Vector();
+//		for(int i = 0; i<=10;i++) {
+//			v.addElement(i);
+//		}
+//		System.out.println(v);
+//		Enumeration e = v.elements();
+//		while(e.hasMoreElements()) {
+//			Integer I = (Integer)e.nextElement();
+//			if(I%2 ==0) {
+//				System.out.println(I);
+//			}
+//			else {
+//				System.out.println(I+" will be removed");
+//				v.remove(I);
+//				System.out.println(v);
+//			}
+//		}
+		
+		
+//		ArrayList my_list = new ArrayList();
+//		for(int i=0; i<=10;i++) {
+//			my_list.add(i);
+//		}
+//		System.out.println(my_list);
+//		Iterator itr = my_list.iterator();
+//		while(itr.hasNext()) {
+//			Integer I = (Integer) itr.next();
+//			
+//			if(I % 2 == 0) {
+//				System.out.println(I);
+//			}
+//			else {
+//				itr.remove();
+//			}
+//		}
+//		
+//		System.out.println(my_list);
+		
+		LinkedList I = new LinkedList();
+		I.add("balakrishna");
+		I.add("venki");
+		I.add("chiru");
+		I.add("nag");
+		
+		System.out.println(I);
+		ListIterator itr = I.listIterator();
+		
+		while(itr.hasNext()) {
+			String s = (String)itr.next();
+			
+			if(s.equals("venki")) {
+				itr.remove();
+				
+			}
+			else if(s.equals("nag")) {
+				itr.add("chaitu");
+			}
+			else if(s.equals("chiru")) {
+				itr.set("charan");
+			}
+		}
+		System.out.println(I);
+		
+		
+
+	} 
+
+}

@@ -1,0 +1,5 @@
+package com.lamichhane.concurrent.modification.exception;
+
+public class MyThread extends Thread {
+
+}

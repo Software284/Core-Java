@@ -1,0 +1,3 @@
+-> whether class contains main method or not and whether main method is declared according to requirement or not these things won't be checked by
+compiler.at runtime JVM is responsible to check these things.if JVM unable to find main method then we will get runtime exception saying no such method
+error:main.

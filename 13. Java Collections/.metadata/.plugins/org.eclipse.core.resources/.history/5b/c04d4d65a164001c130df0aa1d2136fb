@@ -1,0 +1,42 @@
+
+public class Test {
+	/*
+	 	Arrays: An array is a indexed collections of fixted numbers of homogenious data elements.
+	 	the main advantage of arrays is we can represent multiple values by using single variable
+	 	so that readibility of the code will be improved.
+	 	Limitations of arrays:- 
+	 	-> Arrays are fixed in size that is once we creates an array there is
+	 	no chance of increasing or decreasing the size based on our requirement due to this,to use
+	 	arrays concept compulsary we should know the size in advance which may not possible always.
+	 	
+	 	-> Array can hold only homogenious data type elements.
+	 	Student[] st = new Student[10000];
+	 	st[0]=new Student();
+	 	st[1]=new Customer();
+	 	it throws incompatible type exception.we can solve this by using Object type arrays.
+	 	Object[] a = new Object[10000];
+	 	a[0]= new Student();
+	 	a[1]= new Customer(); 
+	 	
+	 	-> Arrays concept is not implemented based on some standard data structures and hence
+	 	readymade method support is not available for every requirement we have to write the code
+	 	explictly which increases complexity of programming.
+	 	
+	 	To overcome above problems of arrays we should go for collections concept.
+	 	-> collections are growable in nature that is based on our requirement we can increase or
+	 	decrease the size.
+	 	-> collections can hold both homogenious and hetrogenious objects.
+	 	-> every collections class is implemented based on some standard data structures hence for
+	 	every requirement readymade method support is available.being a programmer we are responsible
+	 	to use those methods and we are not responsible to implement those methods.
+	 	
+	 	Differences between arrays and collections:
+	 	
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

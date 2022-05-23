@@ -1,0 +1,68 @@
+-> whether class contains main method or not and whether main method is declared according to requirement or not these things won't be checked by
+compiler.at runtime JVM is responsible to check these things.if JVM unable to find main method then we will get runtime exception saying nosuchmethoderror
+:main.
+Example:->
+class Test {
+}
+
+-> at runtime JVM always searches for the main method with the following prototype.this is the method which is configured inside the JVM.we can configure
+our own main method but for that we need to create our own JVM.
+public static void main(String args[]);
+where 
+public -> to call by JVM from anywhere(may be JVM runs inside c drive then we need to call it from other drive such as D,E etc).
+static -> without existing object also JVM has to call this method.
+void -> main method won't return anything to JVM.
+main -> this is the name which is configured inside JVM.
+String[] args -> command line arguments.
+
+-> the above syntax is very strict and if we perform any change then we will get runtime exception saying no such method error: main.
+
+-> even though above syntax are very strict the following changes are acceptable.
+i. static public void main(String args[]);
+ii. public static void main(String[] args);
+iii. public static void main(String  []args);
+iv. static public void main(Stirng[] durga);
+v. static public void main(String... args);
+
+-> we can declare main method with the following modifiers.
+final synchronized strictfp public static void main(String... args);
+
+
+case-I:-> overloading of the main method is possible but JVM will always call string array argument main method only.the other overloaded method we
+have to call explictly.
+
+class Test{
+	public static void main(String args[]){
+		sysout("string[]");
+	}
+	
+	public static void main(int[] args){
+		sysout("int[]");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

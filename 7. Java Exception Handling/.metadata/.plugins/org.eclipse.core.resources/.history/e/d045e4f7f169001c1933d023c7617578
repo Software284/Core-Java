@@ -1,0 +1,4 @@
+Exception:->An unexpected unwanted event that disturbs normal flow of the program is called exception.
+for example tired punchured exception,sleeping exception,file not found exception etc.
+it is highly recomended to handle exceptions and the main objective of excception handling is 
+graceful termination of the program.

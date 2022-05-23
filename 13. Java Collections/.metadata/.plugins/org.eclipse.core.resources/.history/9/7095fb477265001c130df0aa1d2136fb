@@ -1,0 +1,12 @@
+package implementation.of.list.with.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		// this is use only when retrieval of objects.
+		List my_list = new ArrayList<>
+
+	}
+
+}

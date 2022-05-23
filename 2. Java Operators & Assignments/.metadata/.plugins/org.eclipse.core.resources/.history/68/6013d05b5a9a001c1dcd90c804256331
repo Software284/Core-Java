@@ -1,0 +1,116 @@
+Type-cast Operator:->
+-> there are two types of type-casting 
+i. implict type casting
+ii. explict type casting
+
+Implict Type-casting:->
+-> compiler is responsible to perform implict type-casting.
+-> whenever we are assigning smaller data type value to bigger data type variable implict type-casting will be
+performed.
+-> it is also know as widening or upcasting.
+-> there is no loss of information in this type casting.
+-> the following are various possible converions where implict type casting will be performed.
+
+int x = 'a';
+sysout(x); //97
+compiler converts char to int automatically by implict type-casting
+
+double d = 10;
+sysout(d); //10.0
+compiler converts int  to double  automatically by implict type-casting
+
+byte -> short
+byte -> int
+char -> int
+short -> int
+int -> long
+
+
+
+Explict Type-cating:->
+-> programmer is responsible to perform explict type casting.
+-> whenever we are assigning bigger data type value to smaller data type variable then explict type casting is required.
+-> it is also known as narrowing or downcasting.
+-> there may be a chance of loss of information in this type casting.
+
+int x = 130;
+byte b = x; // CE: possible loss of precesion found int required byte
+byte b = (byte)x; //valid
+sysout(b);
+
+output:->
+-126
+
+Note:-> 
+
+byte	->	short
+					 int -> long -> float -> double 
+	  char 
+	  
+Left -> Right => Implict Type casting
+Right -> left => Explict Type casting
+
+-> whenever we are assigning bigger data type value to smaller data type variable by explict type casting. the most 
+significant bit will be lost.we have consider only LSB bits.
+
+How 130 becomes -126 in above example?
+How this loss of information is happening?
+
+int x = 130 -> 0 000000....010000010
+byte b = (byte)x; => 10000010
+2's complement of 0000010
+1111101
++     1
+--------
+1111110
+
+which is 126 
+now final answer is -126
+
+-> 
+
+int x = 150;
+Short s = (Short)x;
+sysout(s);
+
+output:->
+150
+
+byte b = (byte)x;
+sysout(b);
+
+output:->
+-106
+
+
+-> if we assigned floating point values to the integral types by explicit type casting.
+double d = 130.456;
+int x = (int) d;
+sysout(x); //130
+
+byte b = (byte)d;
+sysout(b); // -126
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

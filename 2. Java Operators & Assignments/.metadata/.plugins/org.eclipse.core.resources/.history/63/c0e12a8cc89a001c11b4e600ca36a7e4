@@ -1,0 +1,29 @@
+Java Operator Precedence Chart:->
+1. Unary Operators:
+[],x++,x--,++x,
+--x,~,!,
+new,<type>
+
+2.Arithmetic Operators:
+*,/,%,
++,-
+
+3.Shift Operators:
+>>,>>>,<<
+
+4.Comparision Operators:
+<,<=,>,>=,instanceof
+
+5.Equality Operators:
+==, !=
+
+6.Bitwise Operators:
+&
+^
+|
+
+7.Short circuit Operators:
+&&
+||
+
+8.Conditional Operator

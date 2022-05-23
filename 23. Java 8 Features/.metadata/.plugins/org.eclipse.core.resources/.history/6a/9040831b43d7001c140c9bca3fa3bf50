@@ -1,0 +1,6 @@
+Method And Constructor Reference by Double Colon Operator:-> in java we can use double colon operator
+for method reference and constructor reference.
+instead of lambda expression we can go with another alternative to provide implementation which is
+called method reference.in this method we can re-use already existing method instead of providing
+implementation using lambda expression.
+the biggest advantage of 

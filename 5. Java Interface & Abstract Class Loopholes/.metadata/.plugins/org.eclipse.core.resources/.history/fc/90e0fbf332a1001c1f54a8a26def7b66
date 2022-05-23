@@ -1,0 +1,26 @@
+Roles of new keyword and constructor:->
+-> Whenever we are creating child class object whether parent object will be created or not??
+
+-> Whenever we are creating child class object,what is the need of executing parent class
+constructor??
+
+-> Anyway we can not create object for abstract class either directly or indirectly,but abstract
+class can contain constructor. what is the need??
+
+-> Anyway we can not create object for abstract class and interface. Abstract class can contain
+constructor but interfaces doesn't why??
+
+-> Inside interface we can take only abstract methods.But in abstract class also we can take only
+abstract methods based on our requirement. then what is the need of interface? i.e is it possilbe
+to replace interface concept with abstract class?
+
+-> 
+
+
+
+
+
+
+*:-> the main object of new operator is to create an object and the main puprpose of constructor is
+to initialze object.first object will be created by using new operator and then initialization will
+be performed by constructor.

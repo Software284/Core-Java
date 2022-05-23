@@ -1,0 +1,75 @@
+String Class:-> 
+=============================================================================================================
+case-I:
+-> once we creates a String object we can't perform any changes in the existing object. if we are
+trying to perform any change with those changes a new object will be created. this non-changable behaviour
+is nothing but immutability of String of object.
+
+String s = new String("durga");
+s.append(" software");
+System.out.println(s);
+
+Output:->
+durga
+
+-> once we creates StringBugger Object we can perform any type change in the existing object this changeable
+behaviour is nothing but mutablility of StringBuffer object.
+
+StringBuffer sb = new StringBugger("durga");
+sb.append(" software");
+System.out.pritnln(sb);
+
+Output:->
+durga software
+
+=============================================================================================================
+
+case-II:-> 
+-> in String class .equals method is overridden for content comparision hence even though objects are 
+different if content is same .equals method returns true.
+
+String s1 = new String("durga");
+String s2 = new String("durga");
+System.out.pritnln(s1==s2);
+System.out.println(s1.equals(s2));
+
+output:->
+false
+true
+
+-> in StringBuffer class .equals method not overridden for content comparision hence object class .equals 
+method got executed which is meant for reference comparision(address comparision).due to this if objects are
+different .equals method returns false eventhough content is same.
+
+
+StringBuffer sb1 = new StringBuffer("durga");
+StringBuffer sb2 = new StringBuffer("durga");
+System.out.println(sb1==sb2);
+System.out.pritnln(sb1.equals(sb2));
+
+output:->
+false 
+false
+
+=============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,191 @@
+-> whenever we are writing our own classes we have to provide some information about our class to the
+JVM like 
+i. whether this class can be accessible from anywhere or not.
+ii. whether child class creation is possible or not.
+iii. whether object creation is possible or not. etc
+we can specify this information by using appropriate modifier.
+
+-> the only applicable modifiers for top level classes are 
+i. public 
+ii. default
+iii. final
+iv. abstract
+v. Strictfp
+
+-> but for inner classes the applicable modifers are
+i. public 
+ii. default
+iii. final
+iv. abstract
+v. Strictfp
+vi. static
+vii. protected
+viii. private
+
+
+Access Specifiers VS Access Modifiers:->
+-> public,private,protected,default are considered as specifiers except these remaining are considered as
+access modifiers.
+but this rule is applicable only for old languages like c++ but not in java.
+-> in java all are considered as modifiers only.there is no word like specifier.
+==============================================================================================================
+Top Level Classes Modifiers:-> 
+
+
+public classes:-> 
+-> if a class declared as public then we can access that class from anywhere.
+Example:
+package pack1
+public class A {
+	public void m1(){
+		sysout("Hello");
+	}
+}
+if class A is not a public then while compiling B class we will get compile time error saying pack1.A is
+not public in pack1;cannot be access from outside package.
+
+package pack2
+import pack1.A;
+class B {
+	public static void main(String args[]){
+		A a = new A();
+		a.m1();
+	}
+}
+
+default classes:->
+-> if a class declared as default then we can access that class only withing the current package i.e from
+outside package we can't access.hence default access is also known as package level access.
+
+final modifier:-> 
+-> final is a modifier applicable for classes method and variables.
+i. final method:-> whatever method parent has by default available to the child through inheritance.if the
+child not satisfied with parent method implementation then child is allowed to redefine that method based on
+it's requirement.this process is called overriding.
+so if the parent class method is declare as final then we can't override that method in the child class 
+because it's implementation is final.
+
+ii. final class:-> if a class declared as final we can't extend functionality of that class i.e we can't 
+create child class for that class.i.e inheritance is not possible for final classes.
+
+Note:-> every method present inside final class is always final by default but every variable present inside
+final class need not be final.
+the main advantage of final keyword is we can achive securityand we can provide unique implementation but 
+the main dis-advantage of final keyword is we are missing key benefits of oops such as inheritance and
+polymorphism.hence if there is no specific requirement then it is not recommended to use final keyword.
+
+
+
+Abstract Modifier:->
+-> abstract is a modifier applicable for classes and methods but not for variables.
+
+i.abstract method:-> even though we don't know about implementation still we can declare a method with 
+abstract modifier i.e for abstract method only declaration is available but not implementation.hence
+abstract method declaration should ends with ';'.
+Example:
+public abstract void m1();
+child class is responsible to provide implementation for parent class abstract methods.
+by declaring abstract method in the parent class we can provide guidelines to the child classes such that
+which method compulsary child has to implement.
+abstract method never talks about implementation.if any modifier talks about implementation then it forms
+illegal combination with abstract modifier.
+abstract -> final,native,synchronized,static,private,Strictfp all are illegal expressions.
+abstract final void m1(); //illegal combination of modifiers abstract and final
+
+ii. abstract class:-> 
+-> for any java class if we are not allowed to create an object(because of partial implementation) such type
+class we have to declare with abstract modifier.that is for abstract classes instantation is not possible.
+Example:->
+abstract class Test{
+}
+Test t = new Test() //CE:class type abstract may not be instantiated.
+
+Abstract Class VS Abstract Method:->
+-> if a class contains at least one abstract method then compulsary we should declare class as abstract
+otherwise we will get compile time error.
+reason:if class contains at least one abstract method then implementation is not complete and hence it is
+not recommended to create object.to restrict object instantation compulsary we should declare class as
+abstract.
+
+-> even though class doesn't contain any abstract method still we can declare class as abstract if don't
+want instantation i.e abstract class can contain 0 number of abstract methods also.
+
+Example1:HttpServlet class is abstract but it doesn't contain any abstract methods.
+Example2:every adapter class is recommended to declare as abstract but it doesn't contain any abstract 
+method.
+
+Example3:
+class p {
+	public void m1();
+}
+CE:missing method body or declared abstract
+
+class p {
+	public abstract void m1(){};
+}
+CE:abstract method can not have a body
+
+class p {
+	public abstract void m1();
+}
+CE:p is not abstract and does not override abstract method m1
+
+Note:-> if we are extending abstract class then for each and every abstract method of parent class we should
+provide implementation otherwise we have to declare child class as abstract.in this case next level child
+class is responsible to provide implementation.
+Example:
+abstract class A{
+ public abstract void m1();
+ public abstract void m2();
+ }
+ class B extends A{ //put abstract here
+ 	public void m1(){};
+ }
+CE:B is not abstract and does not override abstract method m2 in A
+
+Final Vs Abstract In Class :-> 
+-> abstract method compulsary we should override in child classes to provide implementation whereas 
+we can't override final methods.hence final abstract combination is illegal combination for methods.
+
+-> for final classes we can't create child class whereas for abstract classes we should create child class
+to provide implementation hence final abstract combination is illegal for classes.
+
+-> abstract class can contain final methods whereas final class can't contain abstract method.
+Example:
+abstract A{
+	public final m1(){
+	}
+}
+//valid
+
+final  A{
+	public abstract m1();
+}
+//invalid
+
+Note:-> it is highly recommended to use abstract modifier because it promotes several oop features like
+inheritance and polymorphism.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+package com.lamichhane.shallow.cloning.example;
+
+public class ShallowCloaningDemo {
+
+	public static void main(String[] args) {
+
+
+		Cat c = new Cat(10);
+		Dog d = new Dog(20,c);
+
+	}
+
+}

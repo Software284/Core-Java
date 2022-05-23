@@ -1,0 +1,13 @@
+package com.lamichhane.generic.area.to.non.generic.area;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> array_list = new ArrayList<String>();
+
+	}
+
+}

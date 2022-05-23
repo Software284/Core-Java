@@ -1,0 +1,21 @@
+-> we can apply relational operators for every primitive type except boolean.relational operators are
+>
+<
+>=
+<= 
+==
+!=
+
+sysout(10 < 20); // true
+sysout('a' < 10); //false
+sysout('a' < 97.6); //true
+sysout('a' > 'A'); //true
+sysout(true > false);// CE:operator > can't be applied to boolean,boolean
+
+-> we can't applied relational operator for object types.
+sysout("mahesh" > "lamichhane");
+CE:operator > can't be applied to java.lang.String,java.lang.String.
+
+sysout(10<20); //true
+sysout(10<20<30);
+CE:operator < can't be applied to boolean,int

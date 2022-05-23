@@ -1,0 +1,25 @@
+-> a constant value which can be assigned to the variable is called a literal.
+int x = 10;
+int = datatype/keyword
+x = variable/identifier
+10 = constant value/literal
+
+Types of literal:->
+
+i. Integral Literals
+-> for integral data types(byte,short,int,long) we can specify literal value in the following ways.
+	a. decimal literal:->
+		-> base 10
+		-> allowed digit are 0-9
+		-> example int x = 10;
+	b. octal literal
+		-> base 8
+		-> allowed digit are 0-7
+		-> example int x = 010;
+		-> literal value should be prefixed with 0.
+	c. hexa decimal literal
+	-> base 16
+	-> allowed digit are 0-9,a-f
+	-> example int x = 0X10;
+	-> literal value should be prefixed with 0X
+	-> for extra digit a-f,we can use both lowercase and uppercase characters

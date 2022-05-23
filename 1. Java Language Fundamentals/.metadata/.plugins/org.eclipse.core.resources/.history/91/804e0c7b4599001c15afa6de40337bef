@@ -1,0 +1,490 @@
+
+-> an array is an indexed collection of fixed number of homogenious data elements.
+-> the main advantage of arrays is we can represent huge number of values by using single variable so that
+readbility of the code will be improved.
+-> but the main dis-advantage of arrays is fixed in size i.e once we creates an array there is no chance of
+increasing or decreasing the size based on our requirement hence to use arrays concept compulsary we should 
+know size in advance,which may not possible always.
+============================================================================================================
+Array Declaration:->
+i. One Dimensional Array Declaration:->
+int[] x; //valid best recomended because name is clearly separated from type.
+int x[]; //valid
+int []x; //valid
+
+-> at the time of declaration we can't specify the size otherwise we will get compile time error.
+int [6] x; //invalid
+int[] x; //valid
+
+ii. Two Dimensional Array Delcaration:->
+int[][] x;
+int [][]x;
+int x[][];
+int[] []x;
+int[] x[];
+int []x[];
+-> all are valid statements.
+
+Which of the following are valid:->
+int[] a,b; // a-1,b->1
+int[] a[],b; // a-> 2,b->1
+int[] a[],b[]; // a-> 2,b-> 2
+int[] []a,b; // a-> 2,b-> 2
+int[] []a,b[]; // a-> 2,b>3
+int[] []a,[]b //CE:
+-> if we wan to specify dimension before the variable that facility is applicable only for first variable
+in a declaration.if we are trying to apply for remaining variable we will get compile time error.
+
+
+iii. Three Dimensional Array Declaration:
+int[][][] a;
+int [][][]a;
+int a[][][];
+int[] [][]a;
+int[] a[][];
+int[] []a[];
+int[][] []a;
+int[][] a[];
+int [][]a[];
+int []a[][];
+====================================================================================================================================
+
+Array Creation:->
+
+i. One Dimensional Array Creation:->
+-> every array in java is an object only hence we can create arrays by using new operator.
+int[] a = new int[3];
+-> for every array type corresponding classes are available and these classes are part of java language and not available to the
+programmer level.
+int[] a = new int[3];
+System.out.println(a.getClass.getName()):
+
+output:->
+[I
+
+Array Type					Corresponding class name
+int[]						[I
+int[][]						[[I
+double[]					[D
+short[] 					[S
+byte[]						[B
+boolean[] 					[Z
+
+
+Loop Holes:->
+
+-> at the time array creation compulsary we should specify the size otherwise we will get compile time error.
+int[] a = new int[]; //invalid
+int[] a = new int[8]; //valid
+
+-> it is legal to have an array with the size zero in java.
+int[] x = new int[0];
+
+-> if we are trying to specify array size with some negative int value then we will get runtime exception saying negative
+array size exception.
+intp[] x = new int[-6];
+
+-> to specify array size the allowed data types are byte,short,char,int.if we trying to specify any other type then we will get
+compile time error.
+int[] x = new int[10];
+int[] x = new int['a'];
+byte b = 20;
+int[] b = new int[b];
+short s = 30;
+int[] x = new int[s]; 
+int[] xy = new int[l]; // invalid CE:
+
+Note:-> the maximum allowed array size in java is 2147483647 which is the maximum value of int data type.
+int[] x = new int[2147483647]; //valid
+int[] x = new int[2147483648]; //invalid
+CE:-> integer number too large.
+even in the first line we may get runtime exception if sufficient heap memory not available.
+
+
+
+ii. Two Dimensional Array Creation:->
+-> in java two dimensional array not implemented by using matrix representation.sun people follwed array of arrays approach for
+multi-dimensional array creation.
+the main advantage of this approach is memory utilization will be improved.in c if there are a place in matrix which are not 
+used then memory should be wasted at that point.this approach overcomes this problem
+
+Example1:->
+int[][] x = new int[2][];
+x[0] = new int[2];
+x[1] = new int[3];
+
+Example2:->
+int[][][] x = new int[3][][];
+x[0] = new int[3][];
+x[00] = new int[1];
+x[01] = new int[2];
+x[02] = new int[3];
+
+x[1] = new int[2][2];
+x[10] = new int[2];
+x[1][1] = new int[2];
+
+===================================================================================================================================
+
+Array Initialization:->
+-> once a we creates an array every element by default initialized with default values.
+int[] x = new int[3];
+System.out.println(x);
+System.out.println(x[0]);
+
+output:->
+[I@344343
+0
+
+Note:-> whenever we are trying to print any reference variable internally toString() method will be called which is implemented
+by default to return the string in the following form.
+classname@hashcodein_hexadecimal_form
+
+->
+int[][] x = new int[2][3];
+System.out.println(x);
+System.out.println(x[0]);
+System.out.pritnln(x[0][0]);
+
+output:->
+[[I@af3443
+[@ad4334
+0
+
+int[][] x = new int[2][];
+System.out.println(x);
+System.out.println(x[0]);
+System.out.pritnln(x[0][0]);
+
+output:->
+[[@fa3434
+null
+RE:null pointer exception
+
+-> once we creates an array every array element by default initialized with default values.if we are not satisfied with default 
+values then we can override these values with our customized values.
+int[] x = new int[6];
+x[0] = 10;
+in[1] = 20;
+x[2] = 30;
+x[3] = 40;
+x[4] = 50;
+x[5] = 60;
+x[6] = 70; // RE: array index out of bound exception
+x[-6] = 80; // RE: array index out of bound excepiton
+x[2.5] = 90; // CE: possible loss of precision found double required int
+==================================================================================================================================
+
+Array Declaration,Creation and Initialization in a single line:->
+-> we can declare create and initialize an array in a single line(shortkurt representation).
+int x[];
+ x = new int[4];
+ x[0] = 10;
+ x[1] = 20;
+ x[2] = 30;
+
+we can write as:
+int[] x = {10,20,30,40};
+char[] ch = {'a','b','c','d'}
+String[] arr = {"mahesh","nabin","sagar"}
+
+we can extend this shortkurt even for multi dimensional also
+int[][] x = { {10,20},{10,20,30} };
+
+Example:-
+int[][][] x = { {{10,20,30},{40,50,60}}, {{70,80},{90,100,110}} };
+sysout(x[0][1][2]) -> 60
+sysout(x[1][0][1]) -> 80
+sysout(x[2][0][0]) -> RE-array index out of bound
+syosut(x[1][2][0]) -> RE-array index out of bound
+sysout(x[1][1][1]) -> 100
+syosut(x[2][1][0]) -> RE-array index out of bound
+
+-> if we want to use this shortkurt compulsary we should perform all activities in a single line.if we are trying to divide into
+multiple line then we will get compile time error.
+int[] x = {10,20,30};
+
+int[] x;
+x = {10,20,30}
+CE:illegal state of expression.
+
+==================================================================================================================================5
+
+length VS length():->
+
+length:->
+-> length is a final variable applicable for arrays.
+-> length variable represents the size of the array.
+Example
+int[] array = new int[6];
+sysout(array.length()); //CE
+sysout(array.length); // 6
+
+
+length():->
+-> length method is a final method applicable for string objects.
+-> length method returns no of character present in the string.
+
+Example:
+String s = "maehsh";
+sysout(s.length); //CE
+syosut(s.length()); //6
+
+Note:-> length variable applicable for arrays but not for string objects whereas length() method is applicable for string but not
+for arrays.
+
+Loop holes:->
+-> in multi-dimensional arrays length variable represents only base size but not total size.
+int[][] x = new int[6][3];
+sysout(x.length); // 6
+sysout(x[0].length); //3
+
+-> there is no direct way to find total  length of multi dimensional array but indirectly we can find as follows.
+x[0].length + x[1].length + x[2].length + .........
+
+===================================================================================================================================
+
+Anonymous Arrays:->
+-> sometimes we can declare an array without name such type of name less arrays are called anonymous arrays.
+-> the main purpose anonymous arrays is just for instant use(1 time usage).
+Example:we can create anonymous array as follows: 
+class Test{
+	public static void main(String[] args){
+		sum(new int[]{10,20,30,40});
+	}
+	
+	public static void sum(int[] x){
+		int total = 0;
+		for(int x1: x){
+			total = total + x1;
+		}
+		System.out.println(The Sum ="+total);
+	}
+}
+
+-> while creating anonymous arrays we can't specify the size otherwise we will get compile time error.
+new int[3]{10,20,30}; //invalid
+new int[]{10,20,30}; //valid
+
+-> we can create multi-dimensional anonymous arrays also
+new int[][]{{10,20},{10,20,30}}; //valid
+
+-> based on our requirement we can give the name for anonymous array then it is no longer anonymous.
+int[] x = new int[]{10,20,30};
+
+==================================================================================================================================
+
+Array Element Assignments:->
+case-I:-> in the case of primitive type arrays as array elements we can provide any type which can be implictly promoted to
+declared type.
+Example1:-> in the case of int type arrays 
+int[] x = new int[5];
+x[0] = 10;
+x[1] = 'a';
+byte b = 20;
+x[2] = b;
+short s = 30;
+x[3] = s;
+x[4] = 10l CE:PLP
+
+Example2:
+-> in the case of float type arrays the allowed data types are byte,short,int,long,char,float.
+
+case-II:-> in the case of object type arrays as array elements we can provide either declared type objects or it's child class
+objects.
+
+Example1:
+Object[] ob = new Object[10];
+ob[0] = new Object();
+ob[1] = new String();
+ob[2] = new Integer(10);
+
+Example2:
+Number[] num = new Number[10];
+num[0] = new Integer(10);
+num[1] = new Double(10.4);
+num[2] = new String("durga"); CE: incompatible types
+
+case-III:-> for interface types arrays as array elements it's implementation class objects are allowed.
+Runnable[] run = new Runnable[10];
+run[0] = new Thread();
+run[1] = new String("maehsh"); CE:incompatible types.
+
+===================================================================================================================================
+
+Array Variable Assignments:->
+case-I:-> element level promotions are not applicable at array level.for example char element can be promoted to int type 
+whereas char array can not be promoted to int array.
+
+int[] x = {10,20,30};
+char[] ch = {'a','b','c'};
+int[] b = x; //valid
+int[] c = ch; //invalid CE:incompatible types found char[] required int[]
+
+Which of the following promotions will be performed automatically.
+char -> int // valid
+char[] -> int[] // invalid
+int -> double // valid
+int[] -> double[] // invalid
+float -> int // invalid
+float[] -> int[] // invalid
+String -> Object // valid
+String[] -> Object[] // valid
+
+
+but in the case object type arrays,child class type array can be promoted to parent class type array.
+Example
+String[] s = {"a","b","c"};
+Object[] o = s;
+===================================================================================================================================
+
+case-II:-> when we are assigning one array to another array internal elements won't be copied just reference variable will be
+re-assigned.that's why size doesn't matter during assigning.
+Example:->
+int[] a = {10,20,30,40,50};
+int[] b = {70,80}
+
+a = b;
+b = a;
+===================================================================================================================================
+
+case-III:-> whenever we are assigning one array to another array the dimension must be matched.for example in the place of one
+dimensional int array we should provide one dimensional array only.if we are trying to provide any other dimension then we will
+get compile time error.
+
+int[][] a = new int[3][];
+a[0] = new int[4][3];
+CE:incompatible types found :int[][] required int[]
+
+a[0] = 10;
+CE: incompatible types found int require int[]
+
+a[0] = new int[2];
+==================================================================================================================================
+
+Note:-> whenever we are assigning one array to another array both dimensions and types must be matched but sizes are not required
+to match.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

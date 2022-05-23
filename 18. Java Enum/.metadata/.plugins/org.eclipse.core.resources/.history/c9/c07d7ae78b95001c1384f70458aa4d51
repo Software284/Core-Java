@@ -1,0 +1,10 @@
+ENUM:->
+-> if we want to represent a group of named constants then we should go for ENUM.
+Example:
+enum Month{
+	JAN,FEB,MAR,APR,...DEC;
+}
+enum Beer{
+	KO,KF,RC,AO;
+}
+semicolon is optional.

@@ -1,0 +1,37 @@
+Encapsulation:-> the process of binding data and corresponding methods into a single unit is nothing but
+encapsulation.Example 
+class student {
+ data_members+methods;
+ }
+ if any component follows data hiding + abstraction such type of component is said to be encapsulated
+ component.
+ encapsulation = data hiding + absttraction
+
+The main advantages of encapsulation are:->
+-> we can achieve security 
+-> enhancement will become easy 
+-> it improves maintainablility of the application.
+-> the main advantage of encapsulation is we can achive security but main dis-advantage of encapsulation
+is it increases lenth of the code and slows down execution.
+
+Tightly Encapsulated Class:-> a class is said to be tightly encapsulated if and only if each and every
+variable declared as private.whethter class contains corresponding getter and setter methods are not
+and whether these methods are declared as public or not these things we are not required to check.
+
+Class A {
+	private int x;
+	}
+-> it is tightly encapsulated class
+
+Class B extends Class A {
+  public int y;
+  }
+ -> it is not tightly encapsulated class
+ 
+ Class C extends Class A {
+   private int z;
+   }
+  -> it is tightly encapsulated class
+  
+  Note:-> if parent is not tightly encapsulated then no child class is tightly encapsulated.these all
+  features such as data hiding,abstraction,encapsulation refers to the security.

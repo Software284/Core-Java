@@ -1,0 +1,7 @@
+Introduction:->
+-> very common way of debugging is usage of sop statements but the problem with sop's is after
+fixing the bug compulsary we have to delete sop statements.otherwise these sop's will be executed
+at runtime for every request,which creates performance problems and disturbs server logs.
+
+-> to overcome these problem sun people introduced assertions concept in 1.4 version.
+-> 

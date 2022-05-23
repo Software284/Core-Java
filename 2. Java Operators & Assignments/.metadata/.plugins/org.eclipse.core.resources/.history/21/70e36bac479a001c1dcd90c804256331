@@ -1,0 +1,22 @@
+-> we can use instanceof operator to check whether the given object is of particular type or not.
+Example:->
+ArrayList list = new ArrayList();
+list.add("Mahesh");
+list.add(new Thread());
+list.add(10);
+list.add(new Object());
+		
+Object o = list.get(3);
+		
+if(o instanceof String) {
+	System.out.println("String Object");
+}
+else if(o instanceof Thread) {
+	System.out.println("Thread Object");
+}
+else if(o instanceof Integer) {
+	System.out.println("Integer Object");
+}
+else if(o instanceof Object) {
+	System.out.println("Object Object");
+}

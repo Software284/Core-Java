@@ -1,0 +1,6 @@
+Primitive Type Functional Interface:-> 
+
+1. Autoboxing:
+Automatic conversion from primitive type to Object type by compiler is called autoboxing.
+2. Autounboxing:
+Automatic conversion from object type to primitive type by compiler is called autounboxing.

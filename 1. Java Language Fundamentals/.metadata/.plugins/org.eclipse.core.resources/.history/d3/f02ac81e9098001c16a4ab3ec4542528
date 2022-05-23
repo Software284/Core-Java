@@ -1,0 +1,157 @@
+-> a constant value which can be assigned to the variable is called a literal.
+int x = 10;
+int = datatype/keyword
+x = variable/identifier
+10 = constant value/literal
+=============================================================================================================
+Types of literal:->
+
+i. Integral Literals
+-> for integral data types(byte,short,int,long) we can specify literal value in the following ways.
+	a. decimal literal:->
+		-> base 10
+		-> allowed digit are 0-9
+		-> example int x = 10;
+	b. octal literal
+		-> base 8
+		-> allowed digit are 0-7
+		-> example int x = 010;
+		-> literal value should be prefixed with 0.
+	c. hexa decimal literal
+	-> base 16
+	-> allowed digit are 0-9,a-f
+	-> example int x = 0X10 or 0x10;
+	-> literal value should be prefixed with 0X or 0x
+	-> for extra digit a-f,we can use both lowercase and uppercase characters.this is one of very few ares
+	   where java is not case sensitive.
+	   
+-> these are only possible ways to specify literal value for integral data types.
+-> by default every integral literal is of int type but we can specify explictly as long type by suffix with
+small l or capital L.
+int x = 10; //valid
+logn l = 10L; //valid
+int x = 10l; //invalid
+long l = 10; //valid
+
+-> by default every interal is of  type of int.
+
+-> there is no direct way to specify byte and short literal explictly but indirectly we can specify.whenver
+we are assigning integral literal to the byte variable and if the value within the range of byte then compiler
+treats it automatically as byte literal.similarly short literal also.
+byte b = 10; //valid
+byte b = 127 //valid
+byte b = 128 //invalid
+
+short s = 32767; //valid
+short s = 32768; //invalid
+=============================================================================================================
+Floating Point Literals:->
+-> by default every floating point literal is of double type.hence we can't assign directly to the float
+variable.
+-> but we can specify floating point literal as float type by suffixed with f or F.
+float f = 123.456; //invalid
+float f = 123.456f; //valid
+double d = 123.456; //valid
+
+-> we can specify explictly floating point literal as double type by suffixed with 'd' or 'D'.offcourse
+this convention is not required.
+double d = 123.456D; //valid but not recommended because by default literal is double type.
+float f = 123.456d; //invalid
+
+-> we can specify floating point literals only in decimal form and we can't specify in octal and hexadecimal
+forms.
+
+double d = 123.456; //valid
+double d = 0123.456; //valid it is decimal litreal but not octal
+double d = 0x123.456 //invalid
+
+-> we can assign integral literal directly to floating point variables and that integral litral can be
+specified either in decimal or octal or hexadecimal forms.
+
+
+double d = 0786; //invalid
+double d = 0xFace; //valid
+double d = 0786.0 //valid
+double d = 0XFace.0 //invalid
+
+-> we can't assign floating point literals to integral types.
+double d = 10; //valid
+int x = 10.0;
+
+-> we can specify floating point literal even in exponential form(scientific notation).
+double d = 1.3e3; //valid
+float f = 1.3e3 //invalid
+float f = 1.3e3f; //valid
+
+=========================================================================================================
+
+Boolean Literal:->
+-> the only allowed values for boolean data type are true or false.
+boolean b = true; //valid
+boolean b = 0; //invalid incompatible types found int required boolean
+boolean b = True; //invalid can't find symbol variable true in class Test
+boolean b = "true"; //invalid incompatible types found java.lang.String requried boolean
+
+
+===========================================================================================================
+
+Char literal:->
+-> we can specify char literal as single character within single quotes.
+char ch = 'a';
+char ch = a; //CE: cannot find symbol symbol:variable a location class Test
+char ch ="a"; //CE: incompatible types found java.lang.String required char.
+char ch = 'ab'; //CE1: unclosed char literal CE2: unclosed char literal or CE3: not a java statement.
+
+-> we can specify char literal as intergral literal which represents unicode value of the character.and that
+integral literal can be specified either in decimal or octal or hexadecimal forms.but allowed range is
+0-65535.
+Exampel:
+char ch = 97; //print a
+char ch = 0xFace; //valid
+char ch = 0777; //valid
+char ch = 65535; //valid
+char ch = 65536; //invalid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   

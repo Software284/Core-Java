@@ -1,0 +1,58 @@
+StringBuffer:-> 
+-> if the content is fixed and won't change frequently then it is recommended to go for String.if the content
+is not fixed and keep on changing then it is not recommended to use string because for every change
+a new object will be created which affects performance of the system.
+to handle this requirement we should go for StringBuffer.
+-> the main advantage of StringBuffer over String is all required changes will be performed existing 
+object only.
+
+Constructors:-> 
+
+i. StringBuffer sb = new StringBuffer();
+-> creates an empty StringBuffer object with default initial capacity 16.once StringBuffer reaches it's
+max capacity a new StringBuffer object will be created with new capacity is equal to (current capacity + 1)*2
+
+ii. StringBuffer sb = new StringBuffer(int initial_capacity);
+-> creates an empty StringBuffer object with specified initial capacity.this improves the performance
+of the program than above when String size is greater than 16 because copying content from the old object
+to new object when size is increases is reduced.
+
+iii. StringBuffer sb = new StringBuffer(String s);
+-> creates an equvalent StringBuffer for the given string with capacity is equal to s.length+16.
+
+Important methods of StringBuffer:->
+
+i. public int length();
+ii. public int capacity();
+iii. public char charAt(int index);
+iv. public void setCharAt(int index,char ch);
+v. public StringBuffer append(String s); // here we can pass int,long,double,boolean etc.means overloaded func
+vi. public StringBuilder insert(int index,String s); // this method is also overloaded.can take int long...etc.
+vii. public StringBuffer delete(int begin,int end);
+viii. public StringBuffer deleteCharAt(int index);
+ix. public StringBuffer reverse();
+x. public void setLength(int length);
+xi. public void ensureCapacity(int length); 
+-> to increase the capacity of StringBuffer on the fly based on requirement.it will increase capacity of string
+once we already created the String Buffer object and want to increase the capacity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

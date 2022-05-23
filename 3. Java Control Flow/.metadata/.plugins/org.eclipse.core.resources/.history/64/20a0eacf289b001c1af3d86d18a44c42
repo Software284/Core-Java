@@ -1,0 +1,70 @@
+Transfer Statements:->
+break
+continue
+return
+try-catch-finally
+assert(1.4)
+========================================================================================================
+break statement:->
+-> we can use break statement in the following places.
+i.break inside switch
+int x = 0;
+switch(x){
+	case 0: 
+	  sysout(0);
+	  break;
+	 case 1:
+	 	sysout(1);
+	 	break;
+	 default:
+	 	sysout("Hi");
+}
+
+ii. inside for loops
+for(int i = 0; i<=10; i++)
+{
+	if (i==5){
+	break;
+	}
+}
+
+iii. inside labeled loops
+class Test{
+	public static void main(String args[]){
+		int x = 10;
+		l1:
+		{
+			sysout("begin");
+			if(x==10){
+				break l1;
+			}
+			sysout("end");
+		}
+		sysout("Hello");
+	}
+}
+output:
+begin
+Hello
+========================================================================================================
+
+continue statement:-> 
+-> 
+
+for(int i =0; i<10; i++)
+{
+	if(i%2 == 0){
+		continue;
+	}
+	sysout(i);
+}
+
+
+
+
+
+
+
+
+
+

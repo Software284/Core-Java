@@ -1,0 +1,14 @@
+Locale Class:->   
+-> a locale object represents a geographic location(country) or language or both.for example,we can
+create a locale object to represent india.we can create a locale object to represent english 
+language.
+-> locale class presents in java.util package.
+-> it is a final class and it is a direct child class of object.
+-> it implements serializable and clonnable interfaces.
+
+Constructors:->
+->
+Locale l = new Locale(String language);
+Locale l = new Locale(String language,String country);
+Example:->
+Locale l = new Locale("pa","IN");

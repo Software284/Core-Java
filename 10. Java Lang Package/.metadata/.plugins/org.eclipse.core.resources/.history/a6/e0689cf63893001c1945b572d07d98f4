@@ -1,0 +1,11 @@
+package com.lamichhane.autoboxing.autounboxing;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

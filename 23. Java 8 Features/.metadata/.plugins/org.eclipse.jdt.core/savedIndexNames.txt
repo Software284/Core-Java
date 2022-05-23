@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\Programmer\OneDrive\Desktop\Desktop FIle\Core Java\23. Java 8 Features\.metadata\.plugins\org.eclipse.jdt.core
+3841323222.index
+939066768.index
+3542644503.index
+877343181.index
+656580845.index
+3774329986.index
+2330634786.index

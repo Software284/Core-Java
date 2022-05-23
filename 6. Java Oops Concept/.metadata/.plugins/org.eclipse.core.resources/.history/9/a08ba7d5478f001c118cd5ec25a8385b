@@ -1,0 +1,543 @@
+Object Type Casting:-> we can use parent reference to hold child object.
+Example:->
+Object o = new String("mahesh")
+we can use interface reference to hold implemented class object
+Example:-> 
+Runnable r = new Thread()
+
+Syntax:
+A  b = (C)d;
+where 
+A = class/interface name
+b = reference variable name
+C = class/interface name
+d = reference variable name
+
+Mantra 1(compile time checking one):-> the type of 'd' and 'C' must have some relation either child to
+parent or parent to child or same type otherwise we will get compile time error saying inconvertible 
+types found 'd' type required 'C'.
+
+Example 1:-
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example 2:-> 
+String s = new String("mahesh");
+StringBuffer sb = (StrinBuffer)s;
+this statement is invalid.throws CE inconvertible types because there is no relationship between
+StringBuffer and String.
+
+Mantra 2(compile time checking 2):->'C' must be either same or derived type of 'A' otherwise we will
+get compile time error saying incompatible types found 'C' required 'A'.
+
+Example1:->
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example2:->
+Object o = new String("mahesh")
+StringBuffer bf = (String)o
+this statement is prefectly invalid.it throws incompatible type exception.
+
+
+Mantra3(Runtime Checking):-> runtime object type of 'd' must be either same or derived type of 'C' otherwise 
+we will get runitme exception saying class cast exception.
+Example1:->
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+we will get runtime exception saying class cast exception java.lang.string can not be cast to string buffer.
+
+Object o = new String("durga")
+Object o1 = String(o)
+prefectly valid statements.
+
+
+
+Type Casting:-> strictly speaking throught type casting we are not creating any new object.for the existing
+object we are providing another type of reference variable that is we are performing type casting not object
+casting.
+Example1:->
+String s = new String("maehsh");
+Object o = (Object)s;
+
+Example2:->
+Integer I = new Integer(10);
+Number n = Number(I);
+Object o = (Object)n;
+sysout(I==n) //true
+sysout(n==o) //true
+
+we can also write in single line as
+
+
+
+Static control flow:-> 
+
+class Base {
+ static int i=10;
+ static 
+ 	{
+ 	 	m1();
+ 	 	sosout("First static block");
+ 	 }
+ public static void main(String args[]){
+ 	m1();
+ 	sosout("main method");
+ }
+ 
+ public static void m1()
+ {
+ 	sosout(j);
+ }
+ static{
+ 	sosout("second static block");
+ }
+ static int j = 20;
+ }
+ 
+ 
+ 
+ Output:-> 
+ 0
+ first static block
+ second static block
+ 20
+ main method
+ 
+ whenever we are executing a java class the following sequence of steps will be executed as the part of static control
+ flow:-> 
+ Rule:->
+ i. Identification of static members from top to bottom
+ ii. execution of static variable assignment and static blocks from
+ top to bottom.
+ iii. exection of main method
+ 
+ inside static block if we are trying to read a variable that read operation is called direct read.
+ if we are calling a method and within that method if we are trying to read a variable that read operation is 
+ called indirect read.
+ 
+ 
+Static Block:-> static block will be executed at the time of class loading.hence at the time of class loading if we
+want to perform any activity we have to define that inside static block.
+Example1:-> at the time of java class loading the corresponding native libraries should be loaded hence we have to
+define this activity inside static block.
+class Test {
+  static{
+    System.loadLibrary("native library path");
+    }
+}
+
+Example2:-> after loading every database driver class we have to register driver class with the driver manager but
+inside database driver class there is a static block to perform this activity and we are not responsible to register
+explictly.
+class DBDriver{
+ static{
+   register this driver with driver manager
+   }
+}
+
+Note:-> within a class we can declare any no of static blocks but all these static blocks will be executed from
+top to bottom.
+
+Without writing main method is it possible to print some information to the console?
+-> yes by using static block.
+class Test {
+	static {
+		sysout("hello i can print");
+		System.exit(0);
+		}
+	}
+
+Without writing main method and static block is it possible to print some statement to the console?
+-> yes there are multiple ways
+i. 
+class Test {
+ static int x = m1();
+ public static int m1(){
+ 	sysout("Hello i can print");
+ 	System.exit(0);
+ 	return 10;
+ 	}
+ }
+
+ii. 
+class Test {
+	static Test t = new Test();
+	{
+		sysout("Hello i can print");
+		System.exit(0);
+	}
+}
+
+
+iii. 
+class Test {
+	static Test t = new Test();
+	Test(){
+		sysout("Hello i can print");
+		System.exit(0);
+		}
+	}
+	
+
+Note:-> from 1.7 version onwards main method is mandatory to start a program execution hence from 1.7 version 
+onwards without writing main method it is impossible to print some statement to the console.
+
+Static control flow in parent to child relationship:-> 
+class Base {
+	static int i = 10;
+	static {
+		m1();
+		sysout("Base Static Block");
+		}
+	p s v main(String args[]){
+		m1();
+		sysout("Base main");
+	   }
+	p s v m1(){
+		sysout(j);
+		}
+	static int j=20;
+}
+
+class Derived extends Base {
+	static int x = 100;
+	static {
+		m2();
+		sysout("Derived Filter static block");
+		}
+	p s v main(String args){
+		m2();
+		sysout("Derived main");
+	}
+	
+	p s v m2(){
+		sysout(y);
+	}
+	static {
+		sysout("Derived second static block");
+	}
+	static int y = 200;
+	}
+	
+	
+Rule:->
+i. Identification of static members from parent to child.
+ii. execution of static variable assignments and static blocks from
+parent to child.
+iii. execution of only child class main method.
+
+
+Output:-> while executing derived class
+0
+Base static block
+0 
+Derived First static block
+Derived Second static block
+200
+Derived main
+
+Output:-> while executing parent class
+0
+Base static block
+20
+Base main method
+
+
+
+Instance Control Flow:-> whenever we are executing a java class first static control flow will be executed,in the instance
+control flow if we are creating an object the following sequence of events will be executed as a part of instance control
+flow.
+
+ Rule
+i. identification of instance member from top to bottom
+ii. execution of instance variable assignment and instance blocks from top to bottom
+iii. execution of constructor
+
+
+class Test {
+	int i = 10;
+	{
+		m1();
+		sysout("First Instance Block");
+	}
+	Test()
+	{
+		sysout("constructor");
+	}
+	p s v main(String args[]){
+		Test t = new Test();
+		sysout("main");
+		// Test t1 = new Test(); also check this statement
+	}
+	public void m1()
+	{
+		sysout(j);
+	}
+	{
+		sysout("Second instance block");
+	}
+	int j = 20;
+}
+
+Output:->
+0
+First instance block 
+Second instance block
+constructor
+main
+
+Note:-> we need to create a object of the class to activate instance control flow.instance control will be executed for
+every object created separately while in static control flow static blocks executed only once no matter how many object
+created of the class.
+object creation is the most costly operation if there is no specific requirement then it is not recomended to create
+object.
+
+Instance control in parent to child relationship:->
+
+class Parent {
+	int i = 10;
+	{
+		m1();
+		sysout("Parent Instance Block");
+	}
+	Test()
+	{
+		sysout("Parent constructor");
+	}
+	p s v main(String args[]){
+		Parent t = new Parent();
+		sysout("Parent main");
+		
+	}
+	public void m1()
+	{
+		sysout(j);
+	}
+	int j = 20;
+}
+
+
+class Child extends Parent {
+	int x = 100;
+	{
+		m2();
+		sysout("Child First Instance Block");
+	}
+	Test()
+	{
+		sysout("Child constructor");
+	}
+	p s v main(String args[]){
+		Parent t = new Parent();
+		sysout("Child main");
+		
+	}
+	public void m2()
+	{
+		sysout(y);
+	}
+	{
+		sysout("Child second instance block");
+	}
+	int y = 200;
+}
+
+Lets we assume Child.java we executed then output will be:->
+Rule:->
+i.Identification of instance members from parent to child
+ii. execution of instance variable assignments and instance blocks only in parent class.
+iii. execution of parent constructor
+iv. execution of instance variable assignment and instance blocks in child class.
+v. execution of child constructor
+
+Output:->
+0
+Parent instance block
+Parent constructor
+0
+Child first instance block
+Child second instance block
+Child constructor
+Child main
+
+
+
+Constructors:-> once we creates an object compulsary we should perform initialization then only the object is in a position
+to respond properly.whenever we are creating an object some piece of the code will be executed automatically to perform
+initialization of the object this piece of the code is nothing but constructor.hence the main purpose of the constructor
+is to perform initialization of an object.
+
+Note:-> the main purpose of constuctor is to perform initialization of an object but not to create object.
+
+difference between constructor and instance block:->
+-> the main purpose of constructor is to perform inilization of an object but other than initialization if we want to 
+perform any activity for every object creation then we should go for instance block.like updating one entry in the 
+database for every object creation or increamenting count value for every object creation etc.
+-> both constructor and instance block have their own different purposes and replacing one concept with another concept
+may not work always.
+-> both constructor and instance block will be executed for every object creation but instance block followed by constructor
+
+Rule for constructor:->
+-> name of the class and name of the constructor must be matched.
+-> return type concept not applicable for constructor even void also.
+-> by mistake if we are trying to declare return type for the constructor then we won't get any compile time error
+because compiler treats it as a method hence it is legal(but stupid) to have a method whoose name is exactly same as
+class name.
+-> the only applicable modifiers for constructor are public,private,default,protected(static not allowed).if we are 
+trying to use any other modifiers we will get compile time error.
+
+Default Constructor:->
+-> compiler is responsible to generate default constructor(but not JVM).
+-> if we are not writing any constructor then only compiler will generate default constructor that is if we are writing
+at least one constructor then compiler won't generate default constructor hence every class in java can contain constructor
+it may be default constructor generated by compiler or customizer constructor explictly provided by programmer but not 
+both simultaneously.
+
+Prototype of default constructor:->
+-> it is always no-arg constructor.
+-> the access modifiers of default constructor is exactly same as access modifiers of class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

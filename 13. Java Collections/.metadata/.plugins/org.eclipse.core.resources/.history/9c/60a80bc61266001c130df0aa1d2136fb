@@ -1,0 +1,88 @@
+Set Interface:-> set is child interface of collection. if we want to represent a group of individual objects as a single
+entity where duplicates are not alloweded and insertion order not preserved.set interface doesn't contain any new methods
+and we have to use only collection interface methods.implementation class of set interface are
+
+i.HashSet:-
+-> the underlying data structure of HashSet is hash table.
+-> Duplicate objects are not allowed.
+-> insertion order not preserved.
+-> it is based on hash code of objects.
+-> null data can be stored but only one time
+-> heterogenious objects are allowed
+-> it implements Serializable and Clonnable but not RandomAccess Interface
+-> HashSet is the best choice if our frequent operations is search operations.
+
+Note: in hashset duplicates are not allowed if we are trying to insert duplicates then we won't get any compile and 
+runtime errors and add method simply returns false.
+
+Constructors:-
+HashSet set = new HashSet(); it creates empty hashset objects with default initial capacity 16.and default fill ratio 0.75.
+HashSet h = new HashSet(int initial_capacity); it is empty hashset object with the specified initial capacity and default
+fill ration 0.75.
+HashSet h = new HashSet(int initial_capacity,float fill_ratio);
+HashSet h = new HashSet(Collection c); creates an equvalent hashset for the given collection.
+
+
+Fill Ration/Load Factor:->  After filling how much ratio a new hashset object will be created,this ratio is called fill
+ratio or load factor.for example fill ratio 0.75 means after filling 75% ratio a new hashset object will be created 
+automatically.
+
+ii. LinkedHashSet:-> 
+->it is the child class of HashSet. it is exactly same as HashSet(including constructors and methods) except following 
+differences
+-> the underlying data structure is hashtable vs underlying data structure is a combination of linkedlist and hashtable.
+-> insertion order not preserved vs insertion order preserved.
+-> introduce in 1.2 version vs introduce in 1.4 version.
+
+Note: In general we can use linked hashset to develop cache based applications where duplicates are not allowed and 
+insertion order preserved.
+
+SortedSet Interface:- SortedSet is child interface of set. if we want to represent a group of individual objects according to
+some sorting order without duplicates then we should go for SortedSet.
+
+Methods:-
+i.Object first() returs first element of sorted set
+ii.Object last() returns last elemet of sorted set
+iii.SortedSet headSet(Object obj) returns sorted set whoose element are less than obj
+iv.SortedSet tailSet(Object obj) returns sorted set whoose element are greater than obj
+v.SortedSet subSet(Object obj1,Object obj2) returns sorted set whoose element are >= obj1 and <=obj2
+vi.Comparator comparator() returns Comparator object that describes underlying sorting technique.if we are using default
+natural sorting order then we will get null.
+
+Note: the default natural sorting order for numbers ascending order and for string objects alphabetical order.
+
+
+TreeSet Class:-> 
+-> the underlying data structure is balanced tree.
+-> duplicates objects are not allowed.
+-> insertion order not preserved.
+-> hetrogenious objects are not allowed otherwise we will get runtime exception.
+-> null insertion posiible only once.
+-> treeset implements serializable and clonnable interface but not random access.
+-> all objects will be inserted based on some sorting order.it may be default natural sorting order or customized sorting
+order.
+
+constructors:-
+TreeSet t = new TreeSet() :-> creates an empty treeset object where the elements will be inserted according to default
+natural sorting order.
+TreeSet t = new TreeSet(Comparator c) :-> creates an empty treeset object where the elements will be inserted according
+to customized sorting order specified by comparator objects.
+TreeSet t = new TreeSet(Collection c)
+TreeSet t = new TreeSet(SortedSet c)
+
+Note:-> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

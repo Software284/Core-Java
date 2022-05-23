@@ -1,0 +1,9 @@
+Generic classses:-> 
+-> until 1.4 version a non generic version of array list class declared as follows:-
+Class ArrayList{
+	add(Object o)
+	Object get(int index);
+}
+-> the argument to add method is object and hence we can add any type of object to the arraylist.due to this we are
+missing type safety.
+-> the return type of get method is Object hence at the time of retrieval we have to perform type casting.

@@ -1,0 +1,331 @@
+Wrapper Classes:-> the main objectives of wrapper classes are 
+i. to wrap primitive into object form so that we can handle primitives also just like objects
+ii. to define several utility methods which are required for the primitives.
+
+Constructors:->
+i. Integer i = new Integer(10);
+ii. Integer i = new Integer("10");
+
+-> almost all wrapper classes contains two constructor, one can take corresponding primitive as
+argument and the other can take string as argument.
+-> if the string argument no representing the a number then we will get runtime exception saying
+number format exception.
+Integer i = new Integer("ten");
+
+Wrapper Class              Corresponding constructor arguments
+Byte            ---->      byte or string
+Short           ---->      short or string
+Integer         ---->      int or string
+Long            ---->      long or string
+Float           ---->      float or string or double
+Double          ---->      double or string
+Character       ---->      char
+Boolean         ---->      boolean or string
+
+Note:
+-> float class contains three constructors with float,double and string arguments.
+Float f = new Float(10.5f);
+Float f = new Float("10.5f");
+Float f = new Float(10.5);
+Float f = new Float("10.5);
+all are valid
+
+-> character class contains only one constructor which can take char argument.
+Character ch = new Character('a); //valid
+Character ch = new Character("a"); //invalid
+
+-> boolean class contains two constructors one can take primitive as argument and other can take string
+argument.if we pass boolean primitive as argument  the only allowed values are true or false where case
+is important and content is also important.
+
+Boolean b = new Boolean(true); //true
+Boolean b = new Boolean(false); //true
+Boolean b = new Boolean("durga"); //invalid
+
+-> if we are passing string type as argument then case and content both are not important.if the content
+is case in-sensitive string of true then it is treated as true otherwise it is treated as false.
+Boolean b = new Boolean("true") //true
+Boolean b = new Boolean("True"); //true
+Boolean b = new Boolean("TRUE"); //true
+Boolean b = new Boolean("malaika"); //false
+Boolean b = new Boolean("mallika"); //false
+Boolean b = new Boolean("jareena"); //false
+
+Note:-> in all wrapper classes toString() method is overridden to return content directly.in all wrapper
+classes .equals method is overridden for content comparision.
+
+==========================================================================================================
+
+Utility methods in wrapper classes:-> 
+i. valueOf();
+ii. xxxValue();
+iii. parseXxx();
+iv. toString();
+
+valueOf() Method:-> we can use valueOf methods to create wrapper object for the given primitive or string.
+every wrapper except character class contains static valueOf method to create wrapper object for the 
+given string.
+
+public static Wrapper valueOf(String s);
+
+Example1:->
+Integer i = new Integer("10");
+Double d = Double.valueOf(10);
+Boolean b = Boolean.valueOf("durga");
+
+output:->
+10
+10.0
+false
+
+
+Example2:->Every integral type wrapper class(byte,short,integer,long) contains the following 
+value of methods to create wrapper object for the given specified radix string.he allowed range 
+of radix is 2-36.
+public static Wrapper valueOf(String s,int radix);
+Integer i1 = Integer.valueOf("1111",2);
+System.out.println(i1);
+Integer i2 = Integer.valueOf("1000",4);
+System.out.pritnln(i2);
+
+output:->
+15
+17
+
+Example3:-> every wrapper class including character class contains static valueOf method to create wrapper
+object for the given primitive.
+
+public static Wraper valueOf(primitive p);
+Integer x = Integer.valueOf(10);
+Double x1 = Double.valueOf(10.5);
+Character ch = Character.valueOf('a');
+Boolean bx = Boolean.valueOf(true); 
+
+==========================================================================================================
+
+xxxValue() Method:->
+-> we can use xxxValue() methods to get primitive for the given wrapper object.
+-> every number type wrapper class(byte,short,integer,long,float,double) contains the following six methods
+to get primitive for the given wrapper object.
+public byte byteValue()
+public short shortValue();
+public int intValue();
+public long longValue();
+public float floatValue();
+public double doubleValue();
+
+Example:->
+Integer i = new Integer(130);
+System.out.println(i.byteValue());
+System.out.println(i.shortValue());
+System.out.println(i.intValue());
+System.out.println(i.longValue());
+System.out.println(i.floatValue());
+System.out.println(i.doubleValue());
+
+output:->
+-126
+130
+130
+130
+130.0
+130.0
+
+
+-> character class contains charValue method to get char primitive for the given character object.
+public char charValue();
+
+Example:->
+Character c  = new Character('A');
+System.out.println(c.charValue());
+
+-> boolean class contains booleanValue method to get boolean primitive for the given Boolean object.
+public boolean booleanValue();
+Example:->
+Boolean b = new Boolean("durga");
+System.out.println(b.booleanValue());
+
+Note:-> in total 38 = 6*6 + 1 + 1 xxValue methods are possible.
+===============================================================================================================
+
+parseXxx() Method:-> we can use parseXxx methods to convert string to primitive.
+
+Example1:-> every wrapper class except  character class contains the following parseXxxx method to find 
+primitive for the given string object.
+public static primitive parseXxx(String x);
+
+int i = Integer.parseInt("10");
+double d = Double.parseDouble("10.5");
+boolean b = Boolean.parseBoolean("true");
+
+output:->
+10
+10.5
+true
+
+
+Example2:->Every integral type wrapper class(byte,short,int,long) contains the following parseXxx method to
+convert specified radix string to primitive.
+public static primitive parseXxx(String s,int radix);
+the allowed range of radix is 2-36.
+int i5 = Integer.parseInt("1111",2);
+System.out.println(i5);
+Output:->
+15
+
+============================================================================================================
+
+toString Method:-> we can use toString method to convert wrapper object or primitive to string.
+
+Example1:-> every wrapper class contains the following toString() method to convert wrapper object to string
+type.
+public String toString();
+Integer i = new Integer(10);
+String s = i.toString();
+System.out.pritnln(s);
+
+-> it is the overriding version of object class toString method.
+-> whenever we are trying to print wrapper object reference internally this toString() method will be
+called.
+
+Example2:->
+-> every wrapper class including character class contains the following static toString method to convert 
+primitive to string.
+
+String s = Integer.toString(10);
+
+Example3:-> integer and long classes contains the following toString method to convert primitive to specified
+radix string.
+public static String toString(primitive p,int radix);
+
+String s = Integer.toString(15,2);
+System.out.pritnln(s);
+
+
+output:->
+20
+true
+1111
+
+
+==============================================================================================================
+
+toXxxString() Method:-> integer and long classes contains the following toXxxString methods.
+String s = Integer.toBinaryString(15);
+System.out.println(s);
+
+String s2 = Integer.toOctalString(15);
+System.out.pritnln(s2);
+
+String zo = Integer.toHexString(15);
+System.out.println(zo);
+
+output:->
+1111
+17
+f
+
+
+===========================================================================================================
+Note:-> see the screenshot for the reference for whole flow control.three are three entities in this flow
+i.Wrapper class
+ii. String
+iii. Primitive data
+
+Wrapper Class vs Primitive data:->
+Wrapper class -> Primitive = object.xxxValue();
+Primitive -> Wrapper Class = Wrapper.valueOf();
+
+Wrapper class vs String :->
+Wrapeer class -> String = obj.toString();
+String - Wrapper class = Wrapper.valueOf();
+
+
+String vs Primitive:->
+String -> primitive = Wrapper.parseXxx();
+primitive -> String = obj.toString();
+
+Note:-> Byte,Short,Integer,Long,Float,Double are child class of Number and then Number is the 
+child class of Object.while Boolean and Character are direct child class of the Object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

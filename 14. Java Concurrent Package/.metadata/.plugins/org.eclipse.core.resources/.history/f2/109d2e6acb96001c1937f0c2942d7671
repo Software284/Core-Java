@@ -1,0 +1,7 @@
+ CopyOnWriteArrayList(C):->
+ Collection(I)
+ List(I)
+ CopyOnWriteArrayList(C)
+ 
+ -> it is a thread safe version of ArrayList as the name indicates CopyOnWriteArrayList creates a clonned copy of underlying ArrayList
+ for every update operation at certain point both will synchronize automatically.Which is taking care by JVM internally.

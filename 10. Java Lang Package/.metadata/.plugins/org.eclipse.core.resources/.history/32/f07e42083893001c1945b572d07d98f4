@@ -1,0 +1,15 @@
+Autoboxing:-> automatic conversion of primitive to wrapper object by compiler is called autoboxing.
+Example:
+Integer i = 10;
+compiler converts int to integer automatically by autoboxing.
+after compilation athe aboce line will become 
+Integer i = Integer.valueOf(10);
+that is internally autoboxing concept is implemented by using valueOf method.
+
+
+Autounboxing:-> automatic conversion of wrapper object to primitive by compiler is called autounboxing.
+Integer I = new Integer(10):
+int i = I;
+compiler converts Integer to int by autounboxing.after compilation the above line will become 
+int i = I.intValue();
+that is 

@@ -1,0 +1,5 @@
+StringBuffer:-> 
+-> if the content is fixed and won't change frequently then it is recommended to go for String.if the content
+is not fixed and keep on changing then it is not recommended to use string because for every change
+a new object will be created which affects performance of the system.
+to handle this requirement we should go for StringBuffer

@@ -1,0 +1,8 @@
+-> a constant value which can be assigned to the variable is called a literal.
+int x = 10;
+int = datatype/keyword
+x = variable/identifier
+10 = constant value/literal
+
+Types of literal:->
+-> 

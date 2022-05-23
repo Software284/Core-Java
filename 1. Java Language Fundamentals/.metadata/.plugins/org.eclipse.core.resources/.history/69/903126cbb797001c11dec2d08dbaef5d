@@ -1,0 +1,27 @@
+-> A name in java program is called identifier which can be used for identification purpose.it can be
+method name,variable name,class name,or label name.
+public class Test {
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+
+	}
+
+}
+-> there are 5 identifiers in this program named:Test,main,String,args,x.
+
+Rules for defining java identifiers:->
+-> the only allowed characters in java identifiers are 
+a-z
+A-Z
+0-9
+$
+_
+if we are using any other character we will get compile time error.
+Example:->
+total_number -> valid
+total#symbol -> invalid
+
+
+-> 

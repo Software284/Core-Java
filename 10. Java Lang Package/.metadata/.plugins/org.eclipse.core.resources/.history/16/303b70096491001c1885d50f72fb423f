@@ -1,0 +1,13 @@
+package com.lamichhane.hashCode.method;
+
+public class RelationBetweenHashCodeToStringMethod {
+	
+	int i;
+	
+
+	public static void main(String[] args) {
+		i
+
+	}
+
+}

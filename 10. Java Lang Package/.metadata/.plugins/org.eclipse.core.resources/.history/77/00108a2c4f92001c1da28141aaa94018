@@ -1,0 +1,73 @@
+Constructor of String class:->
+i.String s = new String(); :-> it created empty String object.
+ii.String s = new String(String literal); :-> it creates String object and the heap for given string literal.
+iii.String s = new String(StringBuffer sb); :-> it creates an equvalent String object for the given string 
+buffer.
+iv.String s = new String(char[] ch); :-> it creates an equivalent String object for the given char array.
+v.String s = new String(byte[] b); :-> it creates an equivalent String object for the given byte array.
+
+Improtant Methods Of String Class:-> 
+i. public char charAt(int index);
+ii. public String concat(String s);
+iii. public boolean equals(Object o);
+iv. public boolean equalIgnoreCase(String s);
+v. public String substring(int begin,int end);
+vi.public String substring(int begin);
+vii. public int length();
+viii. public String replace(char oldChar,char newChar);
+ix. public String toUpperCase();
+x. public String toLowerCase();
+xi. public String trim();
+xii. public int indexOf(char ch);
+
+Note:-> because of runtime operation like above method if there is a change in a content then with those 
+changes a new object will be created on the heap.if there is no change in the content then existing object
+will be re-used and new object won't be created.whether the object present in heap or scp the rule is same.
+
+it doesn't matter the object with same content is available to heap or not if content of the object is 
+changed then new object will be created.
+
+Example:
+String s1 = new String("durga");
+String s2 = s1.toUpperCase();
+String s3 = s1.toLowerCase();
+System.out.pritnln(s1==s2);
+System.out.pritnln(s1==s3);
+
+output:->
+false 
+true
+
+
+How to create our own immutable class:-> once a we creates an object we can't perform any changes in that 
+object.if we are trying to perform any change and if there is a change in the content then with changes 
+a new object will be created.
+if there is no change in the content then existing object will be re-used.this behaviour is nothing but
+immutability.
+String s1 = new String("durga");
+String s2 = s1.toUpperCase();
+String s3 = s1.toLowerCase();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

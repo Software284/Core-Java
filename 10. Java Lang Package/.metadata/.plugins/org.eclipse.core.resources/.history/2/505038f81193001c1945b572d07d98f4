@@ -1,0 +1,13 @@
+package com.lamichhane.wrapper.utility_toStirng.method;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Integer i = new Integer(10);
+		String s = i.toString();
+		System.out.println(s);
+
+	}
+
+}

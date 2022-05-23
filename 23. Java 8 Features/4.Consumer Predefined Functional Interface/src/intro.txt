@@ -1,0 +1,60 @@
+Consumer:-> Sometimes our requirment is we have to provide some input value, perform certain operation, but
+not required to return anything,then we should go for Consumer.i.e Consumer can be used to
+consume object and perform certain operation.
+Consumer Functional Interface contains one abstract method accept.
+1) interface Consumer<T>
+2) {
+3) public void accept(T t);
+4) } 
+
+Program sequence:->
+consumer program for simple sysout program
+consumer program for movie information display
+consumer program with predicate and function
+
+
+Consumer chaining:-> Just like Predicate Chaining and Function Chaining, Consumer Chaining is 
+also possible. For this Consumer Functional Interface contains default method andThen().
+c1.andThen(c2).andThen(c3).accept(s)
+First Consumer c1 will be applied followed by c2 and c3.
+
+Program Sequence:->
+consumer program chain example
+=============================================================================================
+Normal Functional Interfaces (Predicate, Function and Consumer) can accept only one input
+argument. But sometimes our programming requirement is to accept two input arguments, then
+we should go for two-argument functional interfaces. The following functional interfaces can take
+2 input arguments.
+1. BiPredicate
+2. BiFunction
+3. BiConsumer
+
+BiConsumer:-> Normal Consumer can take only one input argument and perform required operation and won't
+return any result.
+But sometimes our programming requirement to accept 2 input values and perform required
+operation and not required to return any result. Then we should go for BiConsumer.
+BiConsumer is exactly same as Consumer except that it will take 2 input arguments.
+1) interface BiConsumer<T,U>
+2) {
+3) public void accept(T t,U u);
+4) //default method andThen() 
+}
+
+
+Program sequence:
+bi consumer two add program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

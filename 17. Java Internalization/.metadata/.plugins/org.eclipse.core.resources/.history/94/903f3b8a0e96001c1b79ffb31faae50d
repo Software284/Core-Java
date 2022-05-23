@@ -1,0 +1,6 @@
+-> the process of desigining web applicaitons in such a way that which provides support for
+various countries and various languages and various currencies automatically without performing 
+any change in the application,is called internationlization(i18n).
+for example if the request is coming from india then the response should be in india people 
+unterstandable form and if the request is coming from US then the response should be in US people
+understandable form.

@@ -1,0 +1,11 @@
+package implementation.of.list.with.LinkedList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		LinkedList my_list = new LinkedList();
+
+	}
+
+}

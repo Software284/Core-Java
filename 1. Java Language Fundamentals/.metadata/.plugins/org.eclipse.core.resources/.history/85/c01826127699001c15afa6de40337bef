@@ -1,0 +1,3 @@
+Var-args Method(Variable Number of argument method):->
+-> until 1.4 version we can't declare a method with variable number of arguments.if there is a change in number of arguments compulsary we should go 
+for new method.

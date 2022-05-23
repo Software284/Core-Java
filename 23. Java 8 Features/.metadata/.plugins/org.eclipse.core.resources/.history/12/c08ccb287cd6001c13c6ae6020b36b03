@@ -1,0 +1,16 @@
+Function:-> 
+-> Functions are exactly same as predicates except that functions can return any type of result
+but function should (can) return only one value and that value can be any type as per our
+requirement.
+-> To implement functions oracle people introduced Function interface in 1.8version.
+-> Function interface present in Java.util.function package.
+-> Functional interface contains only one method i.e., apply()
+
+ 
+
+1) interface function(T,R) {
+2) public R apply(T t);
+3) } 
+
+Function program sequence:->
+Function functional interface program of length of string

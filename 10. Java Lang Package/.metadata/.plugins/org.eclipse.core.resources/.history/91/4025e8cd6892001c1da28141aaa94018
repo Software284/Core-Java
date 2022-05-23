@@ -1,0 +1,2 @@
+StringBuffer:-> 
+-> if the content is fixed and won't change frequently then it is recomended to go for String.

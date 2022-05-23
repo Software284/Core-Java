@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Test.java&apos; to &apos;3.List Interface in Collection Framework/src/introduction.to.list.program&apos;&#x0D;&#x0A;- Original project: &apos;3.List Interface in Collection Framework&apos;&#x0D;&#x0A;- Destination element: &apos;3.List Interface in Collection Framework/src/introduction.to.list.program&apos;&#x0D;&#x0A;- Original element: &apos;Test.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;introduction.to.list.program" element1="/src&lt;{Test.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1640431868679" units="1" version="1.0"/>
+</session>

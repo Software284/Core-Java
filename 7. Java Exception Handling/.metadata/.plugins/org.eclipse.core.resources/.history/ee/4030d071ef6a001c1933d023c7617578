@@ -1,0 +1,8 @@
+Throw:-> Sometimes we can create exception object explictly we can handover to the JVM manually for this
+we have to use throw keyword.hence the main objective of throw keyword is to handover our created 
+exception to the JVM manually.
+
+Note:-> best use of throw keyword is for user-defined exception or customized exception.
+
+Case1:-> throw e if e refers null then we will get null pointer exception.
+Case2:-> after throw statement we are not allowed to write any statement directly.

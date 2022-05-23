@@ -1,0 +1,83 @@
+Generics:->
+case-I:type safety
+-> the main objectives of generics are to provide type safety and to resolve type casting problems.
+-> arrays are type safe that is we can give the gurantee for the type of elements present inside array.
+for example:->if our programming requirement is to hold only string type of objects we can choose string
+array.by mistake if we are trying to add any other type of objects we will get compile time error.
+
+String[] s = new String[10000];
+s[0] = "durga";
+s[1] = "ravi";
+s[2] = new Integer(10); CE:incompatible type found in java.lang.String
+s[2] = "shiva";
+
+hence String array can contain only string type of objects.due to this we can give the gurantee for the type
+of elements present inside array.hence arrays are safe to use with the respect to type.i.e arrays are type
+safe.
+
+-> but collections are not type safe that is we can't give the gurantee for type of elements present inside
+collections.
+for example:-> if our programming requirement is to hold only string type of objects and if we choose arraylist
+by mistake if we are tying to add any other type of object we won't get any compile time error but the program
+may fail at runtime during accessing that object by type casting with string.
+
+ArrayList l = new ArrayList();
+l.add("durga");
+l.add("ravi");
+l.add(new Integer(10));
+
+String name1 = (String)l.get(0);
+String name2 = (String)l.get(1);
+String name3 = (String)l.get(2);
+RE:-> ClassCastException will be thrown here.
+hence we can't give the gurantee for the type of elements present inside collections due to this collection 
+are not safe to use with respect to type.i.e collections are not type safe.
+
+we need to use collections rather than string because arrays are fixed size while collection are dynamic
+is size.
+
+Case-II:-> Typecasting
+-> in the case of arrays at the time of retrival it is not required to perform typecasting because there is
+a gurantee for the type of elements present inside array.
+String[] s = new String[10000];
+s[0] = "durga";
+String name1= s[0];
+here type casting not required
+
+-> but in the case of collections at the time of retrival compulsary we should perform type casting because
+there is no gurantee for the type of elements present inside collections.
+ArrayList l = new ArrayList();
+l.add("durga");
+String name1 = l.get(0);
+// CE: incompatible type found: java.lang.Object required java.lang.String
+String name2 = (String)l.get(0);
+// type casting is mandatory
+
+-> hence type casting is a bigger headche in collections.
+
+Note:-> to overcome above problems of collections sun people introduced Generics concept 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

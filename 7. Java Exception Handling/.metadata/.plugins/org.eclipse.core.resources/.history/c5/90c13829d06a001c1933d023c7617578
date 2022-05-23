@@ -1,0 +1,24 @@
+package printing.exception.information;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Test {
+
+	public static void main(String[] args) throws IOException {
+		
+		FileReader reader = new FileReader("abc.txt");
+		BufferedReader buff = new BufferedReader(reader);
+		try
+		{
+		System.out.println(buff.readLine());
+		}
+		catch(FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}

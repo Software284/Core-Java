@@ -1,0 +1,5 @@
+package queue.implementation.by.priorityqueue;
+
+public class MyComparator2 {
+
+}

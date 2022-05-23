@@ -1,0 +1,441 @@
+-> a java program contain any no of classes but atmost one class declared as public if there is a public class
+then name of the program and name of the public class must be matched otherwise we will get compile time
+error.
+class A{
+}
+class B{
+}
+class C{
+}
+
+case-I:-> if there is no public class then we can use any name and there are no restrictions.
+A.java
+B.java
+C.java
+durga.java
+
+case-II:-> if class B is public then name of the program should be B.java otherwise we will get compile time
+error saying class B is public,should be declared in a file named B.java.
+class A{
+}
+//Durga.Java optional
+public class B{
+}
+//B.java compulsary
+class C{
+}
+//Hero.Java optional
+
+case-III:-> if class B and C declared as public and name of the program is B.java then we will get compile 
+time error saying class C is public,should b declared in a file named C.java.
+class A{
+}
+//A.java optional
+public class B{
+}
+//B.java compulsary
+public class C{
+}
+//C.java compulsary could not be B.java
+==============================================================================================================
+-> 
+class A {
+	public static void main(String[] args) {
+		System.out.println("A Class Main");
+	}
+}
+class B {
+	public static void main(String[] args) {
+		System.out.println("B class main");
+	}
+}
+class C {
+	public static void main(String[] args) {
+		System.out.println("C Class Main");
+	}
+}
+class D {
+}
+
+Javac Durga.java -> A.class,B.class,C.class,D.class
+
+Java A
+o/p:-> A Class Main
+
+Java B
+o/p:-> B Class Main
+
+Java C
+o/p:-> C Class Main
+
+Java D
+o/p:-> RE:NoSuchMethodError:main
+
+Java Durga
+o/p:-> RE:NoClassDefFoundError:Durga
+
+Conclusions:->
+-> Whenever we are compiling a java program for every class present in that program a separate .class file
+will be generated.
+-> we can compile a java program(java source file) but we can't run a java .class file.
+-> whenever we are executing a java class the corresponding class main method will be executed.if class
+doesn't contain method then we will get runtime exception saying NoSuchMethodError:main.
+-> if the corresponding .class file not available then we will get runtime exception saying no class def
+found error.
+-> it is not recommended to declare multiple classes in a single source file.it is highly recomended to
+declare only one class per source file and name of the program we have to keep same as class name.the main
+advantage of this approach is readability and maintainablity of the code will be improved.
+=============================================================================================================
+
+
+Import Statement:->
+class Test{
+	public static void main(String args[]){	
+		ArrayList l = new ArrayList();
+	}
+}
+CE:can not find symbol class ArrayList location class test.
+
+class Test{
+	public static void main(String args[]){	
+		java.util.ArrayList l = new java.util.ArrayList();
+	}
+}
+the problem with usage of fully qualified name everytime is it increases length of the code and reduces 
+readability.
+we can solve this problem by using import statement.
+whenever we are writing import statement it is not required to use fully qualified name everytime we can
+use short name directly.
+import java.util.ArrayList;
+class Test{
+	public static void main(String args[]){	
+		ArrayList l = new ArrayList();
+	}
+}
+
+case-I:-> there are two types of import statements 
+i. explict class import
+Example:
+import java.util.ArrayList;
+it is highly recommended to use explict class import because it improves readability of the code.best
+suitable for high tech city where readability is important 
+
+ii. implict class import
+Example:->
+import java.util.*;
+not recommended to use because it reduces readability of the code.best suitable for amir pet where 
+typing is important.
+
+case-II:-> Which of the following import statements are meaningful
+import java.util.ArrayList; //meaningful
+import java.util.ArrayList.*; // not meaningful
+import java.util.*; // meaningful
+import java.util; // not meaningful
+
+
+case-III:-> consider the following code 
+class MyObject extends java.rmi.UniCastRemoteObject{
+}
+the code compiles fine even though we are not writing import statement because we used fully qualified name.
+
+Note:-> whenever we are using fully qualified name it is not required to write import statement.similarly
+whenever we are writing import statement it is not required to use fully qualified name.
+
+
+case-IV:-> 
+
+import java.util.*;
+import java.sql.*;
+
+class Test{
+	public static void main(String[] args){
+		Date d = new Date();
+	}
+}
+CE:reference to date is a ambigious problem.
+
+Note:-> even in the case of List also we may get same ambiguity problem because it is available in both util
+and awt packages.
+
+case-V:-> while resolving class name compiler always give the precedence in the following order.
+i.Explict Class Import
+ii. Classes Present In Current Working Directory(Default Package)
+iii. Implicit Class Import
+
+import java.util.Date;
+import java.sql.*;
+
+class Test{
+	public static void main(String[] args){
+		Date d = new Date();
+		sysout(d.getClass().getname());
+	}
+}
+
+case-VI:->  whenever we are importing a java package all classes interfaces present in that package by 
+default available but not sub package classes.if we want to use sub-package class compulsary we should write 
+import statemetn until sub-package level.
+Example:
+java.util.regex.Pattern;
+
+to use pattern class in our program which import statement is requried?
+import java.*;
+import java.util.*;
+import java.util.regex.*; //valid
+no import statement requried
+
+
+case-VII:-> all classes and interfaces present in the following packages are by default available to every
+java program.hence we are not required to write import statement.
+i. java.lang package
+ii. default package(current working directory)
+
+
+case-VIII:-> import statements is totally compile time related concept.if more number of imports then more
+will be the compile time but there is no effect on execution time.
+
+case-IX:-> difference between C language #include and java language import statement is in the case of c
+language #include all input output header files will be loaded at the beginning only(at translation time)
+hence it is static include.but in the case of java import statement no .class file will be loaded at the
+beginning.whenever we are using a particular class then only corresponding .class file will be loaded.
+this is considered as dynamic include or load on demand or load on fly.
+
+Note:-> 
+Concept comes in 1.5 version:->
+i. for each loop
+ii. var-args method
+iii. autoboxing,autounboxing
+iv. generics
+v. co-varient return type 
+vi. Queue
+vii. Annotation
+viii. enum
+ix. static import concept //flop concept
+
+
+Static Import:->
+-> introduced in 1.5 version.
+-> according to sun usage of static import reduces length of the code and improves readability but according
+to world wide programming experts(like us) usage of static import creates confusion and reduces readability
+hence if there is no specific requirements then it is not recommended to use static import.
+
+Without static import:-> usually we can access static members by using class name but whenever we are writing 
+static import we can access static members directly without class name.
+Example:->
+class Test{
+		public static void main(String args[]){
+			sysout(Math.sqrt(4));
+			sysout(Math.max(10,20));
+			sysout(Math.random());
+		}
+}
+
+With static import:->
+import static java.lang.Math.sqrt;
+import static java.lang.Math.max;
+import static java.lang.Math.random;
+class Test{
+		public static void main(String args[]){
+			sysout(sqrt(4));
+			sysout(max(10,20));
+			sysout(random());
+		}
+}
+
+
+Explain about System.out.println():->
+class System{
+	static PrintStream out;
+}
+System.out.println();
+Here
+System is a class present in java.lang package
+out is a static variable present in system class of the type PrintStream
+println() is a method present in PrintStream class
+
+
+
+-> out is a static variable present in system class hence we can access by using class name system but whenever
+we are writing static import it is not required use class name and we can access directly.
+
+import static java.lang.System.out;
+class Test{
+	public static void main(String args[]){
+		out.println("Hello");
+		out.println("Hi");
+	}
+}
+
+-> 
+
+Example:
+import static java.lang.Integer.*;
+import static java.lang.Byte.*;
+public class Test{
+	public static void main(String args[]){
+		sysout(MAX_VALUE);
+	}
+}
+CE:reference to MAX_VALUE is ambigious.
+
+
+-> while resolving static members compiler will always consider the precedece in the following order.
+Rule:-> static import priority order
+current class static import
+explicit static import
+implicit static import
+
+import static java.lang.Integer.*;
+import static java.lang.Byte.*;
+public class Test{
+	static int MAX_VALUE = 999;
+	public static void main(String args[]){
+		sysout(MAX_VALUE);
+	}
+}
+
+output:
+999
+
+Normal Import:->
+i. Explicit Import 
+syntax:
+import packagename.classname;
+Example:
+import java.util.ArrayList
+ii.Implicit Import
+import packagename.*;
+Example:
+import java.util.*;
+
+
+Static Import:->
+i.Explicit static import 
+syntax:
+import static packagename.classname.staticmember;
+Example:
+import static java.lang.Math.sqrt;
+import static java.lang.System.out;
+ii. Implicit static import
+syntax
+import static packagename.classname.*;
+Example:
+import static java.lang.Math.*;
+import static java.lang.System.*;
+
+
+Which of the following import statemetn are valid?
+import java.lang.Math.*; //invalid
+import static java.lang.Math.*; //valid
+import java.lang.Math.sqrt; //invalid
+import static java.lang.Math.sqrt(); //invalid
+import java.lang.Math.sqrt.*; //invalid
+import static java.lang.Math.sqrt; //valid
+import java.lang; //valid
+import static java.lang; //invalid
+import java.lang.*; //valid
+import static java.lang.*; //invalid
+
+Note:->
+-> two packages contains a class or interface with the same name is very rare and hence ambiguity problem
+also very rare in normal import.
+but two classes and interfaces contains a variable or method with the same name is very common and hence
+ambiguity problem is also very common problem in static import.
+
+-> usage of static import reduces readability and creates confusion and hence if there is no specific 
+requirement then it is not recommended to use static import.
+
+Difference between Normal Import VS Static Import:->
+Normal Import:
+-> we can use normal import to import classes and interfaces of a particular package.
+-> whenever we are writing import it is not required to use fully qualified name and we can use short
+name directly.
+
+Static Import:
+-> we can use static import to import static members of a particular class or interface.
+-> whenever we are writing static import it is not required to use class name to access static members.and
+we can access directly.
+=============================================================================================================
+
+Packages:-> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+New Vs NewInstance:->
+-> we can use new operator to create an object if we know class name at the beginning.
+Example:
+Test t  = new Test();
+Student s = new Student();
+Customer c = new Customer();
+
+-> newInstance is a method present in Class class,we can use new instance method to create object if we don't know
+class name at the beginnning and it is available dynamically at runitme.
+
+Example:
+Object o = Class.forName(args[0]).newInstance();
+System.out.println("Object Created For="+o.getClass().getName());
+
+-> in real world newInstance operator is used in servert.when every request comes in servlet container automatically
+creates servlet object from web.xml file using newInstance method.
+
+-> in general case it is optional to generate constuctor.in general if we don't provide our own no arg constructor
+then compiler automatically add no arg constructor.if we provide our own constructor then our no-arg constructor will
+be invoked.but in new instance method compiler automatically add the constructor and creates an object.
+
+-> in the case of new operator based on our requirement we can invoke any constructor.
+Example
+Test t = new Test();
+Test t1 = new Test(10);
+Test t2 = new Test("durga");
+
+but new instance method interanlly calls no arg constructor.hence to use new instance method compulsary corresponding
+should contain no arg constructor.otherwise we will get runtime exception saying instantation exception.
+
+-> while using new operator at runtime if the corresponding .class file is not available then we will get runtime
+exception saying NoClassDefFoundError:Test.
+Example:
+Test t = new Test();
+at runtime if Test.class file is not available then we will get runtime exception saying noclassdeffound error.
+
+-> while using newinstance method at runtime if the corresponding .class file is not available then we will get
+runtime exception saying ClassNotFoundException.
+Example
+Object o = Class.forName(args[0]).newInstance();
+java Test Test123
+at runtime if Test123.class file is not available then we will get runtime exception saying ClassNotFoundException:Test
+123.
+
+new Vs newInstance:->
+-> it is an operator in java VS it is a method present in java.lang.Class.
+-> we can use new operator to create objects if we know class name at the beginnning
+
+
+
+
+
+
+
+
+
+
+
+

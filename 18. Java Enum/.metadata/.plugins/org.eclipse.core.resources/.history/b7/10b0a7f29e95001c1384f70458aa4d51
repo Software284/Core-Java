@@ -1,0 +1,8 @@
+-> in old languages enum we can't take only constants but in java enum in addition to constants we can take
+methods,constructor,normal variables etc.hence java enum is more powerful than old languages enum.
+
+-> even inside java enum we can declare main method and we can run enum class directly from command prompt.
+
+Note:->
+-> in addition to constants if we are taking any extraa member like a method then list of constants should
+be in the first line and should ends with semicolon.

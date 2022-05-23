@@ -1,0 +1,15 @@
+
+public class Test {
+	/*
+	 	Arrays: An array is a indexed collections of fixted numbers of homogenious data elements.
+	 	the main advantage of arrays is we can represent multiple values by using single variable
+	 	so that readibility of the code will be improved.
+	 	Limitations of arrays:- Arrays are fixed in size
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

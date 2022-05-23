@@ -1,0 +1,23 @@
+Exception:->An unexpected unwanted event that disturbs normal flow of the program is called exception.
+for example tired punchured exception,sleeping exception,file not found exception etc.
+it is highly recomended to handle exceptions and the main objective of excception handling is 
+graceful termination of the program.
+Excption handling doesn't mean repairing an exception.we have to provide alternative way to continue
+rest of the program normally is the concept of exception handling.for exaple our programming 
+requireent is to read data from remote file locating at london at runtime if london file is not
+available our program should not be terminated abnormally.we have to provide some local file to 
+continue rest of the program normally.this way of defining alternative is nothing but exception
+handling.
+
+Runtime Stack Mechanism:-> For every thread JVM will create a runtime stack.each and every method
+call performed by that thread will be stored in the corresponding stack.each entry in the stack is
+called stack frame or activation record.after completing every method call the corresponding entry
+from the stack will be removed.after completing all method call the stack will become empty and that
+empty stack will be destroyed by JVM just before terminating the thread.
+
+Default Exception Handling:-> Inside a method if any exception occurs,the method in which it is rised
+is responsible to create exception object by including the following information
+-> name of exception
+-> description of excepiton
+-> location at which exception occurs(stack trace)
+

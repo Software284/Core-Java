@@ -1,0 +1,21 @@
+package Collections.searching.method.demo;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ArrayList I = new ArrayList();
+		I.add("Z");
+		I.add("A");
+		I.add("M");
+		I.add("K");
+		I.add("a");
+		
+		System.out.println(I);
+		Collections.sort(I);
+
+	}
+
+}

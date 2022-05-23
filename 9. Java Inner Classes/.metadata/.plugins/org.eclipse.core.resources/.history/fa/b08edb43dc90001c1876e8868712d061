@@ -1,0 +1,57 @@
+Static Nested Inner Classes:-> sometimes we can declare inner class with static modifier such type of inner
+classes are called static nested classes.
+in the case of normal or regular inner class without existing outer class object there is no chance of 
+existing inner class object that is inner class object is strongly associated with outer class object.
+but in the case of static nested classes without existing outer class object there may be a chance of 
+existing nested class object hence static nested class object is not strongly associated with outer class
+object.
+
+if we want to create nested class object from outside of outer class then we can create as follows:->
+Outer.Nested nested = new Outer.Nested();
+
+in normal or regular inner classes we can't declare any static members.but in static nested classes we can
+declare static members including main method hence we can invoke static nested class directly from command
+prompt.
+Example:->
+class Test {
+	static class Nested{
+		public static void main(String args[]){
+			System.out.println("Nested class main method invoked");
+		}
+	}
+	
+	public static void main(String args[]){
+		System.out.println("Outer class main method invoked");
+	}
+}
+
+
+
+from normal or regular inner classes we can access both static and non-static members of outer class 
+directly but from static nested classes we can access static members of outer class directly and we can't
+access non-static members.
+
+
+
+
+Various Combination of Nested classes and interfaces:->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

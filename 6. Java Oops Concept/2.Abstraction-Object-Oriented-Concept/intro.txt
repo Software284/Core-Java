@@ -1,0 +1,19 @@
+Abstraction:-> Hiding internal implementation and just highlight the set of service we are offering, is the
+concept of abstraction.for Example Bank provide following services in the atm
+-> Withdraw
+-> Deposit 
+-> Check Balance
+these services gave the services without highlighting internal implementation.
+The main advantage of abstraction are:->
+i. we can achive security because we are not highlighting our internal implementation.
+ii. without affecting outside person we can able to perform any type of changes in our internal system and
+hence enhancement will become easy.
+iii. it improves maintainablility of the applications.
+iv. it improves easyness to use our system.
+
+by using interfaces and abstract classes we can implement abstraction.
+
+
+
+ 
+ 

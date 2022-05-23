@@ -1,0 +1,52 @@
+package Function_functional.interface_program.of.incremeanting.salary.of.employee;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Test {
+	
+	public static void populate(List<Employee> list) {
+		list.add(new Employee("Mahesh",10000));
+		list.add(new Employee("Pits",15000));
+		list.add(new Employee("Sagar",20000));
+		list.add(new Employee("Kamal",25000));
+		list.add(new Employee("Nabin",30000));
+	}
+
+	public static void main(String[] args) {
+		
+		List<Employee> mylist = new ArrayList<>();
+		populate(mylist);
+		
+		Predicate<Double> mypredicate = val -> val < 20000;
+		
+		Function<Employee,Double> f1 = e -> {
+			double actual_salary = e.salary;
+			if(mypredicate.) {
+				actual_salary += 3000;
+			}
+			return actual_salary;
+		};
+		
+		List<Employee> newList = new ArrayList<>();
+		
+		for(Employee e : mylist) {
+			
+			if(mypredicate.test(e.salary))
+			{
+				
+			}
+			
+		}
+		
+		System.out.println("Before Salary Increament");
+		System.out.println(mylist);
+		
+		System.out.println("After Salary Increament");
+		System.out.println(newList);
+		
+
+	}
+
+}

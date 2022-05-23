@@ -1,0 +1,15 @@
+package com.lamichhane.regular.inner.classes;
+
+public class Outer {
+	
+	class Inner {
+		
+	}
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

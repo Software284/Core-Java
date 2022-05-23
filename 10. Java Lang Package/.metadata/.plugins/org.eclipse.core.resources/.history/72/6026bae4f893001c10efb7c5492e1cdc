@@ -1,0 +1,5 @@
+package com.lamichhane.shallow.cloning.example;
+
+public class Dog {
+
+}

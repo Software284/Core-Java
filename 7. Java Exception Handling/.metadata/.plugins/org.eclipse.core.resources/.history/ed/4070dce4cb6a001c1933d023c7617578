@@ -1,0 +1,10 @@
+package runtime.exception.handling.with.try_catch;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

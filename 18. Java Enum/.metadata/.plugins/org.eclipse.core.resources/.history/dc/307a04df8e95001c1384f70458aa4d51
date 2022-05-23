@@ -1,0 +1,5 @@
+package com.lamichhane.simple.enums.example;
+
+public enum Beer {
+
+}

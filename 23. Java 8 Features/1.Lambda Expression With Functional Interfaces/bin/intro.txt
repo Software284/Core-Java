@@ -1,0 +1,421 @@
+Advantage of java8:->
+-> to simplify programming
+-> to utilize functional programming benefits in java
+-> to enable parallel programming in java.
+
+
+Advantage of lamda expression:->
+-> To enable functional programming in java
+-> write more readable,maintainable and consise code
+-> To use API very easily and effectively.
+-> to enable parallel processing
+
+What is lambda expression:-> it is anonymous function(not having name,not having modifiers,not having any 
+return type).
+
+syntax:->
+() -> {System.out.println("hello world");}
+(int a,int b) -> {System.out.println(a+b);}
+(String s) -> {return s.length();}
+
+
+
+Characteristics of lambda expression:->
+-> A lambda expression can take any no of parameters
+Eg:
+() -> sysout("hello");
+(s) -> s.length();
+(a,b) -> sysout(a+b);
+
+-> if multiple parameters present then these parameters should be separated with ,
+Eg:
+(a,b) -> sysout(a+b);
+
+-> if only one parameter available then parenthesis are optional
+(s) -> s.length() => s -> s.length();
+
+-> usually we can specify the type of parameter if compiler expect the type based on context, then we 
+can remove type[Type Inference]
+Eg:
+(int a , int b) -> sysout(a+b); => (a,b) -> sysout(a+b);
+
+-> simillar to method body, lambda expression body can contain any no of statements. if multiple statements
+are there then we should enclose within curly braces
+Eg:
+() -> {
+  stmt1;
+  stmt2;
+  stmt3;
+  }
+
+if body contains only one statement then curly braces are optional.
+Eg:
+() -> sysout("hello");
+
+-> if lambda expression return something then we can remove return keyword.
+s -> s.length();
+
+
+Functional Interface:-> if interface contain only one abstract method then that interface is 
+called functional interface.functional interface can contain any no of default and static methods.
+restriction is applicable only for abstract method.
+
+Eg: Runnable:-> contains only one method that is run.
+Callable :-> contains only one method that is call.
+ActionListener: -> contains only one method that is actionPerformed.
+Comparable:-> contains only one method that is compareTo.
+
+interface Interf {
+	public void m1();
+	default void m2(){};
+	public static void m3(){};
+}
+it is a functional interface
+
+interface Interf{
+	public void m1();
+	public void m2();
+}
+it is a normal interface.
+
+Note:-> we need functional interfaces to call lambda expression.we use @FunctionalInterface 
+annotation represent functional interface.it is not necessary to add @FunctionalInterface 
+annotation if interface contains only one abstract method.it is better to use this annotation
+becasuse compiler will give appropriate exception if anything uncertain occur.compiler is going
+to use this inofrmation.
+
+
+Functional Interface with respect to inheritance:->
+case-I:-> if an interface extends functional interface and child interface does not contain any
+abstract method, then child interface is always functional interface.
+Eg:
+@FunctionalInterface
+interface P{
+	public void m1();
+}
+@FunctionalInterface
+interface C extends P {
+}
+
+
+case-II:-> in the child interface, we can define exactly same parent interface abstract method.
+Eg:
+@FunctionalInterface
+interface P{
+ public void m1();
+}
+@FunctionalInterface
+interface C extends P{
+ public void m1();
+}
+
+case-III:-> in the child interface we can't define any new abstract methods otherwise we will get
+CE.
+@FunctionalInterface
+interface P{
+ public void m1();
+}
+
+@FunctionalInterface
+interface C extends P{
+	public void m2();
+}
+
+
+case-IV:-> 
+@FunctionalInterface
+interface P{
+	public void m1();
+}
+interface C extends P{
+	public void m2();
+}
+
+//valid
+
+Functional Interface:->
+-> it should contains exactly one abstract method 
+-> it can contains any number of default and static method
+-> it acts as a type of lambda expression.
+-> it can be used to invoke lambda expression.
+
+Note:-> also check examples with predefined functinal interfaces with runnable and 
+callable etc.
+
+Why Functional interface should contains only one abstract method?
+-> problem will occure during matching lambda expression with the functional interface
+method or compiler unable to identify the match for given lambda expression with
+functional interface method.
+
+What is the advantage of @FunctionalInterface annotation?
+-> we can get multiple implementation of a given functional program. we can not declare
+more than one abstract method with the help of the @FunctionalInterface annotation.
+
+
+
+Example Order:->
+helloworld.program
+two.nmber.add
+length.of.string
+thread.program.
+
+
+========================================================================================================
+Lambda Expression for collections:->
+
+Comparator Interface:-> it contains only one abstract method.it contains compare method.it is
+used to define our own sorting or customized sorting.
+public int compare(Obj one,Obj two);
+returns -1 if obj1 has to come before obj2
+return +1 if obj1 has to come after obj2
+return 0 if obj1 and obj2 are equal
+
+Note:-> to define our own sorting order in list,set and map it is very useful.
+
+Example Order:->
+Sorting element of list 
+Sorting element of set
+sorting element of map
+custom sort
+======================================================================================
+Anonymous inner class with lambda expression:-> anonymous inner classes can extends normal class and
+abstract class and interface but to use lambda expression we need to extend interface which contains
+one one method otherwise it is not possible.
+
+i. anonymous inner class with runnable
+ii. anonymous inner class instance variable
+
+Anonymous Inner Class VS Lambda Expression:->
+-> it is a class without name VS it is a function without name.
+-> Annonymous inner class can extend abstract and concreate class VS lambda expression can't extend
+abstract and concreate classes.
+-> Anonymous inner class can implements an interface that contains any no of abstract methods VS lambda 
+expression can implement an interface which contains single abstract method.
+-> inside anonymous inner class we can declare instance variable VS inside lambda expression we can't 
+declare instance variable.
+-> Anonymous inner class can be instantiated VS lambda expression connot be instantiated.
+-> inside anonymous inner class this always refers current anonymous inner class object but not outer
+class object VS inside lambda expression this always refers current outer class object.
+-> anonymous inner class is best choice if we want handle multiple methods VS lambda expression is the best 
+choice if we want handle interface with single abstract method.
+-> for the anonymous inner class at the time of compilation, a separate class file will be generated VS for
+the lambda expression at the time of compilation no separate class file will be generated.
+-> memory will be allocated on demand whenever we use creating object VS lambda expression will reside
+in permanent memory of JVM.
+
+
+
+
+Default Methods inside interface:-> inside interface it is not possible to take concreate
+methods i.e only abstract methods.this rule is applicable only until 1.7 version. since
+1.8 version we can take concreate methods such as default and static methods.
+interface interf {
+ default void m1(){
+   sysout("default method");
+}
+}
+
+it is by default provided to the implementation classes.they can use it or not it is
+their prioroity.
+
+Test t = new Test();
+t.m1();
+
+we can also override default method on the implementation class also.
+public void m1();
+
+Doubt:-> if we are allowed to add concreate methods inside the interface then what is
+the difference between abstract class and interfaces???
+even we are adding concreate methods inside interface in the form of default methods 
+but this interface never equals to abstract class. we will disscuss serveral differences
+in details later.
+
+Difference between interface with default methods and abstract class:->
+-> there may be a problem of multiple inheritance in the case of default methods.there 
+may be a chance of ambiguity problem.
+we can override that default methods in implementation classes to prevent ambiguity
+problem.
+we can also call to specific parent interface methods by overriding and calling the
+parent method.
+public void m1(){
+ Left.super.m1(); or
+ Right.super.m1();
+}
+
+Difference between interface with default methods and abstract class:->
+-> inside interface every variable is always public,static and final we can not declare
+instance variables VS inside abstract class we can declare instance variables which are 
+required to the child class.
+-> interface never talks about state of object VS abstract class can talk about state
+of object.
+-> inside interface we can't declare constructor VS inside abstract class we can declare
+constructors.
+-> inside interface we can't declare instance and static blocks VS inside abstract class
+we can declare constructors.
+-> functional interface with default methods can refer lambda expression VS abstract class
+can't refer lambda expression.
+-> inside interface we can't override object class methods VS inside abstract class we
+can override object class methods.
+
+Static methods inside interfaces:->
+What is the need of defining static method inside a interface because neither static
+method nor interface are realted to object???
+from 1.8 onwards just to define general utility methods no where realted to object state
+such type of utility methods implemented using static methods.
+interface Interf{
+public static void m1(){
+ sysout("static methods inside interface");
+}
+}
+
+class Test implemens Interf{
+ public static void main(String[] args){
+	Test t = new Test();
+       // t.m1();
+       // Test.m1():
+	Interf.m1();
+}
+}
+//error here
+note: interface static methods by default not available to the implementation classes.
+
+Example:->
+default_method inside functional interface
+static_method inside functional interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+Generic classses:-> 
+-> until 1.4 version a non generic version of array list class declared as follows:-
+class ArrayList{
+	add(Object o)
+	Object get(int index);
+}
+-> the argument to add method is object and hence we can add any type of object to the arraylist.due to this we are
+missing type safety.
+-> the return type of get method is Object hence at the time of retrieval we have to perform type casting.
+-> but in 1.5 version a generic version of array list class is declared as follows:->
+class ArrayList<T>{
+	add(T k);
+	T get(int index);
+}
+
+Example:->
+ArrayList<String> list = new ArrayList<String>
+class ArrayList<String>{
+	add(String s);
+	String get(int index);
+}
+
+list.add("durga");
+list.add(new Integer(10));
+CE:cannot find symbol: method add(java.lang.Integer) location class ArrayList<String>
+String s1 = l.get(0);
+here type casting is not required.

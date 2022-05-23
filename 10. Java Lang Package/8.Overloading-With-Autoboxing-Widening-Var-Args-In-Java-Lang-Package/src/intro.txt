@@ -1,0 +1,136 @@
+case-I:-> Autoboxing vs Widening
+public class Test {
+	
+	public static void m1(Integer I) {
+		System.out.println("Auto Boxing");
+	}
+	
+	public static void m1(long l) {
+		System.out.println("Widening");
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+		m1(x);
+
+	}
+
+}
+
+output:->
+Widening
+
+-> widening dominates autoboxing.
+
+case-II:-> Widening vs Var args Method
+public class Test {
+	
+	public static void m1(int... x) {
+		System.out.println("Var Args Method");
+	}
+	
+	public static void m1(long l) {
+		System.out.println("Widening");
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+		m1(x);
+
+	}
+
+}
+
+output:->
+Widening
+
+-> Widening dominates vargs method
+
+case-III:-> Autoboxing vs Var args
+public class Test {
+	
+	public static void m1(int... x) {
+		System.out.println("Var Args Method");
+	}
+	
+	public static void m1(Integer i) {
+		System.out.println("Autoboxing");
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+		m1(x);
+
+	}
+
+}
+
+Output:->
+Autoboxing
+
+-> Autoboxing dominates Var args method
+-> in general var arg method will get least priority that is if no other method matched then only
+var arg method will get the chance.it is exactly same as default case inside switch.
+
+
+-> while resolving methods compiler will always gives the precedence in the following order:
+Widening -> Autoboxing -> Var args
+
+case-IV:
+class Test{
+	public static void m1(Long l){
+		System.out.println("Long");
+	}
+	
+	public static void main(String args[]){
+		int x = 10;
+		m1(x);
+	}
+}
+CE:-> m1(java.lang.Long) in Test can not be applied to (int)
+-> widenning followed by autoboxing is not allowed in java whereas autoboxing followed by widenning
+is allowed.
+
+Example:-
+Long l = 10; -> not allowed 
+long l = 10; -> allowed
+
+case V:
+class Test{
+	public static void m1(Object o){
+		System.out.println("Object version");
+	}
+	
+	public static void main(String args[]){
+		int x = 10;
+		m1(x);
+	}
+}
+
+output:
+Object version
+-> same autoboxing followed by widening concept.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

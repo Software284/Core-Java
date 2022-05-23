@@ -1,0 +1,20 @@
+package map.implementation.with.hashmap;
+
+import java.util.HashMap;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		HashMap m = new HashMap();
+		m.put("chiranjeevi", 700);
+		m.put("balaiah", 800);
+		m.put("venkatesh", 200);
+		m.put("nagarjuna", 500);
+		System.out.println(m);
+		System.out.println(m.put("chiranjeevi", 1000));
+		Set s = m.keySet();
+
+	}
+
+}

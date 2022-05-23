@@ -1,0 +1,14 @@
+package implementation.of.list.with.Vector;
+
+import java.util.Vector;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Vector v = new Vector();
+		v
+
+	}
+
+}

@@ -1,0 +1,4 @@
+Arrays Class:-> Arrays class is an utility class to define several utiliy methods for array objects.
+
+i.sorting elements of array
+public static void sort(primitive[] p)

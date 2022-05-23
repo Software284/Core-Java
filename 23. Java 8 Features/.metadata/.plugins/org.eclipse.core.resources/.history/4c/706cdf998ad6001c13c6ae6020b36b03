@@ -1,0 +1,100 @@
+Function:-> 
+-> Functions are exactly same as predicates except that functions can return any type of result
+but function should (can) return only one value and that value can be any type as per our
+requirement.
+-> To implement functions oracle people introduced Function interface in 1.8version.
+-> Function interface present in Java.util.function package.
+-> Functional interface contains only one method i.e., apply()
+
+ 
+
+1) interface function(T,R) {
+2) public R apply(T t);
+3) } 
+
+Predicate VS Function:->
+-> to implement condition checks,we should go for predicate VS to perform certain operation and to return some
+result we should go for function.
+-> Predicate can take one type parameter which represents input argument type. Predicate<T> VS function can take
+two parameter.first one represents input argument type and second one represent return type.
+Function<T,R>
+-> predicate interface defines one abstract method called test() VS function interface defines one abstract
+method called apply.
+-> public boolean test(T t) VS public R apply(T t);
+-> predicate can return only boolean value VS function can return any type of value.
+
+Function program sequence:->
+Function functional interface program of length of string
+Function functional interface program of counting whitespaces in string
+Function functional interface program of finding grade of student
+Function functional interface program of total salary of all employee
+Function functional interface program of increamenting salary of all employee.
+
+Functional interface Defaults Methods:->
+
+Function Chaining:->We can combine multiple functions together to form more complex functions.For this Function
+interface defines the following 2 default methods:
+f1.andThen(f2): First f1 will be applied and then for the result f2 will be applied.
+f1.compose(f2)===>First f2 will be applied and then for the result f1 will be applied.
+identity();
+
+Function program sequence:->
+-> Function functional interace program defaults methods.
+
+
+
+Functional interface static methods:->what ever we are going to provide to 
+this function it will automatically return this values.
+static identity();
+
+Ex:
+Function<String,String> f = Function.identity();
+f.apply("mahesh");
+output:->
+mahesh
+
+===============================================================================================
+Normal Functional Interfaces (Predicate, Function and Consumer) can accept only one input
+argument. But sometimes our programming requirement is to accept two input arguments, then
+we should go for two-argument functional interfaces. The following functional interfaces can take
+2 input arguments.
+1. BiPredicate
+2. BiFunction
+3. BiConsumer
+
+
+
+BiFunction:-> Normal Function can take only one input argument and perform required operation and returns
+the result. The result need not be boolean type.
+But sometimes our programming requirement to accept 2 input values and perform required
+operation and should return the result. Then we should go for BiFunction.
+BiFunction is exactly same as funtion except that it will take 2 input arguments.
+1) interface BiFunction<T,U,R>
+2) {
+3) public R apply(T t,U u);
+4) //
+
+Program sequence:->
+BiFunction program of returning product of two number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

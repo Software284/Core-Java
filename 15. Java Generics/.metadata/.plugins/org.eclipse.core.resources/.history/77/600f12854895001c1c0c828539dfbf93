@@ -1,0 +1,16 @@
+package com.lamichhhane.case_second;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> a = new ArrayList<String>();
+		ArrayList<Double> b = new ArrayList<Double>();
+		ArrayList<Student> s = new ArrayList<Student>();
+		m1(a);
+		m1(b);
+		m1(s);
+
+	}
+
+}

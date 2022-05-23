@@ -1,0 +1,26 @@
+Regular Expression:-> If we want to represent a group of strings according to a particular pattern then we should go for 
+regular expressions. we can write regular expression to represent all valid mobile numbers.we can
+write regular expression to represent all mail ids.
+The important application areas of regular expression are:->
+i. to develop validation frameworks 
+ii. to develop pattern matching applications(Control F in windows)
+iii. to develop translators like assembers compilers interpreters etc.
+iv. to develop digital circuits.
+v. to develop communication protocols like tcp/ip,udp etc.
+
+
+Pattern :-> pattern object is a compile version of regular expression that is it is a java equivalent 
+object of pattern.we can create a pattern a pattern object by using compile method of pattern class.
+public static Pattern compile(String re)
+
+Matcher:-> we can use matcher object to check the given pattern in the target string.we can create a matcher
+object by using matcher method of pattern class.
+public Matcher matcher(String target)
+
+Important methods of matcher class:-> 
+boolean find():-> it attemps to find next match and returns true if it is available.
+int start() :-> it returns start index of the match
+int end():-> it returns n+1 end index of the match
+String group():-> it returns the matched pattern content
+
+Note:-Pattern and Matcher classes present in java.util.regex package and introduced in 1.4 version.

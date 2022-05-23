@@ -1,0 +1,17 @@
+package collection.api.introduction.program;
+
+public class Test {
+	
+
+	public static void main(String[] args) {
+		
+		int[] my_array = {1,2,3};
+		for(int i = 0; i < my_array.length;i++) {
+			System.out.println("Array Print "+my_array[i]);
+		}
+		
+		String[] myarray
+
+	}
+
+}

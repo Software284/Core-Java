@@ -1,0 +1,287 @@
+Interfaces:->
+==============================================================================================================
+Introduction:->
+-> any service requirement specification(SRS) is considered as an interface.
+Example1:-> JDBC API acts as requirement specification to develop database driver.database vendor is
+responsible to implement this JDBC API.
+sun people is responsible to develop JDBC API. database vendor responsible for implementation.
+
+Example2:-> servert API acts as requirement specification to develop web server.web server vendor is
+responsible to implement servlet api.
+
+-> from client point of view an interface defines the set of services what he is expecting.from service 
+provider point of view an interface defines the set of services what he is offering.hence any contract 
+between client and service provider is considered as interface.
+Example:thorugh bank atm GUI sceen bank people are highlighting the set of services what they are offering
+at the same time the same GUI screen represents the set of services what customer is expecting hence this
+GUI screen act as contract between customer and bank people.
+
+-> inside interface every method is always abstract whether we are declaring or not hence interface is 
+considered as 100% pure abstract class.
+
+Summary Definition:-> any service requirement specification or any contract between client and service
+provider or 100% pure abstract class is nothing but interface.
+
+==============================================================================================================
+
+Interface Declaration and Implementation:->
+-> whenever we are implementing an interface for each and every method of that interface we have to provide 
+implementation otherwise we have to declare class as abstract.then next level child class is responsible
+to provide implementation.
+-> every interface method is always public and abstract whether we are declaring or not hence whenever we
+are implementing an interface method compulsary we should declare as public otherwise we will get compile
+time error.
+
+Example:
+interface interf {
+	void m1();
+	void m2();
+}
+
+abstract class ServiceProvider implements interf{
+	public void m1(){}
+}
+class SubServiceProvider implements ServiceProvider{
+	public void m2(){};
+}
+
+==============================================================================================================
+
+Extends Vs Implements:->
+-> a class can extend only one class at time.
+-> a interface can extends any no of interfaces simulataneously.
+Example:
+interface A{
+}
+interface B{
+}
+interface C extend A,B{
+}
+
+-> a class can implement any no of interfaces simultaneously.
+-> a class can extends another class and can implement any no of interfaces simultaneously
+Example:
+Class A extends B implements C,D,E
+{
+}
+//valid
+==============================================================================================================
+Interface Methods:->
+-> every method present inside interface is always public and abstract whether we are declaring or not.
+Example:
+interface interf{
+	void m1();
+}
+public:-> to make the method available to every implementation class
+abstract:-> implementation class is responsible to provide implementation.
+hence  inside interface the following method declaration are equal.
+void m1();
+public void m1();
+abstract void m1();
+public abstract void m1();
+
+-> as every interface method is always public and abstract we can't declare interface method with the following
+modifiers
+protected
+private
+final
+static
+strictfp
+native
+synchronized
+==============================================================================================================
+Interface Variable:->
+-> an interface can contain variables.the main purpose of interface variable is to define requirement level
+constants.
+-> every interface variable is always public static final whether we are declaring or not.
+Example:
+interface Interf{
+	int x = 10;
+}
+public:-> to make this variable available to every implementation class.
+static:-> without existing object also,implementation classes has to access this variable.
+final:-> if one implementation class changes value then remaining implementation class will be effected.to
+restrict this every interface variable is always final.
+
+-> hence withing the following variable declarations are equal
+int x = 10;
+public int x = 10;
+static int x = 10;
+final int x = 10;
+public static int x = 10;
+public final int x = 10;
+static final int x =10;
+public static final int x = 10;
+
+-> as every interface variable is always public static final we can't declare with the following modifiers
+i. private -> public
+ii. protected -> public
+iii. valatile -> vs final
+iv.transient -> vs static
+
+-> for interface variables compulsary we should perform initialization at the time of declaration otherwise
+we will get compile time error.
+Example:
+interface Interf{
+	int x;
+}
+CE:Equal symbo expected
+
+
+-> inside implementation class we can access interface variables but we can't modify values.
+interface interf {
+	int x = 10;
+}
+
+class Test{
+	public static void main(String args[]){
+	x = 777;
+	sysout(x);
+	}
+}
+CE:cannot assign a value to final variable x
+
+class Test{
+	public static void main(String args[]){
+	int x = 777;
+	sysout(x);
+	}
+}
+//valid
+
+==============================================================================================================
+Interface Naming Conflicts:->
+i. Method Naming Conflicts
+ii. Variable Naming Conflicts
+
+
+Method Naming Conflicts:-> 
+case-I:-> if two interfaces contains a method with the same signature and same return type then in the 
+implementation class we have to provide implementation for only one method.
+
+
+case-II:-> if two interfaces contains method with the same name but different argument types then in the
+implementation class we have to provide implementation for both methods and these method act as overloaded
+methods.
+
+case-III:-> if two interfaces contains a method with same signature but different return types then it is
+impossible to implement both interfaces simultaneously(if return types are not co-varient).
+
+Is a java class can implement any no of interfaces simultaneously?
+-> yes except a particular case.if two interfaces contains a method with same signature but different return
+types then it is impossible to implement both interfaces simultaneously.
+
+Variable Naming Conflicts:->
+case-I:-> two interfaces can contain a variable with the same name and there may be a chance of variable
+naming conflicts but we can solve this problem by using interface names.
+Left.x;
+Right.y;
+
+==============================================================================================================
+Marker Interface:->
+-> if an interface doesn't contain any methods and by implementing that interface if we are objects will get
+some ability such type of interfaces are called marker interfaces.
+i. Serializable(I)
+ii. Cloneable(I)
+iii. RandomAcess(I)
+iv. SingleThreadModel(I)
+
+these are marked for some ability.
+
+Example1:-> by implementing serializable interface our objects can be save to the file and can travel across
+the network.
+
+Example2:-> by implementing clonnable interface our object are in a position to produce exatly duplicate
+clonned objects.
+
+* Without having any methods how the object will get some ability in marker interfaces?
+-> internally JVM is responsible to provide required ability.
+
+* Why JVM is providing requried ability in marker interfaces?
+-> to reduce complexity of programming and to make java language as simple.
+
+* Is it possible to create our own marker interface:->
+-> yes but customization of JVM is required.
+
+==============================================================================================================
+Adapter Classes:->
+-> adapter class is a simple java class that implements an interface with only empty implementation.
+
+interface X {
+	m1();
+	m2();
+	m3();
+	m4();
+	.
+	.
+	.
+	m1000();
+}
+
+class Test implements X{
+	m3(){
+		//10 lines of code
+	}
+	m1(){};
+	m2(){};
+	m3(){};
+	.
+	.
+	.
+	m1000(){};
+}
+here there is a unwanted code of method m1 to m1000 except m3 which are dummy implementation.
+it reduces readability.
+
+solution:
+
+abstract class AdapterX implements X{
+	m1(){};
+	m2(){};
+	m3(){};
+	m4(){};
+	m5(){};
+	.
+	.
+	.
+	m1000(){};
+}
+
+class First extends AdapterX {
+	m1(){
+	}
+}
+
+class Second extends AdapterX{
+	m2(){
+	}
+}
+
+class Third extends AdapterX{
+	m3(){
+	}
+}
+
+Example: we can develop a servlet in the following three ways.
+i. by implementing Servlet interface
+ii. by extending generic servlet
+iii. by extending http servlet
+
+if we implement servlet interface for each and every method of that interface we should provide implementation.
+it increases length of the code and reduces readability.
+instead of implementing servlet interface directly if we extend generic servlet we have to provide implementation
+only for service method.and all remaining methods we are not required provide implementation.hence more or
+less generic servlet act as adapter class for servlet interface.
+
+Note:-> marker interface and adapter classes simplifies complexity of programming and these are best utilities
+to the programmer
+
+
+==============================================================================================================
+Interface VS Abstract class VS Concreate Class:->
+-> 
+==============================================================================================================
+Differences betweeen Interfaces and Abstract class:->
+==============================================================================================================
+Conclusion:->
+==============================================================================================================

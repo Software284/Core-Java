@@ -1,0 +1,11 @@
+package printing.exception.information;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		FileReader reader = new FileReder("abc.txt");
+
+	}
+
+}

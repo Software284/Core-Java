@@ -1,0 +1,20 @@
+package Function_functional.interface_program.of.incremeanting.salary.of.employee;
+
+import java.util.List;
+
+public class Test {
+	
+	public static void populate(List<Employee> list) {
+		list.add(new Employee("Mahesh",10000));
+		list.add(new Employee("Pits",10000));
+		list.add(new Employee("Sagar",10000));
+		list.add(new Employee("Kamal",10000));
+		list.add(new Employee("Nabin",10000));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

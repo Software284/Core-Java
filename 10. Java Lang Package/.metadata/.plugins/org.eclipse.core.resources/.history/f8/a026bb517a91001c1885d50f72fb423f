@@ -1,0 +1,14 @@
+package com.lamichhane.equals.method;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Student s1 = new Student("Mahesh",101);
+		Student s2 = new Student("Akash",102);
+		Student s3 = new Student("Mahesh",101);
+		Student s4 = s1;
+
+	}
+
+}

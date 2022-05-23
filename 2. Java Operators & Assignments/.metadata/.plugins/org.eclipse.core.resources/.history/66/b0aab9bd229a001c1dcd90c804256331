@@ -1,0 +1,7 @@
+Equality Operators(!=,==):->
+-> we can apply equality operators for every primitive type including boolean type also
+Example:
+sysout(10 == 20); //false
+sysout('a' == 'b'); //false
+sysout('a' == 97.0); //true
+sysout(false == false); //true

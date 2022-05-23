@@ -1,0 +1,19 @@
+String Class:-> 
+
+case-I:-> once we creates a string object we can't perform any changes in the existing object. if we are
+trying to perform any change with those changes a new object will be created. this non-changable behaviour
+is nothing but immutability of string.
+
+String s = new String("durga");
+s.append(" software");
+System.out.println(s);
+
+Output:->
+durga
+
+StringBuffer sb = new StringBugger("durga");
+sb.append(" software");
+System.out.pritnln(sb);
+
+Output:->
+durga software

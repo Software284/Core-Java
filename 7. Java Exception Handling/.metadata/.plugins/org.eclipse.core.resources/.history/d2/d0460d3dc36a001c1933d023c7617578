@@ -1,0 +1,11 @@
+package default_exception.handling.mechanism;
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		
+		PrintWriter w = new PrintWriter("abc.txt");
+
+	}
+
+}

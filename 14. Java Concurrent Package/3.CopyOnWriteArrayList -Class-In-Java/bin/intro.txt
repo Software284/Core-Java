@@ -1,0 +1,130 @@
+ CopyOnWriteArrayList(C):->
+ Collection(I)
+ List(I)
+ CopyOnWriteArrayList(C)
+ 
+ -> it is a thread safe version of ArrayList as the name indicates CopyOnWriteArrayList creates a clonned copy of underlying ArrayList
+ for every update operation at certain point both will synchronize automatically.Which is taking care by JVM internally.
+ -> as update operation will be performed on cloned copy there is no effet for the threads which performs read operation.
+ -> it is colstly to use because for every update operation a cloned copy will be created.hence CopyOnWriteArrayList is the best 
+ choice if several read operations and less number of write operations are required to perfrom.
+ -> insertion order is preserved.
+ -> duplicate objects are allowed.
+ ->heterogeneous objects are allowed.
+ -> null insertion is possible.
+ -> it implements serializable,clonnable and randomaccess interfaces.
+ -> while one thread iterating CopyOnWriteArrayList,the Other threads are allowed to modify and we won't get
+ ConcurrentModificationException.that is iterator is Fail Safe.
+ -> iterator of arraylist can perform remove operation but iterator of CopyOnWriteArrayList can't Perform remove operation.
+ otherwise we will get RuntimeException saying unsupportedoperationexception.
+ 
+ Similarities between ArrayList and CopyOnWriteArrayList:->
+ i. insertion order is prserved
+ ii. duplicates are allowed
+ iii. heterogenious objects are allowed
+ iv. null insertion is possible
+ v. implements serializable,clonaable,randomaccess
+ 
+ Differences betweeen ArrayLIst and CopyOnWriteArrayList:->
+ -> concurrent modification exception occured in Arraylist but not in CopyOnWriteArrayList.
+ -> iterator of array list is thread-fail while iterator of copyonwritearraylist is thread-safe.
+ -> iterator of array list can perform remove operation while iterator of copyonwritearraylist can't perform remove operataion.
+ 
+ Constructor:->
+ CopyOnWriteArrayList i = new CopyOnWriteArrayList();
+ CopyOnWriteArrayList i = new CopyOnWriteArrayList(Collection c);
+  CopyOnWriteArrayList i = new CopyOnWriteArrayList(Object[] a);
+  
+
+Methods:->
+
+boolean addIfAbsent(Object o):-> the element will be added if and only if list doesn't contain this element.
+CopyOnWriteArrayList   = new CopyOnWriteArrayList();
+l.add("A");
+l.add("A");
+l.addIfAbsent("B");
+l.addIfAbsent("B");
+System.out.pritnln(l);
+
+int addAllAbsent(Collection c):-> the element of collection will be added to the list if elements are absent and returns number of elements
+added.
+ArrayList I = new ArrayList();
+I.add("A");
+I.add("B");
+
+CopyOnWriteArrayList I1 = new CopyOnWriteArrayList();
+I1.add("A");
+I1.add("C");
+System.out.println(I1);
+I1.addAll(I);
+System.out.pritnln(I1);
+
+ArrayList I2 = new ArrayList();
+I2.add("A");
+I2.add("D");
+I1.addAllAbsent(I2);
+System.out.pritnln(I1);
+
+ArrayList VS CopyOnWriteArrayList:->
+-> it is not thread safe VS it is thread safe.
+-> while one thread iterating one list object,the other thread are not allowed to modify list otherwise we will get
+ConcurrentModificationException VS while one thread iterating list object.the other threads are allowed to modify list
+in safe manner and we won't get ConcurrentModificationException.
+-> iterator is fail-fast VS iterator is fail-safe
+-> iterator or arrray list can perform remove operation vs iterator or copyonarraylist can't perform remove operation.
+-> introduced in 1.2 version VS introduced in 1.5 version.
+
+CopyOnWriteArrayList VS synchronizedList() VS Vector:->
+-> we will get thread safety because every update operation will be performed on separate cloned copy
+VS we will get thread safety because at a time list can be accessed by only one thread at a time VS
+we will get thread safety because at a time only one thread is allowed to access vector
+object
+
+-> at a time multiiple threads are allowed to access/operate on CopyOnWriteArrayList VS at a time only
+one thread is allowed t perform any operation on list object VS at a time only one thread is allowed
+to operate on a vector object.
+
+-> while one thread iterating list object,the other threads are allowed to modify and we won't get
+concurrentmodificationexcception. VS while one thread is iterating,the other threads are not allowed
+to modify list.otherwise we will get concurrentmodificationexception. VS while one thread iterating,
+the other threads are not allowed to modify vector.otherwise we will get concurrentmodificationexception.
+
+-> iterator is fail-safe and won't raise CME.VS iterator is Fail-Fast and it will raise CME.VS 
+iterator is fail-fast and it will raise CMF.
+
+-> iterator can't perform remove operation othersies we will get unsupported  operation exception. VS
+iterator can perform remove operation VS iterator can performs remove operation.
+
+-> introduced in 1.5 version VS introduced in 1.2 version VS introduced in 1.0 version
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

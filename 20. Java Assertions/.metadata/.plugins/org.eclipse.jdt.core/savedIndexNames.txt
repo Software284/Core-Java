@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Programmer\OneDrive\Desktop\Desktop FIle\Java Assertions\.metadata\.plugins\org.eclipse.jdt.core
+3022194239.index
+3841323222.index
+1865797976.index
+1071536135.index
+647384558.index

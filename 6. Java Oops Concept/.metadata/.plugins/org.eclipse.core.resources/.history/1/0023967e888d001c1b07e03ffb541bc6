@@ -1,0 +1,231 @@
+Overriding:-> whatever method parents has by default available to the child thorugh inheritance.if child
+class not satisfied with the parent class implementation then child is allowed to re-define that method
+based on it's requirement.this process is called overiding.the parent class method which is overriden
+is called overidden method and child class method which is overiding is called overriding method.
+
+P p = new P();
+p.marry();
+		
+C c = new C();
+c.marry();
+		
+P p1 = new C();
+p1.marry();
+//at run time if marry method is overloaded then child class marry method will be invoked
+
+* in overiding method resolution always takes cares by JVM based on runtime object and hence overiding 
+is also considered as runtime polymorphism or dynamic polymorphism or late binding.
+
+Rules for overiding:-> 
+-> in overiding method names and argument types must be matched that is method signatures must be
+same.
+-> in overiding return type must be same but this rule is applicable until 1.4 version only from 1.5 
+version onwards we can take co-varient return types.according to this child class method return type
+need not be same as parent method return type.it's child type also allowed it means if parent class method
+has return type Object and child class method type is String then it is allowed.see co-varient example.
+
+-> if parent class return type is Object we can take Object,String,StringBufffer as child class
+return type.
+-> co varient return type concept applicable only for object type but not for primitive
+types.
+-> parent class private method not available to the child and hence overiding concept not
+applicable for private methods.
+-> based on our requirement we can define exactly same private method in child class it is valid but 
+not overiding.
+-> we can't override parent class final method in child classes. if we are trying to override we will
+get compile time error called overidden method is final.
+-> parent class abstract method we should override in child class to provide implementation.
+-> we can override non abstract method as abstract.
+class p {
+ public void m1(){
+ }
+ }
+ 
+abstract class c extends p{
+ public abstract void m1(){
+ }
+ }
+here no matter which class extends c that class must provide implementation of m1 method so
+we can ignore the m1 method by overidding or extending parent class feature.the main advantage of this
+approach is we stop the availability of parent method implementation to the next level child classes.
+-> in overiding the following modifiere won't keep any restriction
+i. synchronized
+ii. native 
+iii. strictfp
+iv. non-final to final
+
+-> while overiding we can't reduce scope of access modifiers but we can increase the scope.
+class p{
+protected void m1(){}
+}
+class c extends p {
+ public void m1(){}
+ }
+it is acceptable.private-> defalult-> protected-> public
+public -> public
+protected -> public,protected
+default -> default,public,protected
+private -> overiding concept not applicable for private methods.
+
+-> if child class method throws any checked exception compulsary parent class method should throw
+the same checked exception or it's parent otherwise we will get compile time error but there are 
+no restriction for unchecked exception.this is because when outside class called parent class method
+then the outside method is responsible for handling exception throwed by parent class.tomorrow if 
+we override this method in any child class and child class throws parent exception of parent class throwed
+method then outer class can't handle that exception so this rule must follow.
+
+p:public void m1() throws Exception
+c: public void m1()
+valid
+
+p: public void m1()
+c: public void m1() throws Exception
+not valid
+
+p: public void m1() throws Exception
+c: public void m1() throws IOException
+valid
+
+p: public void m1() throws IOException
+c: public void m1() throws Exception
+invalid
+
+p: public void m1() throws IOException
+c: public void m1() throws FileNotFoundException,EOFException
+valid
+
+p: public void m1() throws IOException
+c: public void m1() throws EOFException,InterruptedExcepiton
+not valid
+
+p: public void m1() throws IOExcepiton
+c: public void m1() throws AE,NPE,CCE
+valid
+
+
+-> we can't override static method as non static otherwise we will get compile time error.
+-> similarly we can't override non static method as static.
+-> if both parent and child class method are static then we won't get any compile time error it 
+seems overiding concept applicable for static methods but it is not overiding and it is method 
+hiding.
+
+Method Hiding:-> all rules of method hiding are exactly same as overiding except the following 
+differences 
+-> both parent and child class should be static vs both parent and child class should be non static
+-> compiler is responsible for method resolution based on reference type vs JVM is always responsible
+for method resolution based on runtime object.
+-> it is also known as compile time polymorphism or static polymorphism or early binding vs it is
+also known as runtime polymorphism or dynamic polymorphism or late binding.
+
+Note:-> on overiding only child copy is available while in method hiding both copies of object
+are available.
+
+Overriding With Respect to Var args method:->
+
+class p {
+ public void m1(int... x)
+ {
+ 	sopen("parent");
+ }
+}
+
+class c extends p {
+	public void m1(int x)
+	{
+	 sopen("child");
+	 }
+}
+
+class Test {
+	p s v main(string[] args){
+		P p = new P();
+		p.m1(10); // parent called
+		
+		C c = new C();
+		c.m1(10); // child method called
+		 P p1 = new C();
+		 p1.m1(10); // parent called
+	}
+}
+Note:we can override var arg method with another var args method only.if we are trying to override with 
+normal method then it will become overloading but not overiding.
+
+Overiding with respect to variables:-> 
+
+class P {
+ int x = 8888;
+ }
+class C extends P {
+ int x = 9999; 
+ }
+class Test {
+ p s void main(String args[]){
+  P p = new P();
+  sysout(p.x); // 8888
+  C c = new C();
+  sysout(c.x); // 9999
+  
+  P pp = new C();
+  sysout(pp.x); //  8888
+  }
+}
+
+Note:-> variables resolution always takes care by compiler based on reference type irrespective whether the
+variable is static or non static(overiding concept applicable only for methods but not for variables).variables
+resoultion is always takes care by compiler.
+
+
+Differences between Overloading and Overiding:-> 
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

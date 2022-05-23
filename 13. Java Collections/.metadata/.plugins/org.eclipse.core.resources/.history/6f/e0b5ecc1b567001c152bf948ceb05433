@@ -1,0 +1,14 @@
+Arrays Class:-> Arrays class is an utility class to define several utiliy methods for array objects.
+
+i.sorting elements of array
+public static void sort(primitive[] p)
+to sort accroding to natural sorting order
+public static void sort(Object[] o) 
+to sort according to natural sorting order
+public static void sort(Object[] o, Comparator  c)
+to sort according to customized sorting order
+
+Note: we can sort primitive arrays only based on default natural sorting order whereas we can sort
+object arrays either based on default natural sorting order or based on customized sorting order.
+
+ 

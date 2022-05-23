@@ -1,0 +1,541 @@
+Member(Method or Variable) Level Modifiers:->
+=============================================================================================================
+i. public member:->
+-> if a member declared as public we can access that member from anywhere but corresponding should be visible
+i.e before checking member visibility we have to check class visibility.
+Example:
+package pack1;
+class Test{
+	public void m1(){
+		sysout("Hello");
+	}
+}
+
+package pack2;
+import pack1.Test;
+class Demo{
+	public static void main(String args[]){
+		Test t = new Test();
+		t.m1();
+	}
+}
+
+CE:pack1.Test is not public in pack1.can not be accessed from outside package.
+in the above example even though m1 method is public we can't access from outside package because corresponding
+class Test is not public i.e if both class and methods are public then only we can access the method from
+outside package.
+
+
+ii. default members:-> 
+-> if a member declared as default then we can access that member only within the current package.i.e from
+outside of the package we can't access.hence default access is also known as package level access.
+
+
+iii. private members:-> if a member is private then we can access that member only within class i.e from
+outside of the class we can't access.
+abstract methods should be available to the child classes to provide implementation whereas private 
+methods are not available to the child classes.hence private abstract combination is illegal for methods.
+
+
+iv. protected members:-> 
+-> the most misunderstood modifier in java.
+-> if a member declared as protected then we can access that member anywhere within the current package
+but only in child classes of outside package.
+protected = <default> + child
+
+-> we can access protected members within current package anywhere either by using parent reference or by using
+child reference.
+but we can access protected members in outside package only in child classes and we should use child reference
+only i.e parent reference can not be used to access protected members from outside package.
+
+Example:
+package pack1;
+public class A{
+ protected void m1(){
+ 	sysout("most mis-unterstood modifier");
+ }
+}
+
+class B extends A{
+	public static void main(String args[]){
+		A a = new A();
+		a.m1();
+		B b = new B();
+		b.m1();
+		A a1 = new B();
+		a1.m1();
+	}
+}
+
+output:
+most mis-unterstood modifier
+most mis-unterstood modifier
+most mis-unterstood modifier
+
+import pack1.A;
+class C extends A{
+	public static void main(String args[]){
+		A a = new A(); 
+		a.m1();
+		//invalid CE:m1 has protected access in pack1.A
+		
+		C c = new C();
+		c.m1();
+		
+		A a1 = new C();
+		a1.m1();
+		//invalid CE:m1 has protected access in pack1.A
+	}
+}
+
+
+-> we can access protected members from outside package only in child classes and we should use that child
+class reference only.
+Example:-> 
+package pack1;
+public class A{
+ protected void m1(){
+ 	sysout("most mis-unterstood modifier");
+ }
+}
+
+package pack2;
+import pack1.A;
+class C extends A{
+}
+class D extends C{
+	public static void main(String args[]){
+		A a = new A();
+		a.m1();
+		//invalid 
+		
+		C c = new C();
+		c.m1();
+		//invalid
+		
+		D d = new D();
+		d.m1();
+		//valid
+		
+		A a1 = new C();
+		a1.m1();
+		//invalid
+		
+		A a2 = new D();
+		a2.m1();
+		//invalid
+		
+		C c1 = new D();
+		c1.m1();
+		//invalid
+	}
+}
+
+
+===============================================VISIBILITY SUMMARY ===========================================
+
+	Visibility				Private		<default>		Protected		Public
+
+within the same class		true		true			true			true
+
+from child class of same
+package						false		true			true			true
+
+from non-child class of
+same package 				false		true			true			true
+
+
+from child class of 
+outside package				false 		false			true			true
+
+
+from non-child class
+of outside package 			false		false 			false			true
+
+=======================================================================================================
+Note:-> the most accessible modifer is public
+private<default<protected<public
+recommended modifier for data member(variable) is private.but remommended modifier for methods is public.
+
+
+===========================================================================================================
+
+Final Variable:-> 
+
+i. Final instance variables:-> 
+-> if the value of a variable is varied from object to object such type of variables are called instance 
+variables.
+-> for every object a separate copy of instance variables will be created.
+-> for instance variables we are not required to perform initialization explictly JVM will always provide 
+default values.
+Example:
+class Test{
+	int x;
+	public static void main(String[] args){
+		Test t = new Test();
+		sysout(t.x);
+	}
+}
+
+-> if the instance variable declared as final then compulsary we have to perform initialization explictly.
+whether we are using or not.and JVM won't provide default values.
+Example:
+class Test {
+	final int x;
+}
+CE:variable x might not have been initialized.
+
+-> rule: for final instance variable compulsary we should perform initialization before constructor 
+completion otherwise i.e following are various places for initialization.we can't initialize final
+variable to other places except belows point.
+
+
+i. At the time of declaration
+class Test {
+	final int x = 10;
+}
+
+ii. Inside instance block
+class Test{
+	final int x;
+	{
+		x = 10;
+	}
+}
+
+iii. Inside constructor
+class Test {
+	final int x;	
+	Test(){
+		x = 10;
+	}
+}
+
+class Test{
+	final int x;
+	public void m1(){
+		x = 10;
+	}
+}
+CE:can not assign a value to final variable x.
+
+-------------------
+
+
+ii. final static instance variable:->
+-> if the value of a variable is not varied from object to object such type of variables are not recommended
+to declare as instance variables. we have to declare those variables at class level by using static modifier.
+
+-> in the case of instance variables for every object a separate copy will be created but in the case of
+static variables a single copy will be created at class level and shared by by every object of that class.
+
+-> for static variables it is not required to perform initialization explictly.JVM will always provide 
+default values.
+Example:
+class Test{
+	static int x;
+	public static void main(String args[]){
+		sysout(x);
+	}
+}
+
+output:->
+0
+
+-> if the static variable declared as the final then compulsary we should perform initialization explictly.
+otherwise we will get compile time error and JVM won't provide any default values.
+
+class Test{
+	final static int x;
+}
+CE:variable x might not have been initialized.
+
+-> rule :for final static variables compulsary we should perform initialization before class loading 
+completion i.e the following are various places for this.
+
+
+i. At the time of declaration
+class Test{
+	final static int x = 10;
+}
+//valid
+
+ii. Inside static block 
+class Test{
+	final static int x;
+	static{
+		x = 10;
+		}
+}
+//valid
+
+these are the only possible places to perform initialization for static variables.if we are trying to
+perform initialization anywhere else then we will get compile time error.
+
+Example:
+
+class Test{
+	final static int x;
+	public void m1(){
+		x = 10;
+	}
+}
+CE:can not assign a value to final variable x.
+
+
+iii. Final local variables:-> 
+-> sometimes to meet temporary requirements of the programmer we have to declare variables inside a method
+or block or constructor such type of variables are called local variables or temporary variables or stack
+variables or automatic variables.
+
+-> for local variables JVM won't provide any default values compulsary we should perform initialization 
+explictly before using that local variables that is if we are not using then it is not required to perform
+initialization for local variable.
+
+class Test {
+	public static void main(String args[]){
+		int x;
+		sysout("Hello);
+	}
+}
+here we are not using x so doesn't need to intitialize x.
+
+class Test {
+	public static void main(String[] args){
+		int x;
+		sysout(x);
+	}
+}
+//invalid CE: variable x might not have been initialize
+
+-> even though local variable is final before using only we have to perform initialization i.e if we are not 
+using then it is not required to perform initialization even though it is final.in instance final variable
+we need to initiaize variable but here not.
+
+class Test{
+	public static void main(String args[]){
+		final int x;
+		sysout("Hello Take Care");
+	}
+}
+
+output:->
+Hello Take Care
+
+-> the only applicable modifier for local variable is final.
+-> by mistake if we are tying to apply any other modifier then we will get compile time error.
+
+Syntax:
+final int x = 10;
+
+Note:-> if we are not declaring any modifier then by default it is default but this rule is applicable 
+only for instance and static variables but not for local variables.
+
+Formal Paramters:-> 
+-> formal parameters of a method simply act as local variable of that method.hence formal parameter can be
+declared as final.
+-> if formal parameter declared as final within the method we can perform re-assignment.
+Example:
+class Test{
+	public static void main(String[] args){
+		m1(10,20);
+	}
+	
+	public static void main(int x,int y){
+		x = 100; //invalid
+		y = 100; //invalid
+		sysout(x+"..."+y);
+	}
+}
+
+CE:can not assigned a value to final variable x;  
+=============================================================================================================
+
+Static variables:-> 
+-> static is a modifier applicable for methods and variables but not for classes.
+-> we can't declare top level class with static modifier but we can declare inner class as static(such type
+of inner classes are called static nested classes).
+-> in the case of instance variables for every object a separate copy will be created but in the case of
+static variables a single copy will be created at class level and shared by every object of that class. 
+
+class Test{
+	static int x = 10;
+	int y = 20;
+	
+	public static void main(String args[]){
+		Test t1 = new Test();
+		t1.x = 888;
+		t1.y = 999;
+		
+		Test t2 = new Test();
+		sysout(t2.x+"..."+t2.y);
+	}
+}
+
+output:->
+888...20
+
+
+-> we can't access instance members directly from static area but we can access from instance area directly.
+we can access static members from both instance and static areas directly.
+
+class Test{
+	int x=10;
+	static int y = 20;
+	
+	public void m1(){
+		sysout(x); //valid
+		sysout(y); //valid
+	}
+	
+	public static void m2(){
+		sysout(x); //invalid
+		sysout(y); //valid
+	}
+
+}
+
+
+case-I:-> overloading concept applicable for static methods including main method but JVM can always call
+string array argument main method only.
+Example:
+class Test{
+
+	public static void main(String args[]){
+		sysout("string");
+	}
+	
+	public static void main(int[] args){
+		sysout("int");
+	}
+}
+output:
+string
+
+case-II:-> inheritance concept applicable for static methods including main method hence while executing
+child class if child doesn't contain main method then parent class main method will be executed.
+
+class p {
+	public static void main(String args[]){
+		sysout("parent main");
+	}
+}
+
+class C extends P {
+}
+
+
+java P:<-|
+o/p: parent main
+
+java C:<-|
+op: parent main
+
+
+
+
+
+
+case-III:-> it seems overriding concept applicable for static methods but it is not overriding and it is
+method hiding.
+
+Example:
+class p {
+	public static void main(String args[]){
+		sysout("parent main");
+	}
+}
+
+class C extends P {
+	public static void main(String args[]){
+		sysout("child main");
+	}
+}
+
+java P:<-|
+o/p: parent main
+
+java C:<-|
+op: child main
+
+Note:-> for static methods overloading and inheritance concept are applicable but overriding concept is
+not applicable.but instead of method hiding concept is applicable.
+
+Instance Method Vs Static Method:->
+-> inside method implementation if we are using at least one instance variable then that method talks about
+a particular object.hence we should declare method as instance method.
+-> inside method implementation if we are not using any instance variable then this method no way related 
+to a particular object.hence we have to declare such type of method as static method irrespective of 
+whether we are using static variables or not.
+
+-> for static methods implementation should be available whereas for abstract methods implementation is not
+available hence abstract static combination is illegal for methods.
+-> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

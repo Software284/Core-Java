@@ -1,0 +1,50 @@
+case-I:-> Autoboxing vs Widening
+public class Test {
+	
+	public static void m1(Integer I) {
+		System.out.println("Auto Boxing");
+	}
+	
+	public static void m1(long l) {
+		System.out.println("Widening");
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+		m1(x);
+
+	}
+
+}
+
+output:->
+Widening
+
+-> widening dominates autoboxing.
+
+case-II:-> Widening vs Var args Method
+public class Test {
+	
+	public static void m1(int... x) {
+		System.out.println("Var Args Method");
+	}
+	
+	public static void m1(long l) {
+		System.out.println("Widening");
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 10;
+		m1(x);
+
+	}
+
+}
+
+output:->
+Widening
+
+-> Widening dominates vargs method
+

@@ -1,0 +1,23 @@
+Clone Method:->
+-> the process of creating exactly duplicates object is called cloning.
+-> the main purpose of cloning is to maintain backup copy and to preserve an state of an object.
+-> we can perform cloning by using clone method of object class.
+
+protected native Object clone() throws CloneNotSupportedException 
+
+-> we can perform cloning only for cloneable object.an object is said to clonnable if and only corresponding
+class implements cloaneable interface.
+-> Cloneable interface present in java.lang.package and it doesn't contain any methods.it is a marker interface.
+-> if we are trying to perform cloaning for non-cloneable objects then we will get runtime exception saying
+clonenotsupported exception.
+-> s2 = s1 is not cloaning.
+
+Shallow Cloneaing vs Deep Cloneaing:->
+
+Shallow Cloaning:->
+-> the process of creating bitwise copy of an object is called shallow cloaning.
+-> if the main object contain primitive variables then exactly duplicates copies will be created in the cloned
+object.
+-> if the main object contain any reference variable then corresponding object won't be created just duplicate
+reference variable will be created pointing to old content object.
+-> object class clone method meant for shallow cloning.

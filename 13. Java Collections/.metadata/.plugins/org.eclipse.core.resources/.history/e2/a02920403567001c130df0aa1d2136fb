@@ -1,0 +1,2 @@
+Queue:-> 1.5 version enhancements(queue interface).it is the child interface of collection,list,set.if we want
+to represent a group of individual objects prior to processing.

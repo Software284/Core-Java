@@ -1,0 +1,11 @@
+String Constant Pool:-> 
+Interning of String objects:-> we can use intern method to get corresponding string constant pool object
+reference by using heap object reference.
+By using heap object reference if we want to get corresponding SCP object reference then we should go
+for intern method.
+
+String s1 = new String("durga");
+String s2 = s1.intern();
+System.out.println(s1 == s2);
+String s3 = "durga";
+System.out.println(s2 == s3);

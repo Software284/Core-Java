@@ -1,0 +1,20 @@
+Method Local Inner Class:-> sometimes we can declare a class inside a method such type of inner classes are
+called method local inner classes.
+
+the main purpose main method local inner class is to define method specific repeteadly required functionality
+.method local inner classes are best suitable to meet nested method requirements.
+
+if we need to write 50k lines of code inside the method then we need to define a nested metod but in java
+nested method is not available.so we need to write method in the class level but what happen if this method
+is required only inside the method.for this problem solution method local inner classes are best 
+suitable.
+
+we can access method level inner classes only within the method where we declared outside of the method we
+can't access.because of it's less scope method local inner classes are most rarely used type of inner classes
+
+.
+
+we can declare method local inner class inside both instance and static methods.
+
+if we declare inner class inside instance method then from that method local inner class we can access both
+static and non-static members of outer class directly.

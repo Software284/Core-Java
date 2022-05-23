@@ -1,0 +1,17 @@
+package com.lamichhane.wrapper.utility_class.valueof.method;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Integer i = new Integer("10");
+		Double d = Double.valueOf(10);
+		Boolean b = Boolean.valueOf("durga");
+		
+		System.out.println(i);
+		System.out.println(d);
+		System.out.println(b);
+
+	}
+
+}

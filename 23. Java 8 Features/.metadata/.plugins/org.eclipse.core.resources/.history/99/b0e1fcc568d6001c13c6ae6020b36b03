@@ -1,0 +1,47 @@
+Functional Interfaces:-> the interfaces with only one abstract method and any no of default
+and static methods are called functional interfaces.
+Callable
+Comparable
+Comparater
+Runnable
+ActionListener
+
+Predefined functional interfaces:-> these interfaces are present in java.util.function.
+Predicate
+Function
+Consumer
+Supplier
+
+Predicate:-> it performs conditional check and returns based on the the condition either
+true or false.ex employee age with greater than 50 or not.this interface contains single 
+abstract method called test().
+interface Predicate<T>{
+	boolean test(T t){
+	}
+}
+
+Predicate Program Sequence:->
+predicate program to find greater than ten number or not
+predicate program to find length of the string
+predicate program to find collection empty or not
+
+
+Predicate Joining:->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

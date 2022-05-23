@@ -1,0 +1,14 @@
+package array.converting.to.list;
+
+import java.util.Arrays;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		String[] s = {"A","Z","B"};
+		List I = Arrays.asList(s);
+
+	}
+
+}

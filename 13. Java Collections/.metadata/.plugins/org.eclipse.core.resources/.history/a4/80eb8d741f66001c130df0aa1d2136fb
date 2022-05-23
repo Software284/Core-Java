@@ -1,0 +1,7 @@
+package comparator.with.treeset.example;
+
+import java.util.Comparator;
+
+public class MyComparator implements Comparator<T> {
+
+}

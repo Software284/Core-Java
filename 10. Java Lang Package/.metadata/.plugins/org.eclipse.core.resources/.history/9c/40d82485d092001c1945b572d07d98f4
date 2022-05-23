@@ -1,0 +1,14 @@
+package com.lamichhane.wrapper_class.constructors;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Integer i = new Integer(10);
+		Integer i2 = new Integer("10");
+		System.out.println(i);
+		System.out.println(i2);
+
+	}
+
+}

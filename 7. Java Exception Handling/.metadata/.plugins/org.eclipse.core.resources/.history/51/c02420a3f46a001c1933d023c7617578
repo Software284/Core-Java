@@ -1,0 +1,11 @@
+package handling.checked.exception.with_throws.for_parent.handling;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		doStuff();
+
+	}
+
+}

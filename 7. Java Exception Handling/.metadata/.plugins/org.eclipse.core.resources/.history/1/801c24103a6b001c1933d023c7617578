@@ -1,0 +1,37 @@
+Try with resources:-> until 1.6 version it is highly recomended to write finally block to close
+resources which are open as a part of try block.the problem in old appoach are
+i. compulsary programmer is required to close resources inside finally block it increases 
+complexity of programming.
+ii. we have to write finally block compulsary and hence it increases lenght of the code and reduces
+redability.
+
+to overcome above problems sun people introduces try with resources in 1.7 version.the main 
+advantage of try with resources is whatever resources we open as a part of try block wll be closed
+automatically once control reaches end of try block either normally of abnormally and hence we
+are not required close explictly so that complexity of programming will be reduced.
+we are not required to write finally block so that length of the code will be reduced and 
+readibility will be improved.we can declare multiple resources but these resources should be 
+separated should with semicolon.
+all resources should be auto closable resources.a resource is said to be autoclosable if and only
+if corresponding class implements java.lang.AutoClosable interface.all io related resources,database
+related resources and network related resources are already implemented autoclosable interface.
+being a programmer we are not required to do anything just we should aware the point.
+autoclosable interface came in 1.7 version and it contain only one method called close().
+
+All resource reference variables are implictly final and hence within the try block we can't
+perform reassignment otherwise we will get compile time error.
+
+Note: until 1.6 version try should be associated with either catch or finally but from 1.7 version
+onwards we can take only try with resource without catch or finally.
+try(r){
+}
+
+Multi catch block:-> 
+
+
+
+
+
+
+
+

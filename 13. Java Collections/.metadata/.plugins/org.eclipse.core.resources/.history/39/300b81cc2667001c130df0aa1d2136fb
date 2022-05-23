@@ -1,0 +1,11 @@
+package map.implementation.with.hashtable;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Hashtable h = new Hashtable();
+
+	}
+
+}

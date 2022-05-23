@@ -1,0 +1,5 @@
+StringBuilder:->
+-> Every method present in StringBuffer is synchronized and hence only one thread is allowed to 
+operate on StringBuffer object at a time.which may creates performance problems.to handle this requriement
+sun people introduce StringBuilder concept in 1.5 version.
+-> StringBuilder is exactly same as StringBuffer except the following differences

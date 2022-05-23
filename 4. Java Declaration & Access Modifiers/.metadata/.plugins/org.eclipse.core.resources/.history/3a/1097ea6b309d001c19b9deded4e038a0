@@ -1,0 +1,11 @@
+package com.lamichhane.interface_demo;
+
+public class Test1 extends Interf {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Interf.x);
+
+	}
+
+}

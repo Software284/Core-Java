@@ -1,0 +1,18 @@
+Var-args Method(Variable Number of argument method):->
+
+-> until 1.4 version we can't declare a method with variable number of arguments.if there is a change in number of arguments compulsary we should go 
+for new method.it increases length of the code and reduces readability.
+
+-> to overcome this problem sun people introduced var-arg methods in 1.5 version.according to this we can declare a method which can take variable no
+of arguments such type of methods are called var args methods.
+
+-> we can declare a var-arg method as follows
+m1(int... x);
+we can call this method by passing any no of int values including 0 number.
+m1();
+m1(10);
+m1(10,20);
+m1(10,20,30,40);
+
+-> internally var arg parameter will be converted into one dimensional array hence within the var-arg method we can differentiate values by using 
+index.

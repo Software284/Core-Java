@@ -1,0 +1,22 @@
+package implementation.of.list.with.ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		// this is use only when retrieval of objects beacause of performance problem because of array 
+		//implementation
+		List my_list = new ArrayList();
+		my_list.add(0,"A");
+		List new_list = new ArrayList();
+		new_list.add(0);
+		new_list.add(1);
+		my_list.addAll(new_list);
+		
+
+	}
+
+}

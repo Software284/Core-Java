@@ -1,0 +1,20 @@
+Data Hiding:-> Outside person can't access our internl data directly or our internal data should not
+go out directly this oop feature is nothing but data hiding.after validation or authentication outside person
+can access our inernal data.
+example1:-> after providing proper username and password we can able to 
+access our gmail inbox information.
+example2:-> even though we are valid customer of the bank we can able to access our account information and
+we can't access others account information.
+
+-> by declaring data member(variable) as private we can achive data hiding.
+public class Account{
+ private double balance;
+ public double getBalance(){
+ 	//validation
+ 	return balance;
+ }
+ }
+ -> the main advantage of data hiding is security.
+ Note:-> it is highly recomended to declare data member(variable) as private.
+ 
+ 

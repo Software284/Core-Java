@@ -1,0 +1,18 @@
+StringBuffer:-> 
+-> if the content is fixed and won't change frequently then it is recommended to go for String.if the content
+is not fixed and keep on changing then it is not recommended to use string because for every change
+a new object will be created which affects performance of the system.
+to handle this requirement we should go for StringBuffer.
+-> the main advantage of StringBuffer over String is all required changes will be performed existing 
+object only.
+
+Constructors:-> 
+
+i. StringBuffer sb = new StringBuffer();
+-> creates an empty StringBuffer object with default initial capacity 16.once StringBuffer reaches it's
+max capacity a new StringBuffer object will be created with new capacity is equal to (current capacity + 1)*2
+
+ii.StringBuffer sb = new StringBuffer(int initial_capacity);
+-> creates an empty StringBuffer object with specified initial capacity.this improves the performance
+of the program than above when String size is greater than 16 because copying content from the old object
+to new object when size is increases is reduced.

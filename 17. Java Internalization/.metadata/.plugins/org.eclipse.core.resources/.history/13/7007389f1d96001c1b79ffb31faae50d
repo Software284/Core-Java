@@ -1,0 +1,35 @@
+package com.lamichhane.locale.demo.program;
+
+import java.util.Locale;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Locale l = Locale.getDefault();
+		System.out.println(l);
+		
+		Locale l2 = new Locale("nep");
+		l.setDefault(l2);
+		
+		System.out.println(l2.getLanguage()+"..."+l2.getDisplayLanguage());
+		System.out.println(l2.getCountry()+"..."+l2.getDisplayCountry());
+		
+//		String[] iso_languages = l2.getISOLanguages();
+//		for(String s: iso_languages) {
+//			System.out.println(s);
+//		}
+		
+//		String[] iso_country = l2.getISOCountries();
+//		for(String s: iso_country) {
+//			System.out.println(s);
+//		}
+		
+		Locale[] ll = l2.getAvailableLocales();
+		for(Locale s : ll) {
+			System.out.println(s);
+		}
+
+	}
+
+}

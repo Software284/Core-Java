@@ -1,0 +1,22 @@
+package com.lamichhane.switch_statement.demo;
+
+public class Test {
+
+	public static void main(String[] args) {
+	
+		byte x = 10;
+		switch(x+1){
+			case 10:
+				sysout(10);
+				break;
+			case 100:
+				sysout(100);
+				break;
+			case 1000:
+				sysout(1000);
+				break;
+		}
+
+	}
+
+}

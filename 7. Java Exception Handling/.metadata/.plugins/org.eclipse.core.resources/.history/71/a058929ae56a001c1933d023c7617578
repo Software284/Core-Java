@@ -1,0 +1,23 @@
+final:-> final is a modifier applicable for classes methods and variables.if a class declared as
+final then we can't extend that class that is we can't create child class for that class that is
+inheritance is not possible for final classes.
+if a method is final then we can't overide that method in the child class.if a variable declard
+as final then we can't perform reassignment for that variable.
+
+Finally:-> it is a block always associated with try catch to maintain cleanup code. the speciality of 
+finally block is it will be execute always irrespective of whether exception is rised or not rised or 
+handle or not handle.
+
+Finalize:-> it is a method always invoked by garbage collector just before destroying an object to perform
+cleanup activities.once a finalize method completes immediately garbage collector destroys that object.
+
+Note:-> Finally block is responsible to perform cleanup activities related to try block that is whatever
+resources we open as the part of try block will be closed inside finally block.
+whereas finalize method is responsible to perform cleanup activities related to object that is whatever
+resources associated with object will be de-allocated before destroying an object by using finalize 
+method.
+
+Various Combinations of try catch finally:-> try catch finally order important.whenever we are writing
+try compulsary we should write either catch or finally otherwise we will get compile time error that is
+try without catch or finally is invalid.whenever we are writing catch block compulsary try block must
+be required that is catch without try is invalid.

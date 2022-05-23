@@ -1,0 +1,22 @@
+package com.lamichhane.without.generics;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+	
+		ArrayList list = new ArrayList();
+		list.add("durga");
+		list.add("ravi");
+		list.add(new Integer(10));
+		
+		String s1 = (String)list.get(0);
+		
+		System.out.println(s1);
+		System.out.println(list.get(1));
+		System.out.println(list.get(2));
+
+	}
+
+}

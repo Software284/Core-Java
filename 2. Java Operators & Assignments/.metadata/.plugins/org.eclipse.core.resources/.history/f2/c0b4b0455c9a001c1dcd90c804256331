@@ -1,0 +1,27 @@
+Assignments Operators:->
+-> there are three types of assignment operators 
+i. simple assignment 
+Example:
+int x = 10;
+
+ii. chained assignment
+Example:
+int a = b = c = d = 20;
+or int a=20,b=20,c=20,d=20;
+
+iii. compound assignment
+Example:
+a += 20;
+
+total assignemtn:
++=
+*=
+/=
+%=
+-=
+&=
+|=
+^=
+>>=
+>>>=
+

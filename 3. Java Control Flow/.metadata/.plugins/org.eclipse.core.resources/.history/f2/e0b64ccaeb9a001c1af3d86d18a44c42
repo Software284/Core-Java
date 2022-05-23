@@ -1,0 +1,123 @@
+Flow Control:->
+-> it describes the order in which the statements will be executed at runtime.
+
+Flow Control:
+	Selection Statements
+		if-else
+		switch
+	Iterative Statements
+		while()
+		do-while()
+		for()
+		for-each loop
+	Transfer Statements
+		break
+		continue
+		return
+		try-catch-finally
+		assert
+
+===================================================================================================
+Selection Statements:->
+i. if else:->
+syntax:
+if(b)
+{
+	// action if b is true
+}
+else {
+	// action if b is false
+}
+-> the argument to the if statement should be boolean type by mistake if we are trying to provide any
+other type then we will get compile time error.
+int x = 0;
+if(x){
+sysout("Hello");
+}
+else
+{
+	sysout("Hi");
+}
+
+output:->
+incompatible types found int required boolean
+
+int x = 10;
+if(x=20){
+sysout("Hello");
+}
+else{
+syosut("Hi");
+}
+
+output:->
+incompatible types found int required boolean
+
+int x = 10;
+if(x == 20){
+syosut("Hello");
+}
+else{
+sysout("Hi");
+}
+
+output:
+Hi
+
+boolean b = true;
+if(b = false){
+sysout("Hello");
+}
+else{
+syosut("Hi");
+}
+
+output:-> 
+Hi
+
+
+boolean b = false;
+if(b == false){
+sysout("Hello");
+}
+else{
+sysout("Hi");
+}
+
+output:
+Hello
+
+-> else part and curly braces are optional.without curly braces only one statement is allowed under
+if which should not be declarative statement.
+if(true)
+sysout("Hello");
+//valid
+
+if(true);
+//valid
+
+if(true)
+int x = 10;
+//invalid
+
+if(true){
+int x = 10;
+}
+//valid
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

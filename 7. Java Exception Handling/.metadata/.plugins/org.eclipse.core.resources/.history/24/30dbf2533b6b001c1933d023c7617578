@@ -1,0 +1,14 @@
+package program.with.try_with.resources;
+
+import java.io.FileReader;
+
+public class Test {
+
+	public static void main(String[] args) {
+		FileReader r = new FileReader("abc.txt");
+		BufferedReader br = new BufferedReader(r);
+		try()
+
+	}
+
+}

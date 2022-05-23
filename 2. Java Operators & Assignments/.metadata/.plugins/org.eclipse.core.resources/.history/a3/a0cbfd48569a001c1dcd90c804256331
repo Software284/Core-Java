@@ -1,0 +1,25 @@
+Type-cast Operator:->
+-> there are two types of type-casting 
+i. implict type casting
+ii. explict type casting
+
+Implict Type-casting:->
+-> compiler is responsible to perform implict type-casting.
+-> whenever we are assigning smaller data type value to bigger data type variable implict type-casting will be
+performed.
+-> it is also know as widening or upcasting.
+-> there is no loss of information in this type casting.
+
+int x = 'a';
+sysout(x); //97
+compiler converts char to int automatically by implict type-casting
+
+double d = 10;
+sysout(d); //10.0
+compiler converts int  to double  automatically by implict type-casting
+
+byte -> short
+byte -> int
+char -> int
+short -> int
+int -> long

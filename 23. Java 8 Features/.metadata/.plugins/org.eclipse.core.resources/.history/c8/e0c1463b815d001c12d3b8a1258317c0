@@ -1,0 +1,41 @@
+package Function_functional.interface_program.of.incremeanting.salary.of.employee;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+public class Test {
+	
+	public static void populate(List<Employee> list) {
+		list.add(new Employee("Mahesh",10000));
+		list.add(new Employee("Pits",15000));
+		list.add(new Employee("Sagar",20000));
+		list.add(new Employee("Kamal",25000));
+		list.add(new Employee("Nabin",30000));
+	}
+
+	public static void main(String[] args) {
+		
+		List<Employee> mylist = new ArrayList<>();
+		populate(mylist);
+		
+		Function<Employee,Double> f1 = e -> {
+			double actual_salary = e.salary;
+			if(actual_salary < 20000) {
+				actual_salary += 3000;
+			}
+			return actual_salary;
+		};
+		
+		List<Employee> newList = new ArrayList<>();
+		
+		for(Employee e : mylist) {
+			double salary = f1.apply(e);
+			e.salary = salary;
+			newList.add(e);
+		}
+		
+
+	}
+
+}

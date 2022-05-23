@@ -1,0 +1,3 @@
+Throw:-> Sometimes we can create exception object explictly we can handover to the JVM manually for this
+we have to use throw keyword.hence the main objective of throw keyword is to handover our created 
+exception to the JVM manually.

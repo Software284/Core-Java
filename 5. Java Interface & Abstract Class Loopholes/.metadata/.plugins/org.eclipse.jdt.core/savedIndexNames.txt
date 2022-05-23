@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\Programmer\OneDrive\Desktop\Desktop FIle\Java Interface & Abstract Class Loopholes\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3841323222.index
+1159005397.index

@@ -1,0 +1,111 @@
+Generic classses:-> 
+-> until 1.4 version a non generic version of array list class declared as follows:-
+class ArrayList{
+	add(Object o)
+	Object get(int index);
+}
+-> the argument to add method is object and hence we can add any type of object to the arraylist.due to this we are
+missing type safety.
+-> the return type of get method is Object hence at the time of retrieval we have to perform type casting.
+-> but in 1.5 version a generic version of array list class is declared as follows:->
+class ArrayList<T>{
+	add(T k);
+	T get(int index);
+}
+
+-> based on our runtime requirement T will be replaced with our provided type.for example to hold only string type of
+objects. a generic version of array list object can be created as follows.
+
+Example:->
+ArrayList<String> list = new ArrayList<String>
+class ArrayList<String>{
+	add(String s);
+	String get(int index);
+}
+
+list.add("durga");
+list.add(new Integer(10));
+CE:cannot find symbol: method add(java.lang.Integer) location class ArrayList<String>
+String s1 = l.get(0);
+here type casting is not required.T is called type parameter.
+
+-> in generics we are associating a type parameter to the class such type of parameterized classes are nothing but 
+generic classes or template classes.
+-> based on our requirement we can define our own generic classes also.
+class Account<T>{
+}
+Account<Gold> a1 = new Account<Gold>();
+Account<Platinimu> a2 = new Account<Platinium>();
+->see example for full details.
+
+Bounded Types:-> we can bound the type parameter for a particular range by using extends keyword such types are called bounded
+types
+Example1:->
+class Test<T>{
+}
+-> as the type parameter we can pass any type and there are no restrictions and hence it is unbounded type.
+
+Test<Integer> t1 = new Test<Integer>(); //valid
+Test<String> t2 = new Test<String>(); //valid
+
+Example2:->
+class Test<T extends Number>{
+	
+}
+-> we can pass either number or it's child classes.
+-> this is correct statement
+class Test<T implements Runnable>{
+}
+-> we can pass either runnable or it's implementation classes
+-> this is incorrect statement but we can replace imlements with extends.
+class Test<T super String>{
+}
+-> we can pass either string or it's super classes
+-> this is incorrect statement.
+
+Note:-> we can define bounded type only using extends keyword.
+
+->syntax for bounded type
+class Test<T extends x>{
+	
+}
+-> X can be either class or interface.if X is a class then as a type parameter we can pass either X type or it's child
+classes.if X is an interface then as a type parameter we can pass either X type or it's implementation classes.
+
+Test<Integer> t1 = new Test<Integer>(); //valid
+Test<String> t2 = new Test<String>();  //valid
+CE:->type parameter j.l.String is not in it's bound
+
+class Test<T extends Runnable>{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

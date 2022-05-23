@@ -1,0 +1,117 @@
+Relation Between .equal method and == operator:->
+-> if two object are equal by == operator then these object are always equal by .equal method that is
+if r1 == r2 is true then r1.equals(r2) is always true.
+
+-> if two objects are not equal by == operator then we can't conclude anything about .equals method.it
+may return true or false.that is if r1 == r2 is false then r1.equals(r2) may returns true or false.
+and we can't expect exactly.
+
+-> if two object are equal by .equals method then we can't conclude anything about == operator.it may 
+returns true or false.that is r1.equals(r2) is true then we can't conclude anything about r1 == r2.it 
+may returns true or false.
+
+-> if two objects are not equal by .equals method then these object are always not equal by == operator.
+that if r1.equals(r2) is false then r1 == r2 is always false.
+
+Differences between == operator and .equals method:->
+-> to use == operator compulsary there should be some relation between argument types(either child to
+parent or parent to child or same type).otherwise we will get compile time error saying incomparable
+types.
+-> if there is no relation between argument types then .equals method won't rise any compile time
+or runtime errors simply it returns false.
+
+String s1 = new String("durga");
+String s2 = new String("durga");
+StringBuffer sb1 = new StringBuffer("durga");
+StringBuffer sb2 = new StringBuffer("durga");
+		
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(sb1==sb2);
+System.out.println(sb1.equals(sb2));
+//System.out.println(s1 == sb1); CE:incompatible type
+System.out.println(s1.equals(sb1));
+
+output:->
+false
+true
+false
+false
+false
+
+-> == operator is an operator in java applicable for both primitives and object types vs equals method
+is an method applicable only for object types but not for primitives.
+-> in the case of object references double equal operator meant for reference comparison(address
+comparison).by default .equals method present in object class also meant for reference comparison.
+-> we can't override == operator for content comparison.we can override .equals method for content
+comparison.
+-> to use double equal operator compulsary there should be some realtion between between argument 
+types(either child to parent or parent to child or same type) otherwise we will get compile time 
+error saying incomparable types.if there is no relation between argument types then .equals method
+won't rise any compile time or runtime errors and simply returns false.
+
+Note:-> for any object reference r,
+r == null
+r.equals(null)
+always returns false.
+Example:-
+Thread t = new Thread();
+System.out.println(t== null) 
+System.out.println(t.equals(null));
+
+output:->
+false
+false
+
+Note:-> Hashing related data structures follow the following fundamental rule.
+i. two equivalent object should be placed in same bucket but all object present in the same bucket
+need not be equal.
+
+Contract between .equals method and hashcode method:->
+-> if two objects are equal by .equals method then their hascode must be equal that is two equivalent
+objects should have same hashcode that is if r1.equals(r2) is true then 
+r1.hasCode) == r2.hasCode()
+is always true.
+-> object class .equals method and the hashcode method follows above contract.hence whenever we
+are overriding .equals method compulsary we should override hashcode method to satisfy above contract.
+that is two equivalent object should have same hashcode.
+-> if two object are not equal by .equal method then there no restriction on hashcode.maybe equal
+or may not be equal.
+-> if hashcode of two objects are equal then we can't conclude anything about .equals method it may
+returns true or false.
+-> if hascode of two objects are not equal then these object are always not equal by .equals method.
+
+Note:-> to satisfy contract between equals and hashcode methods whenever we are overriding .equals 
+method compulsary we have to override hashcode method otherwise we won't get any compile time 
+and runtime errors.but it is not a good programming practise.
+String s1 = new String("durga");
+String s2 = new String("durga");
+System.out.println(s1.equals(s2));
+System.out.println(s1.hashCode());
+System.out.println(s2.hashCode());
+
+output:->
+true
+95950491
+95950491
+
+-> in stringbuffer .equals method is not overridden for content comparison and hence hascode() method
+is not overridden.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

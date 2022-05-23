@@ -1,0 +1,5 @@
+Various possible runtime flags:->
+i. -ea -> enableassertions
+ii. -da -> disableassertions
+iii. -esa -> enablesystemassertion
+iv. -dsa -> disablesystemassertion

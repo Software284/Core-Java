@@ -1,0 +1,23 @@
+Introduction:->
+-> very common way of debugging is usage of sop statements but the problem with sop's is after
+fixing the bug compulsary we have to delete sop statements.otherwise these sop's will be executed
+at runtime for every request,which creates performance problems and disturbs server logs.
+
+-> to overcome these problem sun people introduced assertions concept in 1.4 version.
+-> the main advantage of assertions when compared with sop's is after fixing the bug we are not
+required to remove assert statements because they won't be executed by default at runtime.
+
+-> based on our requirement we can enable and disable assetrions.and by default assertions are
+disabled.
+-> hence the main objective of assertions is to perform debugging.
+-> usually we can perform debugging in development and test environments but not in production
+environment hence assertions concept applicable for development and test environments but not 
+for production.
+-> it comes in 1.4 version.
+
+
+
+Assert as identifier and keyword:->
+-> assert keyword introduced in 1.4 version hence from 1.4 version onwards we can't use assert as
+identifier otherwise we will get compile time error.
+-> 

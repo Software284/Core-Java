@@ -1,0 +1,213 @@
+Anonymous Inner Class:-> sometimes we can declare inner class without name such type of inner classes are called
+anonymous inner classes.
+the main purpose of anonymous inner classes is just for instant use(one time usage).
+if we have 100 methods in parent class but we want to inherit only one method from parent class at that 
+situation anonymous inner class that extends class is best suitable instead of inheritance relationship.
+
+based on declaration and behaviour there are three types of anonymous inner classes:->
+
+i. anonymous inner class that extends a class
+ii. anonymous inner class that implements a interface
+iii. anonymous inner class that defines inside arguments
+
+
+Anonymous inner class that extends a class:-> 
+Thread t = new Thread();
+Thread t  = new Thread()
+{
+};
+
+Generated class names of example are:->
+PopCorn.class
+Test.class
+Test$1.class
+Test$2.class
+
+PopCorn p = new PopCorn(); :=> just we are creating PopCorn object.
+PopCorn p =  new PopCorn()
+{
+};
+-> we are declaring a class that extends PopCorn without name(anonymous inner class).
+-> for that child class we are creating an object with parent reference.
+
+PopCorn p = new PopCorn()
+{
+	public void taste(){
+	syosut("Spicy");
+	}
+};
+-> we are declaring a class that extends PopCorn without name(anonymous inner class).
+-> in that child class we are overriding taste method.
+-> for that child class we are creating an object with parent reference.
+
+-> defining a thread by extending thread class 
+
+Normal approach vs Annomoys approach:-> 
+
+Normal:->
+class MyThread extends Thread{
+	public void run(){
+		for(int i = 0; i<10; i++){
+			System.out.println("Child Thread");
+		}
+}
+
+class ThreadDemo{
+	public static void main(String args[]){
+		MyThread  t = new MyThread();
+		t.start();
+		for(int i = 0; i<10; i++){
+			System.out.println("Main Thread");
+		}
+		
+	}
+}
+
+Anonymous:->
+class ThreadDemo {
+	public static void main(String args[]){
+		Thread t = new Thread(){
+			public void run(){
+				for(int i = 0; i<10; i++){
+					System.out.println("Child Thread");
+		         }
+			}
+		};
+		t.start();
+		for(int i = 0; i<10; i++){
+			System.out.println("Main Thread");
+		}
+		
+	}
+}
+
+Anonymous inner class that implements a interface:-> 
+Normal approach:->
+class MyRunnable implements Runnable {
+	public void run(){
+		for(int i=0;i<=10;i++){
+		 System.out.println("Child Thread");
+		}
+	}
+}
+
+class ThreadDemo {
+	public static void main(String args[]){
+		MyRunnable r = new Runnable();
+		Thread t = new Thread(r);
+		t.start();
+		for(int i=0;i<=10;i++){
+			System.out.println("Main Thread");
+		}
+	}
+}
+
+Anonymous approach:->
+class ThreadDemo {
+	public static void main(String args[]){
+		Runnable r = new Runnable(){
+			public void run(){
+				for(int i=0;i<=10;i++){
+		 			System.out.println("Child Thread");
+		        }
+			}
+		};
+		Thread t = new Thread(r);
+		t.start();
+		for(int i=0;i<=10;i++){
+		 	System.out.println("Main Thread");
+		}
+	}
+}
+
+
+Anonymous inner class that defines inside arguments:-> 
+class ThreadDemo {
+	public static void main(String args[]){
+		Thread t = new Thread(new Runnable(){
+			public void run(){
+				for(int i=0;i<=10;i++){
+					System.out.println("Child Thread");
+				}
+			}
+		});
+		
+		for(int i=0;i<=10;i++){
+		 	System.out.println("Main Thread");
+		}
+		
+	}
+}
+
+Normal java class vs Anonymous Inner Class:->
+-> normal java class can extends only one class at a time of course anonymous inner class also can extends
+only one class at time.
+-> a normal java class can implement any no of interfaces simultaneously but anonymous inner class can
+implement only one interface at a time.
+-> a normal java class can extends a class and can implement any no of interfaces simultaneously but 
+anonymous inner class can extend a class or can implement an interface but not both simultaneously.
+-> in normal java class we can write any no of constructors simultaneously but in anonymous inner classes
+we can't write any constructor explictly(because the name of the class and name of the constructor must be
+same but anonymous inner classes not having any name).
+
+Note:-> if the requriement is standard and required several times then we should go for normal top level
+class.if the requirement is temporary and required only once(instant use) then we should go for anonymous
+inner class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

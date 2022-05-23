@@ -1,0 +1,18 @@
+Command Line Arguments:-> 
+-> the arguments which are passing from command prompt are called command line arguments.
+-> with these command line arguments JVM will create an array and by passing that array as argument JVM will call main method.
+Example:->
+java Test A B C
+
+-> the main objective of command line argument is we can customize behaviour of the main method.
+
+-> java uses string as command line argument because string is most used data type and we can convert to any other type such as primitive,boolean etc.
+
+
+case-I:-> 
+
+class Test{
+	public static void main(String args[]){
+		
+	}
+}

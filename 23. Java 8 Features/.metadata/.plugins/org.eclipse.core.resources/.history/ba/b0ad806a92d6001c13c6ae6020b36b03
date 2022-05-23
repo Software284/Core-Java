@@ -1,0 +1,32 @@
+Primitive Type Functional Interface:-> 
+
+1. Autoboxing:
+Automatic conversion from primitive type to Object type by compiler is called autoboxing.
+
+
+2. Autounboxing:
+Automatic conversion from object type to primitive type by compiler is called autounboxing.
+
+3. In the case of generics, the type parameter is always object type and no chance of passing
+primitive type.
+ArrayList<Integer> l = new ArrayList<Integer>();//valid
+ArrayList<int> l = new ArrayList<int>();//invalid
+
+
+Need of Primitive Functional Interfaces:
+In the case of normal Functional interfaces (like Predicate, Function etc) input and return types are
+always Object types. If we pass primitive values then these primitive values will be converted to
+Object type (Auboxing), which creates performance problems.
+1) import java.util.function.Predicate;
+2) class Test
+3) {
+4) public static void main(String[] args)
+5) {
+6) int[] x ={0,5,10,15,20,25};
+Primitive
+ Type
+Auto Boxing
+Wrapper
+ Object
+ Type
+Auto Unboxing

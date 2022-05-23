@@ -1,0 +1,17 @@
+package com.lamichhane.clone.method.example;
+
+public class Test {
+	
+	int i = 20;
+	int j = 30;
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		Test t = new Test();
+		Test t2 = (Test)t.clone();
+	
+		
+
+	}
+
+}

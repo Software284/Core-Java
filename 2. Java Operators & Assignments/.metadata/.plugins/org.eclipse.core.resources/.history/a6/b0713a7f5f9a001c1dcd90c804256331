@@ -1,0 +1,8 @@
+New Operator:-> 
+-> we can use new operator to create object.
+Example:
+Test t = new Test();
+
+Note:->
+-> after creating an object constructor will be executed to perform initialization of an object hence constructor is
+not for creation of object and it is for initialization of an object.

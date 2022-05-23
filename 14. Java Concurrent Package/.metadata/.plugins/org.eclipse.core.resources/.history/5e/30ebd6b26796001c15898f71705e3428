@@ -1,0 +1,12 @@
+package com.lamichhane.concurrent.hash.map.program1;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ConcurrentHashMap map = new ConcurrentHashMap();
+		
+
+	}
+
+}

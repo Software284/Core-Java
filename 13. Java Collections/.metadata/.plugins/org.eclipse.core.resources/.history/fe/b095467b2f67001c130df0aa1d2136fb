@@ -1,0 +1,11 @@
+package map.implementation.with.properties;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Properties p = new Properties();
+
+	}
+
+}

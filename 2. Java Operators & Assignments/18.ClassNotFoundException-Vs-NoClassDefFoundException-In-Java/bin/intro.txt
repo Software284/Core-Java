@@ -1,0 +1,14 @@
+Difference Between ClassNotFoundException VS NoClassDefFoundError:->
+
+-> for hard coded class names,at runtime if the corresponding .class file is not available then we will get runtime
+exception saying NoClassDefFoundError,which is unchecked.
+Example:
+Test t = new Test();
+at runtime if Test.class file is not available then we will get runtime exception saying NoClassDefFoundError:Test.
+
+-> for dynamically provided class names at runtime if the corresponding .class file is not available then we will get
+runtime exception saying ClassNotFoundException,which is checked exception.
+Example:
+Object o = Class.forName(args[0]).newInstance();
+java Test Student
+at runtime if Student.class file not available then we will get runtime exception saying ClassNotFoundException:Student.

@@ -1,0 +1,14 @@
+Introduction:-> 
+-> for writing any java program whether it is simple or complex the most commonly required
+classes and interfaces are grouped into a separate package which is nothing but java.lang package.
+
+-> we are not required to import java.lang package explictly because all classes and interfaces present 
+in lang package by default available to every java program.
+
+-> All avaialble classes in java.lang package are
+i.Objet
+ii.String
+iii.StringBuffer
+iv.StringBuilder
+v.Wrapper 
+vi.Autoboxing and Unboxing

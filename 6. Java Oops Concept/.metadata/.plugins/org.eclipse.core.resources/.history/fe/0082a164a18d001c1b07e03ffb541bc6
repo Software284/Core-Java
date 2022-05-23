@@ -1,0 +1,135 @@
+Coupling:-> the degree of dependency between the components is called coupling.if dependency is more
+then it is considered as tightly coupling and if dependency is less then it is considered as loosely
+coupling.
+Example:-> Tightly Coupled
+class A {
+ static int i = B.j;
+ }
+
+class B {
+ static int j = C.k;
+ }
+
+class C {
+ static int k = D.m1();
+ }
+
+class D {
+ public stati int m1(){
+  return 10;
+  }
+ }
+
+the above components are said to be tightly coupled to each other because dependency between the
+components is more.
+tightly coupling is not a good programming practise because it has several serious dis-advantages.
+
+i.Without effecting remaining components we can't modify any component and hence enhancement will 
+become difficult.
+ii.It suprasses re-usability
+iii.It reduces maintainability of the application.
+
+hence we have to maintain dependency between the components as less as possible that is loosely coupling
+is a good programming practise.
+
+
+Cohesion:-> for every component a clear well defined functionality is defined then that component is
+said to be follow high cohesion.in programming it is better to design different component for the
+independent parts of the program.for example spring mvc follows high cohession because it provides
+separate compoent for modal,view and controller.
+
+
+high cohession is always is a good programming practise because it has several advantages.
+i.Without effecting remaining components we can modify any component hence enhancement will become
+easier.
+ii.it promotes re-usability of the code(where ever validation is required we can re-use the same
+vaidate servlet without re-writing).
+iii.it improves maintainability of the application.
+
+Note:-> loosely coupling and high cohesion are good programming practises.these are used at design
+pattern levels,framework levels.
+
+Object Type Casting:-> we can use parent reference to hold child object.
+Example:->
+Object o = new String("mahesh")
+we can use interface reference to hold implemented class object
+Example:-> 
+Runnable r = new Thread()
+
+Syntax:
+A  b = (C)d;
+where 
+A = class/interface name
+b = reference variable name
+C = class/interface name
+d = reference variable name
+
+Mantra 1(compile time checking one):-> the type of 'd' and 'C' must have some relation either child to
+parent or parent to child or same type otherwise we will get compile time error saying inconvertible 
+types found 'd' type required 'C'.
+
+Example 1:-
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example 2:-> 
+String s = new String("mahesh");
+StringBuffer sb = (StrinBuffer)s;
+this statement is invalid.throws CE inconvertible types because there is no relationship between
+StringBuffer and String.
+
+Mantra 2(compile time checking 2):->'C' must be either same or derived type of 'A' otherwise we will
+get compile time error saying incompatible types found 'C' required 'A'.
+
+Example1:->
+Object o = new String("durga")
+StringBuffer sb = (StringBuffer)o
+this statement is perfect valid.
+
+Example2:->
+Object o = new String("mahesh")
+StringBuffer bf = (String)o
+this statement is prefectly invalid.it throws incompatible type exception.
+
+
+Mantra3(Runtime Checking):-> runtime object type of 'd' must be either same or derived type of 'C' otherwise 
+we will get runitme exception saying class cast exception.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

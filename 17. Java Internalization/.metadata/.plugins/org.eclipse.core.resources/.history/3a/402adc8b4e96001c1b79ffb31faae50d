@@ -1,0 +1,6 @@
+-> various locations follow various styles to represent date.
+Example:
+IN-> dd/mm/yyyy
+US-> mm/dd/yyyy
+
+-> we can use DateFormat to format java date according to a particular Locale.

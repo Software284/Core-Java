@@ -1,0 +1,5 @@
+package com.lamichhane.main.method.inside_enum;
+
+public enum Fish {
+
+}

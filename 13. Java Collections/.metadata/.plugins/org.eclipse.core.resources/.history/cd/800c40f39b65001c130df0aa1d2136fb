@@ -1,0 +1,311 @@
+package introduction.to.list.program;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Test {
+	
+	/*
+	 	List is child interface of collection. if we want to represent group of individual objects
+	 	as a single entity where duplicates are allowed and insertion order must be preserved then
+	 	we should go for list.we can preserve insertion order via index and we can differentiate
+	 	duplicate objects by using index hence index will play very important role in list.
+	 	
+	 	list interface defines the following specific methods .
+	 	i. void add(int index,Object o)
+	 	ii. void addAll(int index,Collection c)
+	 	iii. Object get(int index)
+	 	iv. Object remove(int index)
+	 	v. int indexOf(Object o)
+	 	vi. int lastIndexOf(Object o)
+	 	vii. ListIterator listIterator()
+	 	viii. Object set(int index, Object new)
+	 	
+	 	Implementation classes of List Interface:-
+	 	i. ArrayList
+	 	ii. LinkedList
+	 	iii. Vector
+	 		a. Stack
+	 		
+	 	ArrayList Class:- the underlying data structures is 
+	 	i. resizable array or growable array.
+	 	ii. duplicates are allowed
+	 	iii. insertion order is preserved
+	 	iv. hetrogenious objects are allowed(only for treeset and treemap  hetrogenous objects are not allowed)
+	 	v. null insertion
+	 	
+	 	Constructors for ArrayList:-
+	 	i. ArrayList l = new ArrayList(); it creates an empty array list object with the default initial capacity 10 .once arraylist reaches its 
+	 	max capacity then a new array list object will be created with the 
+	 	new capacity = current capacity * 3/2 + 1;
+	 	ii. ArrayList l = new ArrayList(int initial_capacity) it creates an empty array list object with the specified initial capacity.
+	 	iii. ArrayList l = new ArrayList(Collection c) it creates an equivalent array list object for the given collection.
+	 	iv. ArrayList<Object Type> obj = new ArrayList<>() it is recomended user
+	 	
+	 	usually we can use collections to hold and transfer object from one location to another location(container).to provide support this
+	 	requirement every collection class by default implements serializable and clonnable interfaces.
+	 	
+	 	Arraylist and Vector classes implements RandomAccess Interface so that any random element we can access with the same speed.
+	 	
+	 	Random Access Interface:- it is presents in java.util.package and it doesn't contain any methods. it is a marker interface where required
+	 	utility will be provided automatically by the JVM.
+	 	
+	 	Array list is the best choice if our frequent operation is retrival operation(because array list implements random access interface).
+	 	Array list is the worst choice if our frequent operation is insertion or deletion in middle.
+	 	
+	 	diffrences between array list and vector:-
+	 	i. non-synchronize method vs synchronize method
+	 	ii. Not thread safe vs thread safe
+	 	iii. relatively high performance vs relatively low performance
+	 	iv. 1.2 version non-legacy vs 1.0 version legacy
+	 	
+	 	How to get synchronize version of array list object:- 
+	 	ArrayList l = new ArrayList();
+	 	List l1 = Collections.synchronizedList(l)
+	 	public static List synchronizedList(List I)
+	 	public static Set synchronizedSet(Set S)
+	 	public static Map synchronizedMap(Map M)
+	 	
+	 	LinkedList Class:- 
+	 	-> the underlying data structure is doubly linked list.
+	 	-> insertion order is preserved.
+	 	-> duplicate objects are allowed
+	 	-> hetrogenious objects are allowed
+	 	-> null insertion is possible
+	 	-> LinkedList implements serializable and clonnable interfaces but not random access interface.
+	 	-> LinkedList is the best choice if our frequent operation is insertion or deletion in middle.
+	 	-> LinkedList is the worst choice if our frequent operation is reterival operation.
+	 	
+	 	Constructors:- 
+	 	LinkedList l = new LinkedList()
+	 	LinkedList l = new LinkedList(Collection c)
+	 	
+	 	linkedlist class specific methods:- usually we can use linked list to develop stacks and queues.to provide support for this requirement
+	 	linkedlist class defines the following specific methods.
+	 	i. void addFirst(Object o);
+	 	ii. void addLast(Object o);
+	 	iii. Object getFirst();
+	 	iv.Object getLast();
+	 	v. Object removeFirst();
+	 	vi. Object removeLast(); 
+	 	
+	 	Differences between array list and linked list:- ArrayList is best when frequent operation is retrievel and Linkes list is best when our
+	 	frequent operation is insertion of deletion.in array list data are stored in a consecutive memory location while in linked list data 
+	 	are not stored  into consecutive memory location.
+	 	
+	 	In arraylist the elements will be stored in conssecutive memory locations hence retrieval operation become easy.in linked list the element
+	 	won't be stored in consecutive memory locations and hence opeartion retrievel operation become complex. Array uses growable array as data
+	 	structures while linkes list uses doubly linked list as underlying data structures.
+	 	
+	 	
+	 	Vector:- underlying data structures
+	 	-> growable array or resizable array
+	 	-> Insertion Order
+	 	-> duplicates
+	 	-> hetrogenious 
+	 	-> null insertion
+	 	-> implements serializable,clonnable,randomaccess
+	 	-> every method is a synchronize so thread safe.
+	 	-> new capacity = current_capacity * 2;
+	 	
+	 	Constructor:- 
+	 	Vector v = new Vector();
+	 	Vector v = new Vector(int initail_capacity)
+	 	Vector v = new Vector(int initail_capacity,int incremental_capacity)
+	 	Vector v = new Vector(Collection c)
+	 	
+	 	Vector Specific Methods:- 
+	 	
+	 	add object:-
+	 	i.add(Object o) -C
+	 	ii.add(int index,Object o) -L
+	 	iii. addElement(Object o) -V
+	 	
+	 	remove object:-
+	 	remove(Object o) -C
+	 	removeElement(Object o) -V
+	 	remove(int index) -L
+	 	removeElementAt(int index) -V
+	 	clear() -C
+	 	removeAllElements() -V 
+	 	
+	 	get objects:-
+	 	Object get(int index) -L
+	 	Object elementAt(int index) -V
+	 	Object firstElement() -V
+	 	Object lastElement() -V
+	 	
+	 	Other methods 
+	 	int size()
+	 	int capacity()
+	 	Enumeration elements()
+	 	
+	 	
+	 	Stack Class:- it is the child class of vector.it is a special designed class for last in first out order(LIFO).
+	 	constructor:- 
+	 	Stack s = new Stack();
+	 	methods:-
+	 	Object push(Object o)
+	 	Object pop();
+	 	Object peak(); returns top of the stack
+	 	boolean empty();
+	 	int search(Object o); if object is three return offset of object present in stack else -1.
+	 	
+	 	
+	 	
+	 	3 Cursors of java:-
+	 	i.Ennumeration
+	 	ii. Iterator
+	 	iii.ListIterator
+	 	
+	 	if we want to get objects one by one from the collection then we should go for cursor.there are three types of curseors available in java
+	 	as above.
+	 	
+	 	Ennumerations:- we can use ennumeration to get objects one by one from legacy collections objects.we can create Ennumeration objects by
+	 	using elements method of Vector class.
+	 	public ennumerations elements()
+	 	public boolean hasMoreElements()
+	 	public Object nextElements()
+	 	Ennumerations e = v.elements();
+	 	
+	 	Dis-advantage of Ennumerations:-
+	 	-> we can apply enumerations concept only for legacy classes such as vector and stack and it is not a universal curosr.
+	 	-> by using enumerations we cant get only read access and we can't perform remove operations.
+	 	
+	 	to overcome above limitations we should go for iterator.
+	 	
+	 	Iterator:-> we can apply iterator concept for any collections object and hence it is universal cursor. by using iterator
+	 	we can perform both read and remove operations.
+	 	public Iterator iterator()
+	 	we can iterator object by using iterator method of Collection interface.
+	 	Iterator it = c.iterator() c is collection object
+	 	
+	 	Methods:
+	 	public boolean hasNext()
+	 	public Object next()
+	 	public void remove()
+	 	
+	 	Limitations:-> 
+	 	-> by using enumerations and iterator we can always move only towards forward direction and we can't move towards backward
+	 	direction these are single direction cursors but not bi-directional cursors.
+	 	-> by using iterator we can perform only read and remove operations and we can't perform replacement on the addition of new
+	 	objects.
+	 	
+	 	to overcome above limitations we should go for ListIterator.
+	 	
+	 	ListIterator:-> by using listiterator we can move either to the forward direction or to the backward direction hence it is
+	 	bi-directional cursor.by using list iterator we can perform replacement and addition of new object in addition to read and
+	 	remove operations.
+	 	method:
+	 	public ListIterator listIterator() of list interface
+	 	ListIterator itr = l.listIterator(); l is any list object.
+	 	
+	 	listiterator is the child interface of iterator.
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 */
+
+	public static void main(String[] args) {
+		
+//		ArrayList I = new ArrayList();
+//		I.add("A");
+//		I.add(10);
+//		I.add("A");
+//		I.add(null);
+//		
+//		System.out.println(I);
+//		I.remove(2);
+//		System.out.println(I);
+//		I.add(2,"M");
+//		I.add("N");
+//		System.out.println(I);
+		
+//		ArrayList  I1 = new ArrayList();
+//		LinkedList I2 = new LinkedList();
+//		System.out.println(I1 instanceof Serializable); //true
+//		System.out.println(I2 instanceof Cloneable); //true
+//		System.out.println(I1 instanceof RandomAccess); //true
+//		System.out.println(I2 instanceof RandomAccess); //false
+		
+//		LinkedList I = new LinkedList();
+//		I.add("durga");
+//		I.add(30);
+//		I.add(null);
+//		I.add("durga");
+//		I.set(0, "Software");
+//		I.add(0,"Venky");
+//		I.removeLast();
+//		I.addFirst("CCC");
+//		System.out.println(I);
+		
+//		Vector v = new Vector();
+//		System.out.println(v.capacity());
+//		for(int i=1;i<=10;i++) {
+//			v.addElement(i);
+//		}
+//		
+//		System.out.println(v.capacity());
+//		v.addElement("A");
+//		System.out.println(v.capacity());
+//		System.out.println(v); 
+		
+//		Stack s = new Stack();
+//		s.push("A");
+//		s.push("B");
+//		s.push("C");
+//		System.out.println(s);
+//		System.out.println(s.search("A"));
+//		System.out.println(s.search("Z"));
+		
+//		Vector v = new Vector();
+//		for(int i = 0; i<=10;i++) {
+//			v.addElement(i);
+//		}
+//		System.out.println(v);
+//		Enumeration e = v.elements();
+//		while(e.hasMoreElements()) {
+//			Integer I = (Integer)e.nextElement();
+//			if(I%2 ==0) {
+//				System.out.println(I);
+//			}
+//			else {
+//				System.out.println(I+" will be removed");
+//				v.remove(I);
+//				System.out.println(v);
+//			}
+//		}
+		
+		
+		ArrayList my_list = new ArrayList();
+		for(int i=0; i<=10;i++) {
+			my_list.add(i);
+		}
+		System.out.println(my_list);
+		Iterator itr = my_list.iterator();
+		while(itr.hasNext()) {
+			Integer I = (Integer) itr.next();
+			
+			if(I % 2 == 0) {
+				System.out.println(I);
+			}
+			else {
+				itr.remove();
+			}
+		}
+		
+		System.out.println(my_list);
+		
+		
+
+	} 
+
+}

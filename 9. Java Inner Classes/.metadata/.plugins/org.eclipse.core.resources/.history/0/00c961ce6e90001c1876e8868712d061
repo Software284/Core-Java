@@ -1,0 +1,25 @@
+package com.lamichhane.annonymous.inner_class.that_extends_class;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		PopCorn p = new PopCorn()
+		{
+			public void test() {
+				System.out.println("Spicy");
+			}
+		};
+		p.taste();
+		PopCorn p1 = new PopCorn();
+		p1.taste();
+		PopCorn p2 = new PopCorn()
+		{
+			public void test() {
+				System.out.println("Sweet");
+			}
+		};
+
+	}
+
+}

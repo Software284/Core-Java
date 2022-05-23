@@ -1,0 +1,6 @@
+
+Expression		initial value of x			value of y			final value of x
+y=++x			10							11					11
+y=x++			10							10					11
+y=--x			10							9					9
+y=x--			10							10					9

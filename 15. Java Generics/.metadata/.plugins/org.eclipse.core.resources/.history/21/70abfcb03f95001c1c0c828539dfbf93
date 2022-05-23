@@ -1,0 +1,12 @@
+case-I:->
+m1(ArrayList<String> l);
+-> we can call this method by passing array list of only string type.
+m1(ArrayList<String> l){
+	l.add("A");
+	l.add(null);
+	l.add(10); CE
+}
+but within the method we can add only string types of objects to the list.by mistake if we are tying to add any other type then we will get compile time
+error.
+
+case-II:->

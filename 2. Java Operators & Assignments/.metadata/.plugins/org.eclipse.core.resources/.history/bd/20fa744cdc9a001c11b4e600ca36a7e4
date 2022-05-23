@@ -1,0 +1,11 @@
+instanceof VS instanceOf():->
+-> instanceof is an operator in java. we can use instanceof to check whether the given object is of particular type
+or not and we know type at the beginning.
+Example:
+Thread t = new Thread();
+System.out.println(t instanceof Runnable);
+System.out.println(t instanceof String);
+
+output:->
+true
+false

@@ -1,0 +1,16 @@
+Collection(I)
+Set(I)
+CopyOnWriteArraySet(C)
+
+-> it is a thread safe version of set.
+-> internally implemented by CopyOnWriteArrayList.
+-> Insertion order is preserved.
+-> duplicate object are not allowed.
+-> multiple thread can able to perform read operation simultaneously but for every update operation a separate
+clonned object will be created.
+-> as for every update operation a separate cloned copy will be created which is costly hence if multiple update 
+operation are required then it is not recomended to use CopyOnWriteArraySet.
+-> while one thread iterating set the other threads are allowed to modify set and we won't get ConcurrentModification
+Exception.
+-> iterator or CopyOnWriteArraySet can perform only read operation and won't perform remove operation.otherwise
+we will get runtime exception unsupportedmethodoperation excepton.

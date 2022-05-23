@@ -1,0 +1,3 @@
+case-I:->
+m1(ArrayList<String> l);
+-> we can call this method by passing array list of only string type.

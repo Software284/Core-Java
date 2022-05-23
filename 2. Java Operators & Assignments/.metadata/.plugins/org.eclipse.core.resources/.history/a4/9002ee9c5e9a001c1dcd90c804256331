@@ -1,0 +1,7 @@
+Conditional Operator(?:):-> 
+Syntax:->
+int x = 10 < 20 ? 30 : 40;
+
+int x = (10 > 20) ? 30: ((40 > 50) ? 60:70));
+
+-> the only possible ternary operator in java is conditional operator.

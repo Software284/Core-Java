@@ -1,0 +1,49 @@
+Singleton Classes:-> for any java class if we are allowed to create only one object such type of class is called singleton
+class.
+Example:->
+Runtime,BusinessDelegate,ServiceLocator etc
+
+Advantage:->
+-> if several people have same requirement then it is not recomended to create a separate object for every requirement.
+we have to create only one object and we can re-use same object for every simillar requirement so that performance and 
+memory utilization will be improved.this is the cental idea of singleton classes.
+
+Example:->
+Runtime r1 = Runtime.getRuntime();
+Runtime r2 = Runtime.getRuntime();
+Runtime rn = Runtime.getRuntime();
+
+How to create our own singleton classes?
+-> there are two approach to create singleton classes
+i. private constructor
+
+class Test {
+	private static Test t = new Test();
+	private Test(){
+	}
+	public static Test getTest(){
+		return t;
+	}
+}
+
+Test t1 = Test.getTest();
+Test t2 = Test.getTest();
+Test tn = Test.getTest();
+
+ii. 
+class Test {
+	private static Test t = null;
+	private Test(){
+	}
+	public static Test getTest(){
+		if(t == null){
+			t = new Test();
+		}
+		return t;
+	}
+}
+
+Test t1 = Test.getTest();
+Test t2 = Test.getTest();
+Test tn = Test.getTest();
+

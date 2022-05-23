@@ -1,0 +1,87 @@
+Streams:-> if we want to process the objects from the collections then we should go for streams
+concept.io streams meant for representing data with respect to file I/O while util package streams 
+meant for process data from collection.
+
+Program sequence:->
+program of finding even number in list without streams
+program of finding even number in list with stream
+program to double list value without stream
+program to double list value with stream map configuration
+
+Difference Between map and filter method:->
+Streams s = c.stream();
+where 
+c is any collection object
+stream() this method present inside collection interface as default method
+Stream is an interface present in java.util.Stream package.
+
+Note: the no of objects because of filter is less than orginal object.in case of
+map the orginal objects in list and and new list is always must be same.
+
+Filtering:->
+-> if we want to filter elements from the collection based on some boolean conditions,then we should
+go for filtering.
+-> we can configure filter by using filter method of stream interface
+public Stream filter(Predicate<T> t);
+here predicate can be boolean valued function or lambda expression
+Eg:-> Stream s1 = c.stream().filter(i -> i % 2 == 0);
+
+Mapping:->
+-> if we want to create a separate new object for every object present in the collection based on some function
+then we should go for mapping mechanism.
+-> we can implement mapping by using map() method of stream interface.
+public Stream map(Function<T,R> f)
+Eg: 
+Stream s1 = c.stream().map(i -> i *2);
+
+Processing by collect() method:-> this method collects the elements from the stream and adding
+to the specified collection.
+Eg: AL<String> l = new AL<String>();
+l.add("Pawan");
+l.add("RaviTeja");
+l.add("chiranjeevi");
+l.add("venkatesh");
+l.add(Nagarjuna");
+
+Program sequence:->
+program of finding list with more than nine characters with collect processing
+
+Processing by count() method:->this method returns the no of element present in
+stream.
+public long count();
+
+Program sequence:->
+program of finding list with more than nine char with count processing
+
+
+Processing by sorted() method:-> 
+-> we can use sorted() method to sort elements inside stream.
+-> we can sort either based on default natural sorting order or based on our own customized
+sorting by comparator object.
+sorted():-> for default natural sorting
+sorted(Comparator c):-> for customized sorting
+
+program sequence:->
+program to convert list into sorted list with sorted method processing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

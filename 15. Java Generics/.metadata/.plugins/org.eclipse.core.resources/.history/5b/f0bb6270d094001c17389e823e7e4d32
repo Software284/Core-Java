@@ -1,0 +1,12 @@
+package com.lamichhane.our.own.generic_class;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Gen<String> s1 = new Gen<String>();
+		
+
+	}
+
+}

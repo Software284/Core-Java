@@ -1,0 +1,7 @@
+final:-> final is a modifier applicable for classes methods and variables.if a class declared as
+final then we can't extend that class that is we can't create child class for that class that is
+inheritance is not possible for final classes.
+if a method is final then we can't overide that method in the child class.if a variable declard
+as final then we can't perform reassignment for that variable.
+
+Finally:-> 

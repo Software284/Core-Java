@@ -1,0 +1,35 @@
+Functional Interfaces:-> the interfaces with only one abstract method and any no of default
+and static methods are called functional interfaces.
+Callable
+Comparable
+Comparater
+Runnable
+ActionListener
+
+Predefined functional interfaces:-> these interfaces are present in java.util.function.
+Predicate
+Function
+Consumer
+Supplier
+
+Predicate:->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predicate Program Sequence:->

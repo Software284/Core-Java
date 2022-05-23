@@ -1,0 +1,7 @@
+
+
+sysout(10 < 20); // true
+sysout('a' < 10); //false
+sysout('a' < 97.6); //true
+sysout('a' > 'A'); //true
+sysout(true > false);// CE:operator > can't be applied to boolean,boolean

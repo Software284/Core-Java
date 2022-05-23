@@ -1,0 +1,2 @@
+-> in old languages enum we can't take only constants but in java enum in addition to constants we can take
+methods,constructor,normal variables etc.hence java enum is more powerful than old languages enum.

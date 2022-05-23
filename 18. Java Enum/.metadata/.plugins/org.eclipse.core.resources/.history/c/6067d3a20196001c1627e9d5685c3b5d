@@ -1,0 +1,10 @@
+package com.lamichhane.enums_instance.method.and.variable;
+
+enum Beer {
+	KF,KO,RC,AO;
+	
+	
+	Beer(){
+		System.out.println("Constructor");
+	}
+}

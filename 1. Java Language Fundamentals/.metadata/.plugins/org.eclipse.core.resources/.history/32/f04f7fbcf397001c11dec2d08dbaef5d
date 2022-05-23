@@ -1,0 +1,185 @@
+-> in java every variable and every expression has some type.
+-> each and every data types is clearly defined.
+-> every assignment should be checked by compiler for type compatibility.
+-> because of above reasons we can conclude java language is strongly typed programming language.
+
+-> java is not considered as pure object oriented programming language because several oop features are
+not satisfied by java(like operator overloading,multiple inheritance,etc).
+moreover we are depending on primitive data types which are not a objects.
+
+Primitive Data Types:->
+	Numeric Data Types
+		Integral Data Types
+			byte
+			short
+			int 
+			long
+		Floating Point Data Types
+			float
+			double
+			
+			
+	Non-numeric Data Types
+		char
+		boolean
+
+-> except boolean and char remaining data types are considered as signed data types because we can represent
+both positive negative numbers.
+============================================================================================================
+
+Integral Data Types:->
+
+i.byte:->
+size: 1 byte(8bits)
+x [] [] [] [] [] [] []
+max value: + 64+32+16+8+4+2+1 = +127
+min value: - (1's complement of max value)+1
+  1 1 1 1 1 1 1
+            + 1
+----------------
+1 0 0 0 0 0 0 0
+min value: -128
+
+range: -128 to 127
+
+
+-> the most significant bit acts as sign bit.
+sign bit:
+0 -> positive
+1 -> negative
+
+positive numbers will be represented directly in a memory whereas negative numbers represented in 2's 
+complement form.
+
+Example:
+byte b = 10; //valid
+byte b = 127 //valid
+byte b = 128 
+CE:Possible Loss of Precision fount int required byte
+byte b = 10.5 
+CE:Possible Loss of Precision found double required byte
+byte b = true
+CE:incompatible types found boolean required byte
+byte b = "durga"
+CE:incompativle types found java.util.String requried byte
+
+Note:-> byte is the best choice if we want to handle data in terms of streams either from the file or
+from the network(file supported form or network supported form is byte).
+
+
+
+
+ii. short:->
+-> short is most rarely used data type in java.
+size: 2 byte(16 bits)
+range : -2pow(15) to 2pow(15)-1 [-32768 to 32767]
+
+Example:
+short b = 32767; //valid
+short b = 32768 // invalid
+CE:Possible Loss of Precision fount int required byte
+short b = 10.5 
+CE:Possible Loss of Precision found double required byte
+short b = true
+CE:incompatible types found boolean required byte
+short b = "durga"
+CE:incompativle types found java.util.String requried byte
+
+Note:-> short data type is best suitable for 16 bit processor like 8085 but these processors are completely
+outdated and hence corresponding short data type is also outdated data type.
+
+
+iii. int:->
+-> it is the most commonly used data type in java.
+size: 4 bytes(32bits)
+range: -2pow(-31) to 2pow(31)-1 [-2147483648 to 2147483647]
+
+int x = 2147483647 //valid
+int x = 2147483647 // CE: integer number too large
+int x = 2147483648l // CE: Possible loss of precision found long requried int.
+int x = true // CE:incompatible types found boolean requried int
+
+
+
+
+iv. long:->
+-> sometimes int may not enough to hold big values then we should go for long type.
+Example1:-> the amount of distance travelled by ligh in thousands days,to hold this value int may not 
+enough.we should go for long data type.
+long l = 1,26,000 * 60 * 60 *24 * 24
+Example2:-> the number of character present in a big file may exceed int range hence the return type of
+length method is long but not int.
+long l = f.length();
+
+size : 8 byte(64 bit)
+range: -2pow(63) to 2pow(63)-1
+
+Note:-> all the above data types(byte,short,int,long) meant for representing integeral values.if we want 
+to represent floating point values then we should go for floating point data types.
+
+===========================================================================================================
+
+Floating Point Data Types:->
+
+i. Float:-> 
+float VS double:->
+-> 5 to 6 VS 14 to 15
+-> single precision VS double precision
+-> size: 4 bytes VS size: 8 bytes
+-> Range: -3.4 e38 VS 3.4 e38 VS Range: -1.7 e308 to 1.7 e308
+
+-> if we want 5 to 6 decimal place of accuracy then we should go for float VS if we want 14 to 15 decimal
+place of accuracy then we should go for double.
+-> float follows single precision VS double follows double precision
+-> 4 bytes VS 8 bytes
+-> Range: -3.4 e38 VS 3.4 e38 VS Range: -1.7 e308 to 1.7 e308
+
+============================================================================================================
+
+Non-Numeric Data Type:->
+
+i. boolean:-> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

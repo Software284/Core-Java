@@ -1,0 +1,83 @@
+-> in java some words are reserved to represent some meaning or functionality such type of words are
+called reserved words.
+Reserved words(53)
+	Keywords(50)
+		UsedKeywords(48)
+		UnusedKeywords(2)
+	Reserved Literal(3)
+	
+those three reserved literal are true,false,null.
+those two unused keywords are goto,const.
+
+Keywords for data tyeps(8):-> 
+byte
+short
+int 
+long
+float
+double
+boolean 
+char
+
+Keywords for flow control(11):->
+if 
+else
+switch
+case
+default
+do
+while
+for
+break
+continue 
+return
+
+Keywords for modifiers(11):->
+public 
+private
+protected
+static
+final 
+abstract
+synchronized
+native 
+Strictfp
+transient
+volatile
+
+Keywords for Exception Handling(6):->
+try
+catch
+finally
+throw
+throws
+assert
+
+
+Class related keywords(6):->
+class
+interface
+extends
+implements
+package
+import
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

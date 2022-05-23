@@ -1,0 +1,48 @@
+Short Ciruit Operators(&&,||):->
+-> these are exactly same as bitwise operators(&,|) except the following differences
+(&,|) VS (&&,||):
+i. both arguments should be evaluated always VS second argument evaluation is optional
+ii. relatively performance is low VS relatively performance is high
+iii. applicable for both boolean and integral types VS applicable only for boolean but not for integral types.
+
+
+
+Note:->
+x && y
+->  y will be evaluated if x is true.
+-> i.e if x is false then y won't be evaluated.
+
+x || y
+-> y will be evaluated iff x is false.
+-> i.e if x is true then y won't be evaluated.
+
+Example:->
+int x = 10,y = 15;
+if(++x < 10 & ++y > 15){
+	x++;
+}
+else
+{
+	y++;
+}
+sysout(x+"..."+y);
+
+output:  x     y
+& :->    11    17
+&& :->   11    16
+| :->    12    16
+|| :->   12    16
+
+
+
+
+
+
+
+
+
+
+
+
+
+

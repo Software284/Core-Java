@@ -1,0 +1,11 @@
+package comparator.with.treeset.example;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		TreeSet set = new TreeSet();
+
+	}
+
+}

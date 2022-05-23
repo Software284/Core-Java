@@ -1,0 +1,5 @@
+package com.lamichhane.interface_demo;
+
+public interface Interf {
+	int x = 10;
+}

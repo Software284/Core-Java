@@ -1,0 +1,14 @@
+Arithmatic Operator(+,-,*,/,%):->
+-> if we apply any arithmatic operator between two variables a and b the result type is always max(int,type_of_a,type_of
+_b);
+byte + byte = int
+byte + short = int
+short + short = int
+byte + long = long
+long + double = double
+float + long = float
+char + char = int
+
+Example:
+sysout('a'+0.90); // 97.90
+sysout('a'+'b'); // 195

@@ -1,0 +1,50 @@
+-> we can use instanceof operator to check whether the given object is of particular type or not.
+Example:->
+ArrayList list = new ArrayList();
+list.add("Mahesh");
+list.add(new Thread());
+list.add(10);
+list.add(new Object());
+		
+Object o = list.get(3);
+		
+if(o instanceof String) {
+	System.out.println("String Object");
+}
+else if(o instanceof Thread) {
+	System.out.println("Thread Object");
+}
+else if(o instanceof Integer) {
+	System.out.println("Integer Object");
+}
+else if(o instanceof Object) {
+	System.out.println("Object Object");
+}
+
+syntax:->
+r instancof X
+r -> object reference
+X -> class/interface name
+
+Example1:->
+Thread t = new Thread();
+sysout(t instanceof Thread); //true
+sysout(t instanceof Object); //true
+sysout(t instanceof Runnable); //true
+
+Example2:-> to use instance of operator compulsary there should be some relation between argument types(either child to
+parent or parent to child or same type) otherwise we will get compile time error saying inconvertible types.
+Thread t = new Thread();
+sysout(t instanceof String);
+CE:inconvertible found thread required string
+
+Note:-> for any class or interface X null instance of x is always false.
+
+
+
+
+
+
+
+
+

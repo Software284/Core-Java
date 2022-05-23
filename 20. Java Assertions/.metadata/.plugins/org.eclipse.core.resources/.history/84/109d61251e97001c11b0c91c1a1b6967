@@ -1,0 +1,55 @@
+Types Of Assert Statements:-> thre are two types of assert statements 
+i. Simple Version
+ii. Augmented Version
+
+i.Simple Version
+syntax:
+assert(b)
+-> b should be boolean type.
+-> if b is true then our assumption satisfied and hence rest of the program will be executed normally.
+-> if b is false then our assumption fails i.e somewhere something goes wrong.and hence the program will
+be terminated abnormally by rising assertions error.once we got assertions error we will analyze the code
+and we can fix the problem.
+
+Note:-> java enabling assertions.
+java -ea class_name
+for eclipse selet run as VM argument type -ea
+by default assert statement won't be executed because assertions are disabled by default but we can enable
+assertions by using above command.
+
+Augmented Version:->
+-> we can augment some description with assertion error by using augmented version.
+syntax
+assert(b):e
+b should boolean type
+e should be string type
+e will be executed if and only first argument is false that is if the first argument is true then second
+argument won't be executed.
+
+Conclustion1:-> 
+int x = 10;
+;;;;;;;;;;;;;;;;;;;
+assert(x > 10) : ++x;
+;;;;;;;;;;;;;;;;;;;
+System.out.println(x);
+
+Conclusion2:->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

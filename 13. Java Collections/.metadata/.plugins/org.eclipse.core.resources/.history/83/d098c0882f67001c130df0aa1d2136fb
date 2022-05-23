@@ -1,0 +1,14 @@
+package map.implementation.with.properties;
+
+import java.util.Properties;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Properties p = new Properties();
+		FileInputStream fis = new FileInputStream("user-info.properties")
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package queue.implementation.by.priorityqueue;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		PriorityQueue q = new PriorityQueue();
+
+	}
+
+}
